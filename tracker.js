@@ -1,1 +1,4317 @@
-!function(){"use strict";if(window.__rpTracker)window.__rpTracker.open();else{var e=400,t="rpTrackerLast",r=[["pat",/Patwari\s*Remarks\s*:/i],["gir",/Gird\w*\s*Remarks\s*:/i],["nt",/Naib\s*Tehsildar\s*Remarks\s*:/i],["teh",/(^|[^b\s]\s*)Tehsildar\s*Remarks\s*:/i],["_stop",/Gist of all successive|Details of Final mutation|Enter Final Remarks/i]],a="rpTrackerSLA",n=864e5,o={Patwari:"pat",Girdawar:"gir","Naib Tehsildar":"nt"},i={role:{},village:{}},l=["2026-01-05","2026-01-17","2026-01-26","2026-02-15","2026-03-17","2026-03-19","2026-03-20","2026-03-21","2026-03-26","2026-04-14","2026-05-01","2026-05-27","2026-05-28","2026-06-26","2026-07-05","2026-08-15","2026-08-26","2026-08-28","2026-09-04","2026-09-23","2026-10-02","2026-10-20","2026-10-26","2026-11-08","2026-11-24","2026-12-25"],s=null,d=["Patwari","Girdawar","Naib Tehsildar"],p="rpTrackerSeen",c=null,u="#b42318",f="#b26a00",h=5,b=/Gist\s*of\s*all\s*successive|Details\s*of\s*Final\s*mutation/i,v=/Forwarded\s*By|Certificate\s*Details|Remarks\s*:|Members\s*Remarks|GridViewMembersRemarks/i,m=document.createElement("div");m.style.cssText="position:fixed;inset:0;z-index:2147483647;";var g=m.attachShadow({mode:"open"});g.innerHTML='<style>:host{all:initial}*{box-sizing:border-box}.wrap{position:fixed;inset:0;background:#eef1f6;color:#1d2330;font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:auto;-webkit-text-size-adjust:100%}.bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:8px;padding:10px 14px;background:#12355b;color:#fff}.bar b{font-size:16px;flex:1}.bar small{opacity:.8;font-weight:400;display:block;font-size:11px}button{font:inherit;border:0;border-radius:8px;padding:9px 14px;cursor:pointer;background:#e6e9ef;color:#1d2330}button.pri{background:#0f2d4f;color:#fff}button.x{background:transparent;color:#fff;font-size:22px;padding:2px 8px}.box{max-width:1240px;margin:0 auto;padding:14px}.card{background:#fff;border:1px solid #e1e4ea;border-radius:12px;padding:14px;margin-bottom:12px}.warn{background:#fff7e0;border-color:#f0d58a}.scanbar{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #d5dbe6;box-shadow:0 3px 8px rgba(16,32,60,.08)}.scanbar[hidden]{display:none}.sbin{max-width:1240px;margin:0 auto;padding:8px 14px}.sbt{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px}.sbt b{color:#12355b}.sbt .tools{gap:6px}.sbt button{padding:6px 10px;font-size:12.5px}.scanbar .prog{height:6px;margin:6px 0}.sspd{font-size:11.5px;color:#4a5466;margin:0 0 6px;line-height:1.4}.sdots{display:flex;flex-wrap:wrap;gap:4px}.sdot{font-size:11px;padding:2px 7px;border-radius:10px;background:#eef1f6;color:#64708a}.sdot.ok{background:#e3f4ea;color:#145c36;font-weight:600}.sdot.cur{background:#12355b;color:#fff;font-weight:600}.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin-top:12px}.set{border:1px solid #dfe4ec;border-radius:8px;padding:7px 9px;font-size:12px;background:#fff}.set b{display:block;font-size:12.5px;color:#12355b}.set span{color:#64708a}.set.ok{border-color:#9fd3b6;background:#f1faf5}.set.ok span{color:#145c36}.set.cur{border-color:#1b4a7a;box-shadow:0 0 0 2px rgba(27,74,122,.15)}.card.resume{border:2px solid #1b4a7a}.prog{height:10px;background:#e1e4ea;border-radius:6px;overflow:hidden;margin:10px 0}.prog i{display:block;height:100%;background:#1f8a52;width:0}.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}.muted{color:#5b6475;font-size:12px}h3{margin:0 0 8px;font-size:15px}.scroll{overflow-x:auto}.pill{display:inline-block;padding:2px 9px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.02em}input.num{width:56px;padding:6px;border:1px solid #c9ced8;border-radius:6px;font:inherit}select{padding:6px;border:1px solid #c9ced8;border-radius:6px;font:inherit;max-width:100%}.rp{--n1:#0f2d4f;--n2:#1b4a7a;--ink:#16202e;--mut:#64708a;--line:#e3e7ee;--red:#b42318;--amb:#b26a00;--grn:#1f8a52;color:var(--ink);font-variant-numeric:tabular-nums}.rp *{box-sizing:border-box}.rp-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2px 0 14px}.rp-title{font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--n1)}.rp-sub{font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.35}.rp-sub a{color:var(--n2)}.rp-sub.amb{color:#a35f00}.rp-btns{display:flex;gap:6px;flex-wrap:wrap}.rp-btns button{background:#fff;border:1px solid #cfd6e2;color:var(--n1);font-weight:600;font-size:13px;padding:8px 12px;border-radius:8px}.rp-btns button:hover{border-color:var(--n2);background:#f4f7fc}.rp-btns button.pri{background:var(--n1);border-color:var(--n1);color:#fff}.rp-btns button.pri:hover{background:var(--n2)}.rp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}.rp-kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;border-top:4px solid var(--n2);box-shadow:0 1px 2px rgba(16,32,60,.05)}.rp-kpi span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mut)}.rp-kpi b{display:block;font-size:30px;font-weight:800;line-height:1.15;margin-top:4px;color:var(--n1)}.rp-kpi b small{font-size:13px;font-weight:600;color:var(--mut)}.rp-kpi em{display:block;font-style:normal;font-size:11.5px;color:var(--mut);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rp-kpi.red{}.rp-kpi.red b{color:var(--red)}.rp-kpi.green{}.rp-kpi.green b{color:var(--grn)}.rp-kpi.amber{}.rp-kbar{height:4px;background:#e8ebf1;border-radius:3px;margin-top:8px;overflow:hidden}.rp-kbar i{display:block;height:100%;background:var(--n2)}.rp-card{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;box-shadow:0 1px 2px rgba(16,32,60,.05);overflow:hidden}.rp-ch{display:flex;justify-content:space-between;align-items:center;padding:10px 14px 0}.rp-ch h4{margin:0;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}.rp-hint{font-size:11px;color:var(--mut)}.rp-clear{background:none;border:0;color:var(--n2);font-weight:700;font-size:12px;padding:0}.rp-segs{display:flex;gap:4px;padding:10px 14px 14px}.rp-seg{border:0;border-radius:8px;padding:10px 12px;text-align:left;font-size:13px;min-width:90px;cursor:pointer;transition:transform .12s,box-shadow .12s}.rp-seg b{font-size:18px;margin-right:4px}.rp-seg:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(16,32,60,.12)}.rp-seg.on{outline:3px solid var(--n1);outline-offset:1px}.rp-seg.zero{opacity:.75;cursor:default}.rp-seg.zero:hover{transform:none;box-shadow:none}.rp-segok{display:block;font-size:11px;font-weight:600;color:#145c36;margin-top:2px}.rp-segod{display:block;font-size:11px;font-weight:600;color:#3b4456;margin-top:2px}.rp-actpanel{border:1px solid var(--n1);box-shadow:0 8px 22px rgba(15,45,79,.13)}.rp-ah{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(90deg,var(--n1),var(--n2));color:#fff}.rp-ah h3{margin:0;font-size:16px;font-weight:800}.rp-ah span{font-size:12px;opacity:.82}.rp-apps .rp-ah{background:#fff;color:var(--ink);border-bottom:1px solid var(--line)}.rp-apps .rp-ah span{color:var(--mut);opacity:1}.rp-chipw{background:#fff;color:var(--n1);border:0;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:700}table.rp-at,table.rp-t{width:100%;border-collapse:collapse;font-size:13px}table.rp-at th,table.rp-t th{background:#f4f6fa;color:#3b4456;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 10px;text-align:left;border-bottom:2px solid #d8dee8;white-space:nowrap}table.rp-at th.c,table.rp-t th.c,table.rp-at td.c,table.rp-t td.c{text-align:center}table.rp-at td{padding:10px;border-bottom:1px solid #edf0f4;vertical-align:middle}tr.rp-ar{cursor:pointer;transition:background .12s}tr.rp-ar:nth-child(even) td{background:#fafbfd}tr.rp-ar:hover td{background:#eef3fb}tr.rp-ar.sel td{background:#dfe9f9}.rp-on{font-weight:700;font-size:13.5px;margin-top:3px}.rp-big{font-size:20px;font-weight:800}.mbar{display:flex;height:4px;border-radius:3px;background:#e8ebf1;overflow:hidden;width:56px;margin:4px auto 0}.mbar i{display:block;height:100%}.rp-ob{display:inline-block;min-width:32px;padding:3px 9px;border-radius:14px;background:var(--red);color:#fff;font-weight:800;font-size:14px;text-align:center}.rp-ob small{font-size:10px;font-weight:700;margin-left:1px;opacity:.9}.rp-ob.lo{background:transparent;color:var(--red);box-shadow:inset 0 0 0 1px #efc2bd}.rp-ob.amb{background:transparent;color:var(--amb);box-shadow:inset 0 0 0 1px #ecd38a}.rp-odn{color:var(--red);font-size:16px}.rp-odn.lo{font-weight:700}.rp-okb{display:inline-block;padding:3px 9px;border-radius:14px;background:#eef1f6;color:#145c36;font-weight:700;font-size:12px;white-space:nowrap}.rp-okn{color:var(--grn);font-size:16px}.rp-nil{color:#b8bfcc}.rp-act{font-weight:600}.rp-sep{color:#b8bfcc;margin:0 6px}.otag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:10px;background:#eef1f6;color:#3b4456;font-size:11px;font-weight:700;white-space:nowrap}.rp-sets{padding:10px 14px}.rp-sets.part{border-color:#ecd38a;background:#fffbef}.rp-setsin{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.rp-setl{font-size:12.5px;color:#3b4456;padding:2px 0 8px}.rp-sets .rp-fcs{margin-bottom:4px}.rp-resume{background:var(--n1);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-weight:700}.rp-pst{display:inline-block;margin:4px 4px 0 0;font-size:11px;font-weight:600;padding:1px 8px;border-radius:10px;white-space:nowrap}.rp-pst.report{background:#e3f4ea;color:#145c36}.rp-pst.comment{background:#fff4dc;color:#8a5300}.rp-pstl{margin-top:2px}.rp-pdfm{display:grid;gap:6px;background:#fff;border:1px solid #cfd6e2;border-radius:10px;padding:10px;margin:-4px 0 12px auto;max-width:420px;box-shadow:0 8px 22px rgba(15,45,79,.13)}.rp-pdfm[hidden]{display:none}.rp-pdfm b{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}.rp-pdfm button{text-align:left;background:#f6f8fb;border:1px solid #e1e6ee;border-radius:8px;padding:9px 12px;font-weight:700;color:var(--n1);font-size:13.5px}.rp-pdfm button span{display:block;font-weight:500;color:var(--mut);font-size:11.5px;margin-top:1px}.rp-pdfm button:hover{border-color:var(--n2)}tr.rp-tot td{background:var(--n1)!important;color:#fff;font-weight:800;font-size:14px;padding:10px}.rp-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:#fbfcfe}.rp-search{flex:1;min-width:220px}.rp-search input{width:100%;padding:9px 12px;border:1px solid #cfd6e2;border-radius:8px;font:inherit;background:#fff}.rp-search input:focus{outline:2px solid var(--n2);border-color:var(--n2)}.rp-fcs{display:flex;gap:6px;flex-wrap:wrap}.rp-fc{border:1px solid #cfd6e2;background:#fff;color:#3b4456;border-radius:18px;padding:6px 12px;font-size:12.5px;font-weight:600}.rp-fc b{display:inline-block;margin-left:4px;padding:0 6px;border-radius:9px;background:#eef1f6;font-size:11px}.rp-fc.on{background:var(--n1);border-color:var(--n1);color:#fff}.rp-fc.on b{background:rgba(255,255,255,.2)}.rp-sort{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px}.rp-sort select{padding:7px 8px;border:1px solid #cfd6e2;border-radius:8px;font:inherit;font-size:12.5px;background:#fff}table.rp-t td{padding:11px 10px;border-bottom:1px solid #edf0f4;vertical-align:top}tr.rp-r{cursor:pointer;transition:background .12s}tr.rp-r:hover td{background:#f5f8fd}tr.rp-r.open td{background:#eef3fb;border-bottom-color:transparent}.rp-app{font-weight:800;font-size:13px;letter-spacing:.01em}.rp-nm{font-weight:600}.rp-pw{font-weight:700;margin-top:3px}.rp-rv{color:#a35f00;font-weight:600}.rp-sb{display:inline-block;padding:4px 10px;border-radius:14px;font-weight:800;font-size:15px;white-space:nowrap}.rp-sb small{font-size:11px;font-weight:600}.rp-sb.muted{font-size:12px;font-weight:600;background:#eef1f6;color:var(--mut)}.rp-lcc{max-width:280px;min-width:180px}.rp-lc .pill{font-size:10.5px}.rp-d{font-size:11px;color:var(--mut);margin-left:6px}.rp-lc p{margin:4px 0 0;font-size:12.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}tr.rp-r.open .rp-lc p{-webkit-line-clamp:unset}.rp-rmk{font-size:12.5px;line-height:1.45;min-width:200px}.rp-chev{color:#9aa3b5;font-size:20px;width:28px;text-align:center;vertical-align:middle!important}.rp-chev span{display:inline-block;transition:transform .15s}tr.rp-r.open .rp-chev span{transform:rotate(90deg);color:var(--n2)}tr.rp-x{display:none}tr.rp-x.open{display:table-row}tr.rp-x td{background:#f7f9fd;border-bottom:1px solid #dbe3ef;padding:0}.rp-xin{display:grid;grid-template-columns:1fr 240px;gap:16px;padding:14px 18px 16px 22px}ul.rp-tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid #d5dce8}ul.rp-tl li{position:relative;padding:0 0 12px 12px}ul.rp-tl li i{position:absolute;left:-26px;top:3px;width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #c9d1de}ul.rp-tl li.old{opacity:.55}ul.rp-tl li.mark i{background:#8a94a8}ul.rp-tl li.now i{background:var(--n2);box-shadow:0 0 0 3px rgba(27,74,122,.18)}ul.rp-tl li.now.bad i{background:var(--red);box-shadow:0 0 0 3px rgba(217,45,32,.2)}.rp-tlh{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.rp-tlh b{font-size:12.5px}.rp-tlh span{font-size:11px;color:var(--mut)}ul.rp-tl p{margin:2px 0 0;font-size:12.5px;line-height:1.45}.rp-meta{display:grid;gap:8px;align-content:start}.rp-meta div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px}.rp-meta span{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}.rp-meta b{font-size:13px}.rp-empty{text-align:center;color:var(--mut);padding:24px!important}@media(max-width:760px){.rp-kpis{grid-template-columns:1fr 1fr}.rp-kpi b{font-size:24px}.rp-segs{flex-direction:column}.rp-seg{flex:none!important}table.rp-at thead,table.rp-t thead{display:none}tr.rp-ar{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 8px;padding:10px 12px;border-bottom:1px solid #edf0f4}tr.rp-ar td{border:0;padding:0!important;background:transparent!important;text-align:left!important}tr.rp-ar td.acc{grid-column:1/-1;box-shadow:none}tr.rp-ar td.rp-actc{grid-column:1/-1}tr.rp-ar td[data-l]:before,tr.rp-r td[data-l]:before{content:attr(data-l);display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:2px}tr.rp-ar .mbar{margin:4px 0 0}tr.rp-ar.sel{background:#dfe9f9}tr.rp-tot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 12px;background:var(--n1)}tr.rp-tot td{padding:0!important}tr.rp-tot td:last-child{display:none}tr.rp-r{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;padding:12px 12px 12px 16px;border-bottom:1px solid #edf0f4}tr.rp-r td{border:0;padding:0!important;background:transparent!important;text-align:left!important;max-width:none;min-width:0}tr.rp-r td.acc{box-shadow:none}tr.rp-r td.rp-lcc,tr.rp-r td.rp-rmk{grid-column:1/-1}tr.rp-r td.rp-chev{display:none}tr.rp-r.open{background:#eef3fb}tr.rp-x.open{display:block}tr.rp-x td{display:block}.rp-xin{grid-template-columns:1fr;padding:12px 14px}.rp-top{align-items:flex-start}.rp-btns{width:100%}.rp-btns button{flex:1}}</style><div class="wrap"><div class="bar"><b>Revenue Plus Tracker<small>Read-only — never submits or changes anything · version 52</small></b><button class="x" id="close">×</button></div><div class="scanbar" id="scanbar" hidden></div><div class="box" id="main"></div></div>';var y=g.getElementById("main");g.getElementById("close").onclick=function(){location.assign(w.split("#")[0])},g.getElementById("close").title="Close and reload the dashboard";var x=null,w=location.href,k=!1,P=!1,T=!1,S="Revenue Plus Tracker";document.addEventListener("visibilitychange",(function(){document.hidden||k||!/^(✅|⚠)/.test(document.title)||setTimeout((function(){ye("")}),4e3)}));var E={logout:"Your Revenue Plus login has ended (the portal logs out after some time without use). Log in again, open the Dashboard, run Tracker and tap “Show last scan”. The documents will open again.",gone:"This application is no longer in the pending list on the Dashboard. It may have been processed since the scan. Run a new scan.",nolist:"The Dashboard did not show an application list when reloaded."},N="rpTrackerScan",C=10,R=!1,D=null,A=null,z=["Patwari","Girdawar","Naib Tehsildar","Tehsildar","Applicant","?"],O={Patwari:["#fff3c4","#7a5a00"],Girdawar:["#d6f1ec","#11655b"],"Naib Tehsildar":["#e8e0fa","#4b2f9e"],Tehsildar:["#dfe9f9","#1b4a7a"],Applicant:["#eceef2","#5b6475"],"?":["#eceef2","#5b6475"]},L={report:"Patwari report submitted",comment:"Patwari comment only — no report"};window.__rpTracker={open:ve,_t:window.__RP_TEST?{pendingWith:Ie,buildGuess:X,recordSeen:le,resetSeen:function(){c=null},dayNum:ae,compliance:se,stage:_,parseDetail:U}:null},ve()}function I(e){return String(null==e?"":e).replace(/ /g," ").replace(/\s+/g," ").trim()}function j(e){return document.hidden?Promise.resolve():new Promise((function(t){setTimeout(t,e)}))}function M(e){return I(e).replace(/[&<>"']/g,(function(e){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e]}))}function B(e){return(new DOMParser).parseFromString(e,"text/html")}function W(e){return!(e=I(e))||/^(report\s*)?pending\.?$/i.test(e)||/^(na|n\/a|-+|nil|none)$/i.test(e)}function G(e){return Array.prototype.filter.call(e.querySelectorAll("input[type=submit],button"),(function(e){return/process/i.test((e.value||"")+" "+(e.textContent||""))&&e.name}))}function F(e){var t=G(e),r=[];if(!t.length)return r;for(var a=t[0].closest("table"),n=[],o=a?Array.prototype.slice.call(a.querySelectorAll("tr")):[],i=0;i<o.length;i++)if(/application\s*no/i.test(o[i].textContent)&&!G(o[i]).length){n=Array.prototype.map.call(o[i].children,(function(e){return I(e.textContent)}));break}function l(e,t){for(var r in e)if(t.test(r))return e[r];return""}return t.forEach((function(t){var a=t.closest("tr");if(a){var o=Array.prototype.map.call(a.children,(function(e){return I(e.textContent)})),i={};n.forEach((function(e,t){e&&(i[e]=o[t]||"")})),r.push({appNo:l(i,/application\s*no/i)||o[0]||"",name:l(i,/name/i),mobile:l(i,/mobile/i),village:l(i,/village/i),khasra:l(i,/khasra/i),purpose:l(i,/purpose/i),appDate:l(i,/application\s*date/i),revert:parseInt(l(i,/revert/i),10)||0,days:parseInt(l(i,/days/i),10)||0,actionBy:n.some((function(e){return/action\s*by/i.test(e)}))?l(i,/action\s*by/i):null,btnName:t.name,btnValue:t.value||"Process",form:t.form||e.forms[0]})}})),r}function U(e){var t=B(e),a=I(t.body?t.body.textContent:""),n=[];r.forEach((function(e){var t=e[1].exec(a);t&&n.push({k:e[0],s:t.index,e:t.index+t[0].length})})),n.sort((function(e,t){return e.s-t.s}));var o={ok:!1};function i(e){var t=e.exec(a);return t?I(t[1]):""}n.forEach((function(e,t){if("_stop"!==e.k){var r=t+1<n.length?n[t+1].s:Math.min(a.length,e.e+500);o[e.k]=I(a.slice(e.e,r)).slice(0,500),o.ok=!0}})),o.khewat=i(/Khewat\s*No\.?\s*:\s*(\S+)/i),o.khata=i(/Khata\s*No\.?\s*:\s*(\S+)/i),o.patReportPending=/Owner\(s\) name with full description\s*:\s*Report Pending/i.test(a),o.vendee=i(/Name of Vendee\s*(.{0,80}?)\s*Parentage of Vendee/i),o.area=i(/Area Proposed for Alienation[^:]{0,60}?Purpose\s*:?\s*(.{0,200}?)\s*(?:Adjoining Khasra|Tatima|Other Supporting|Certificate Details|Documents Preview)/i),/Area Proposed for Alienation/i.test(a)?o.patTopPending=!o.area||/report\s*pending/i.test(o.area):o.patTopPending=o.patReportPending||!/Owner\(s\) name with full description/i.test(a),o.patTopPending&&(o.area=""),o.assigned={},[["nt","ddlNaibTehsildar"],["gir","ddlGirdhawar"],["pat","ddlPatwari"]].forEach((function(e){var r=t.querySelector('select[id$="'+e[1]+'"]'),a=r&&r.querySelector("option[selected]");a&&"-1"!==a.value&&I(a.textContent)&&(o.assigned[e[0]]=I(a.textContent).replace(/^Girdh?awar/i,"Girdawar"))})),o.history=[];var l=t.querySelector('[id$="GridViewMembersRemarks"]')||Array.prototype.find.call(t.querySelectorAll("table"),(function(e){var t=e.querySelector("tr");return t&&/forwarded\s*by|action\s*by/i.test(t.textContent)}));return l&&(Array.prototype.slice.call(l.querySelectorAll("tr"),1).forEach((function(e){var t=Array.prototype.map.call(e.children,(function(e){return I(e.textContent)}));if(!(t.length<3)&&t[1]){var r=t[t.length-1];o.history.push({by:t[1],remark:t.slice(2,t.length-1).join(" "),date:r,t:q(r)})}})),o.history.length?o.ok=!0:/no\s*data\s*found/i.test(l.textContent)&&(o.ok=!0,o.unmarked=!0)),o}function q(e){var t=/([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/.exec(e);if(t){var r=new Date(t[1]+" "+t[2]+" "+t[3]).getTime();if(!isNaN(r))return r}if(t=/(\d{1,2})\s+([A-Za-z]{3})[a-z]*\.?,?\s+(\d{4})/.exec(e)){var a=new Date(t[2]+" "+t[1]+" "+t[3]).getTime();if(!isNaN(a))return a}return(t=/(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})/.exec(e))?new Date(+t[3],+t[2]-1,+t[1]).getTime():0}function H(e){return e=String(e||"").toUpperCase().trim(),/^NAIB\s*TEH/.test(e)?"Naib Tehsildar":/^TEH/.test(e)?"Tehsildar":/^NT/.test(e)?"Naib Tehsildar":/^(GIR|GD|GQ|GR)/.test(e)?"Girdawar":/^(PAT|PT)/.test(e)?"Patwari":""}function V(e){var t=H(e);if(!t)return e;var r=/^\s*(naib\s+tehsildar|tehsildar|patwari|girdh?awar(?:\s+qanungo)?)\s+(.+)$/i.exec(String(e));if(r)return t+" "+r[2].replace(/\w\S*/g,(function(e){return e.charAt(0).toUpperCase()+e.slice(1).toLowerCase()}));var a=String(e).replace(/^(TEH|NT|GIR|GD|GQ|GR|PAT|PT)/i,"");return t+((a=a.charAt(0).toUpperCase()+a.slice(1).toLowerCase())?" "+a:"")}function Y(e){return e?new Date(e).toLocaleDateString("en-IN",{day:"2-digit",month:"short"}):""}function _(e){return e&&e.ok?e.history&&e.history.length?function(e,t){for(var r,a=e[e.length-1],n=H(a.by),o=a.remark,i="Applicant"===(r="Patwari"===n?"Girdawar":"Girdawar"===n?"Naib Tehsildar":"Naib Tehsildar"===n?"Patwari":"Tehsildar"===n?K(o)?"Applicant":"Patwari":"")?"Returned to applicant":r?"With "+r:"Unknown holder",l=r,s=e.length-1;s>=0;s--)if(H(e[s].by)===r){l=V(e[s].by);break}for(var d=0,p=1;p<e.length;p++){var c=H(e[p-1].by),u=H(e[p].by);"Naib Tehsildar"!==c&&"Girdawar"!==c||"Patwari"!==u||d++,"Tehsildar"===u&&K(e[p].remark)&&d++}for(var f=[],h=-1,b=e.length-1;b>=0;b--)if("Tehsildar"===H(e[b].by)){h=b;break}var v=e.slice(h+1).filter((function(e){var t=H(e.by);return"Girdawar"===t||"Naib Tehsildar"===t}));t&&t.patTopPending&&v.length&&f.push("Error: "+V(v[0].by)+" acted but Patwari report is “Report Pending”"),d&&f.push("Sent back "+d+"×"),"Tehsildar"!==n&&/revert|reject|return|mismatch|deficien|not legible/i.test(o)&&f.push(V(a.by)+" suggests revert/rejection");var m="Tehsildar"===H(e[0].by)?e.slice(1):e.slice(),g=m.length?m[m.length-1]:null;return{level:g?H(g.by)||"Other":"None",levelBy:g?V(g.by):"",levelT:g?g.t:0,stage:i,holder:l,flag:f.join("; "),lastBy:V(a.by),lastT:a.t,lastRemark:o,patReport:t?t.patTopPending?"Pending":"Submitted":"",stageDays:a.t?Math.max(0,Math.floor((Date.now()-a.t)/864e5)):null,history:e.map((function(e){return{by:V(e.by),remark:e.remark,t:e.t,date:e.date}}))}}(e.history,e):function(e){"patTopPending"in e&&(e=Object.assign({},e,{pat:e.patTopPending?"Report Pending":W(e.pat)?"Report submitted":e.pat}));var t=[["Patwari","pat"],["Girdawar","gir"],["Naib Tehsildar","nt"],["Tehsildar","teh"]].filter((function(t){return t[1]in e})),r=-1;t.forEach((function(t,a){W(e[t[1]])||(r=a)}));var a=[];return e.patTopPending&&t.slice(1).some((function(t){return!W(e[t[1]])}))&&a.push("Error: later officer acted but Patwari report is “Report Pending”"),{stage:r+1<t.length?"With "+t[r+1][0]:"teh"in e?"Tehsildar acted":"With Tehsildar",flag:a.join("; "),patReport:e.patTopPending?"Pending":"Submitted"}}(e):{stage:"Could not read",flag:""}}function J(){var e={pat:5,gir:7,nt:9,tot:10,mode:"app"};try{Object.assign(e,JSON.parse(localStorage.getItem(a)||"{}"))}catch(e){}return"stage"!==e.mode&&(e.mode="app"),e}function $(e){return e=String(e||""),/^Naib Tehsildar/i.test(e)?"Naib Tehsildar":/^Tehsildar/i.test(e)?"Tehsildar":/^Patwari/i.test(e)?"Patwari":/^Girdawar/i.test(e)?"Girdawar":H(e)}function K(e){return!/process\s*under\s*rules|forward|marked\s*to|to\s*(the\s*)?patwari/i.test(e||"")}function Z(e,t){return"Patwari"===e?"Girdawar":"Girdawar"===e?"Naib Tehsildar":"Naib Tehsildar"===e?"Patwari":"Tehsildar"===e?K(t)?"Applicant":"Patwari":""}function X(e){var t={},r={};e.forEach((function(e){(e.history||[]).forEach((function(a){var n=$(a.by);if(n&&a.by!==n&&((t[n]=t[n]||{})[a.by]=1,"Patwari"===n)){var o=e.village||"—";(r[o]=r[o]||{})[a.by]=((r[o]||{})[a.by]||0)+1}}))})),i={role:{},village:{}},Object.keys(t).forEach((function(e){var r=Object.keys(t[e]);1===r.length&&(i.role[e]=r[0])})),Object.keys(r).forEach((function(e){var t=Object.keys(r[e]).sort((function(t,a){return r[e][a]-r[e][t]}));i.village[e]=t[0]}))}function Q(e,t){var r=t&&t.assigned;return r&&("Naib Tehsildar"===e?r.nt:"Girdawar"===e?r.gir:"")||("Patwari"===e?i.village[t.village||"—"]||i.role.Patwari||e:i.role[e]||e)}function ee(){var e=new Date;return e.setHours(0,0,0,0),e.getTime()}function te(e){return("0"+(e=new Date(e)).getDate()).slice(-2)+["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"][e.getMonth()]}function re(e){return e.getFullYear()+"-"+("0"+(e.getMonth()+1)).slice(-2)+"-"+("0"+e.getDate()).slice(-2)}function ae(e,t){var r=s||(s={},(J().holidays||l).forEach((function(e){s[e]=1})),s),a=0,n=new Date(e);n.setHours(0,0,0,0);var o=new Date(t);o.setHours(0,0,0,0);for(var i=0;n<o&&i<3e3;i++)n.setDate(n.getDate()+1),0===n.getDay()||r[re(n)]||a++;return a}function ne(e){var t=String(e.appDate||"").split("/"),r=q(t[0]||""),a=q(t[1]||"");return{applied:r,resub:a&&a>=r?a:0,base:a&&a>=r?a:r}}function oe(){if(c)return c;try{c=JSON.parse(localStorage.getItem(p)||"{}")}catch(e){c={}}return c}function ie(e){var t=ne(e);return e.appNo+"|"+(t.base?re(new Date(t.base)):"")}function le(e,t){var r=oe();e.forEach((function(e){if(e.history&&e.history.length){var a=ie(e),n=r[a]=r[a]||{};"Pending"===e.patReport?n.sub||(n.pend=Math.max(n.pend||0,t)):n.sub||(n.sub=t);try{var o=se(e),i=o&&o.reverted?o.reverted.role+"|"+o.reverted.sinceT:"";i&&n.sig!==i&&(n.sig=i,n.sigSince=t),i||(delete n.sig,delete n.sigSince)}catch(e){}n.touch=t}}));var a=t-200*n;Object.keys(r).forEach((function(e){(r[e].touch||0)<a&&delete r[e]}));try{localStorage.setItem(p,JSON.stringify(r))}catch(e){}}function se(e,t){var r=e.history||[];t=t||J();var a=ee(),n=[],i=ne(e);if("stage"!==t.mode&&i.base){var l=[];l.push({base:i.base,end:0,earlier:!1});l.forEach((function(l){d.forEach((function(s){for(var d=+t[o[s]],p=null,c=0;c<r.length;c++){var u=r[c].t;if(u&&u>=l.base&&(!l.end||u<l.end)&&$(r[c].by)===s){p=r[c];break}}var f={role:s,from:l.base,limit:d,earlier:l.earlier};if(p)f.to=p.t,f.by=p.by,f.acted=!0,f.days=ae(l.base,p.t),f.over=Math.max(0,f.days-d),f.status=f.over?"late":"ontime";else if("Patwari"!==s||l.earlier||"Submitted"!==e.patReport)"Patwari"!==s&&!l.earlier&&function(e,t){var r="Girdawar"===t?e.gir:"Naib Tehsildar"===t?e.nt:"";return!!I(r)&&!W(r)}(e,s)?(f.by=Q(s,e),f.acted=!0,f.days=null,f.over=0,f.byField=!0,f.status="reported",f.note="remarks submitted in the report section (no entry in Members Remarks, so the date is not known)"):l.earlier?(f.by=Q(s,e),f.status="notreached",f.days=null,f.over=0):(f.open=!0,f.by=Q(s,e),f.days=ae(l.base,a),f.over=Math.max(0,f.days-d),f.left=Math.max(0,d-f.days),f.status=f.over?"overdue":"running");else{f.by=Q(s,e),f.acted=!0,f.days=null,f.over=0;var h=oe()[ie(e)]||{};if(h.sub&&h.pend&&h.pend<h.sub){var b=ae(l.base,h.pend),v=ae(l.base,h.sub);f.to=h.sub,f.days=v,f.est=!0,f.note="report found in scan of "+Y(h.sub)+"; still pending in scan of "+Y(h.pend),v<=d?f.status="ontime":b>=d?(f.status="late",f.over=b+1-d,f.overMax=v-d):(f.status="reported",f.note+=" — submitted between day "+(b+1)+" and day "+v+", so it may or may not be late")}else f.status="reported",f.note="report is in; date unknown, because no earlier scan in this round saw it pending"}"Patwari"!==s||l.earlier||(f.acted&&"Pending"===e.patReport&&(f.note="comment only, report still pending"),f.open&&(f.note="Pending"===e.patReport?"no report or comment yet":i.resub?"no report or comment since resubmission":"report filled, no comment yet")),n.push(f)}))}));var s=null;if(n.forEach((function(e){!e.earlier&&e.open&&(s?(e.open=!1,e.status="waiting",e.waitFor=s.role,e.over=0,e.left=null,e.days=null,delete e.note):s=e)})),s&&"overdue"===s.status){var p=n.indexOf(s),c=p>0?n[p-1]:null;c&&c.acted&&null!=c.days&&c.days>s.limit&&(s.inherited=!0,s.cause=(c.by||c.role)+" acted only on day "+c.days)}var u=null,f=!1,h=n.filter((function(e){return"Naib Tehsildar"===e.role&&!e.earlier}))[0];if(!n.some((function(e){return e.open}))&&h&&h.byField)f=!0;else if(!n.some((function(e){return e.open}))){for(var b=r.filter((function(e){return e.t&&e.t>=i.base})),v=-1,m=b.length-1;m>=0;m--)if("Naib Tehsildar"===$(b[m].by)){v=m;break}var g=v>=0?b.slice(v+1):[],y=g.length?g[g.length-1]:v>=0?b[v]:b[b.length-1],x=g.length&&Z($(y.by),y.remark)||"Patwari";"Tehsildar"!==x&&"Applicant"!==x||(x="Patwari");var w=ae(i.base,a);u={role:x,sinceT:y?y.t:0,sinceBy:y?y.by:"",total:w,over:Math.max(0,w-(+t.tot||10)),limit:+t.tot||10}}return de(n,{mode:"app",base:i.base,resub:i.resub,dayNow:ae(i.base,a),stopped:!1,reverted:u,submitted:f})}if(!r.length||!r[0].t)return null;for(var k=0;k<r.length;k++){var P=Z($(r[k].by),r[k].remark),T=o[P];if(T&&r[k].t){var S=r[k].t,E=+t[T],N=r[k+1],C={role:P,from:S,limit:E};N&&N.t?(C.to=N.t,C.acted=$(N.by)===P,C.days=ae(S,N.t),C.over=Math.max(0,C.days-E),C.by=N.by,C.status=C.acted?C.over?"late":"ontime":"moved",C.acted||(C.note=N.by+" acted on "+Y(N.t)+" without a "+P+" entry",C.by=Q(P,e),C.over=0)):(C.open=!0,C.days=ae(S,a),C.over=Math.max(0,C.days-E),C.left=Math.max(0,E-C.days),C.status=C.over?"overdue":"running",C.by=e.holder&&$(e.holder)===P&&e.holder!==P?e.holder:Q(P,e),"Patwari"===P&&(C.note="Pending"===e.patReport?"no report or comment yet":"report filled, not yet forwarded")),n.push(C)}}return de(n,{mode:"stage"})}function de(e,t){var r=e.filter((function(e){return e.open})),a=e.filter((function(e){return"late"===e.status})),n={visits:e,open:r,overdue:r.filter((function(e){return"overdue"===e.status})),late:a,lateDays:a.reduce((function(e,t){return e+t.over}),0),acted:e.filter((function(e){return e.acted&&"reported"!==e.status})).length,ontime:e.filter((function(e){return"ontime"===e.status})).length};return n.cur=n.overdue[0]||r[0]||null,Object.assign(n,t)}async function pe(e,t){if(!t||!e.body||!e.body.getReader||"undefined"==typeof TextDecoder)return e.text();for(var r=e.body.getReader(),a=new TextDecoder,n="",o=-1;;){var i=await r.read();if(i.done)break;if(n+=a.decode(i.value,{stream:!0}),o<0){var l=t.exec(n);l&&(o=l.index+4e3)}if(o>=0&&n.length>=o){try{r.cancel()}catch(e){}break}}return n}function ce(e,t){if(t=t||{},window.AbortController){var r=new AbortController;t.signal=r.signal,setTimeout((function(){r.abort()}),9e4)}return fetch(e,t)}async function ue(e,t,r,a){var n=function(e){var t=new URLSearchParams;return Array.prototype.forEach.call(e.elements,(function(e){if(e.name&&!e.disabled){var r=(e.type||"").toLowerCase();["submit","button","image","reset","file"].indexOf(r)>=0||("checkbox"!==r&&"radio"!==r||e.checked)&&("select-multiple"!==r?t.append(e.name,e.value):Array.prototype.forEach.call(e.options,(function(r){r.selected&&t.append(e.name,r.value)})))}})),t.set("__EVENTTARGET",""),t.set("__EVENTARGUMENT",""),t}(e);r.forEach((function(e){n.set(e[0],e[1])}));var o=new URL(e.getAttribute("action")||t,t).href,i=await ce(o,{method:"POST",body:n,credentials:"include",redirect:"follow",headers:{"Content-Type":"application/x-www-form-urlencoded"}}),l=a?await i.text():await pe(i,b),s=i.url,d={status:i.status,url:s,html:l,followed:""};if(!a&&!v.test(l)){var p,c=new URL(s).pathname.toLowerCase(),u=[];[/pageRedirect\|\|([^|]+)\|/gi,/(?:location\.href|location\.replace|window\.location|window\.open)\s*(?:=|\()\s*['"]([^'"]+\.aspx[^'"]*)['"]/gi,/['"]([^'"\s<>]*Approve[A-Za-z]*\.aspx[^'"\s<>]*)['"]/gi].forEach((function(e){for(;p=e.exec(l);)u.push(p[1])}));for(var f=null,h=0;h<u.length&&!f;h++)try{new URL(decodeURIComponent(u[h]).replace(/&amp;/g,"&"),s).pathname.toLowerCase()!==c&&(f=[0,u[h]])}catch(e){}if(f){var m=new URL(decodeURIComponent(f[1]).replace(/&amp;/g,"&"),s).href,g=await ce(m,{credentials:"include"});l=await pe(g,b),s=g.url,d.followed="HTTP "+g.status+" "+new URL(s).pathname}}return{html:l,url:s,diag:d}}function fe(e){function t(e){return I(e).replace(/\d{6,}/g,"XXXXX")}var r=e.diag,a=B(r.html),n=Array.prototype.map.call(a.querySelectorAll("script:not([src])"),(function(e){return e.textContent})).filter((function(e){return/location|open\(|\.aspx|alert/i.test(e)})).map(t).join(" ¦ ").slice(0,300),o=t(a.body?a.body.textContent:""),i=/[^.]{0,60}(error|invalid|expired|not authori[sz]ed|unauthori[sz]ed|denied|exception|login|try again)[^.]{0,120}/i.exec(o),l=i?"message: "+I(i[0]):o.slice(0,220);return"HTTP "+r.status+" "+new URL(r.url).pathname+(r.followed?" → "+r.followed:"")+" · title: "+t(a.title||"—")+" · has list: "+(/application\s*no/i.test(r.html)?"yes":"no")+(n?" · scripts: "+n:"")+" · text: "+l+(e.html!==r.html?" · final text: "+t(B(e.html).body?B(e.html).body.textContent:"").slice(0,220):"")}function he(e){return Array.prototype.find.call(e.querySelectorAll("select"),(function(e){return Array.prototype.some.call(e.options,(function(e){return/fard/i.test(e.text)}))}))||e.querySelector("select")}function be(e){return Array.prototype.find.call(e.querySelectorAll("input[type=submit],button"),(function(e){return/^\s*view\s*$/i.test(e.value||e.textContent||"")}))}function ve(){x||(x=B(document.documentElement.outerHTML),document.head.innerHTML='<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+S+"</title>",document.body.innerHTML="",document.body.removeAttribute("class"),document.body.setAttribute("style","margin:0;background:#f4f5f7"),document.body.appendChild(m),window.scrollTo(0,0)),me()}function me(){var e=x.forms[0],r=F(x),a=e&&he(e),n=a?a.options[a.selectedIndex]&&a.options[a.selectedIndex].text:"",o=null;try{o=JSON.parse(localStorage.getItem(t)||"null")}catch(e){}var i=Pe(),l=i&&i.plan?Ee(i):null,s=i&&i.items?i.items.filter((function(e){return e.err})).length:0,d=!l||l.complete&&!s?"":'<div class="card resume"><h3>Unfinished scan</h3><p class="muted" style="margin:0 0 8px">Started '+M(new Date(i.started).toLocaleString("en-IN"))+(i.allTypes?" · all service types":"")+" · <b>"+l.read+" of "+l.N+"</b> applications read · <b>"+l.setsDone+" of "+l.S+"</b> sets of "+C+" complete.</p>"+(s?'<p class="muted" style="margin:0 0 8px;color:#8a5300">'+s+" could not be read and will be retried.</p>":"")+'<div class="tools"><button class="pri" id="resume">'+(l.complete?"Retry "+s+" unread":"Resume scan ("+(l.N-l.read+s)+" left)")+'</button><button id="sofar">Show results so far</button></div><p class="muted" style="margin:8px 0 0">Starting a new scan below discards this unfinished one.</p></div>';if(!e||!r.length&&!a){y.innerHTML=d+'<div class="card warn"><b>No application list found.</b><br>Open the Revenue Plus <b>Dashboard</b>, choose a Service Type, press <b>View</b>, then run Tracker again.</div>'+(o?'<div class="card"><button id="showlast">Show last scan ('+M(new Date(o.at).toLocaleString())+")</button></div>":"");var p=g.getElementById("showlast");return p&&(p.onclick=function(){Fe(o)}),void ge(i)}y.innerHTML=d+'<div class="card"><h3>'+(d?"Or start a new scan":"Scan pending applications")+'</h3><p class="muted">The tracker presses “Process” for each application in the background, only to read who the file is pending with. It never types remarks or presses Submit.</p><div class="tools"><button class="pri" id="one">Scan this list'+(n?" ("+M(n)+")":"")+" — "+r.length+" applications ("+Math.max(1,Math.ceil(r.length/C))+" sets)</button>"+(a?'<button id="all">Scan all service types</button>':"")+'</div></div><div class="card warn"><b>Before you start:</b> close any other Revenue Plus tab where an application is open. When you are done, tap <b>×</b> — it reloads the Dashboard. Always reload before processing an application, because the portal remembers the last application opened.</div>'+(o?'<div class="card"><div class="tools"><span>Last scan: <b>'+M(new Date(o.at).toLocaleString())+"</b> — "+o.items.length+' applications</span><button id="showlast">Show last scan</button></div></div>':"");var c=g.getElementById("one");c&&(c.onclick=function(){ze(!1)});var u=g.getElementById("all");u&&(u.onclick=function(){ze(!0)});var f=g.getElementById("showlast");f&&(f.onclick=function(){Fe(o)}),ge(i)}function ge(e,t){var r=g.getElementById("resume");r&&(r.onclick=function(){Oe()});var a=g.getElementById("sofar");a&&(a.onclick=function(){var t=Ee(e),r={};e.plan.forEach((function(e,t){r[Se(e)]=t})),Fe({at:e.at||Date.now(),items:e.items.slice().sort((function(e,t){return r[Se(e)]-r[Se(t)]})),partial:!0,scan:{total:t.N,sets:t.S,setsDone:t.setsDone,read:t.read,gone:(e.gone||[]).length}})})}function ye(e){try{document.title=e?e+" · "+S:S}catch(e){}}function xe(e,t){try{document.hidden&&window.Notification&&"granted"===Notification.permission&&new Notification(e,{body:t,tag:"rp-tracker"})}catch(e){}}async function we(e,t){var r=await ce(w.split("#")[0],{credentials:"include"}),a=r.url,n=await r.text(),o=B(n),i=n.length;if(ke(o,a))return{why:"logout"};var l=function(t){return F(t).filter((function(t){return I(t.appNo)===I(e)}))[0]},s=l(o);if(!s&&t&&o.forms[0]){var d=o.forms[0],p=he(d),c=be(d);if(p&&c){var u=await ue(d,a,[[p.name,t],[c.name,c.value||"View"]],!0);if(a=u.url,s=l(o=B(u.html)),i+=u.html.length,!s&&ke(o,a))return{why:"logout"}}}return s?{row:s,baseUrl:a,bytes:i,html:o.documentElement.outerHTML}:{why:F(o).length?"gone":"nolist",detail:fe({html:o.documentElement.outerHTML,diag:{status:r.status,url:a,html:o.documentElement.outerHTML,followed:""}})}}function ke(e,t){return!!e.querySelector("input[type=password]")||/login|signin|sessionexpired|default\.html/i.test(new URL(t).pathname)&&!/App\/Default\.aspx/i.test(t)}function Pe(){try{return JSON.parse(localStorage.getItem(N)||"null")}catch(e){return null}}function Te(e){try{localStorage.setItem(N,JSON.stringify(e))}catch(t){try{e.items.forEach((function(e){e.docs=[],e.mut=null,e.adj=null,e.fields=null})),localStorage.setItem(N,JSON.stringify(e))}catch(e){}}}function Se(e){return(e.svc||"")+"|"+e.appNo}function Ee(e){var t=e.plan.length,r=Math.max(1,Math.ceil(t/C)),a={},n=[];e.items.forEach((function(e){a[Se(e)]=e})),(e.gone||[]).forEach((function(e){a[e]="gone"}));for(var o=0;o<r;o++)n.push({no:o+1,n:0,read:0,od:0,gone:0,err:0});e.plan.forEach((function(e,t){var r=n[Math.floor(t/C)],o=a[Se(e)];r.n++,"gone"===o?(r.read++,r.gone++):o&&(r.read++,o.err&&r.err++,o._od&&r.od++)})),n.forEach((function(e){e.complete=e.read===e.n}));var i=n.reduce((function(e,t){return e+t.read}),0);return{N:t,S:r,sets:n,read:i,setsDone:n.filter((function(e){return e.complete})).length,complete:i>=t}}function Ne(e,t,r){var a=Ee(e),n=e.items.filter((function(e){return e._od})).length,o=g.getElementById("scanbar");ye("⏳ Set "+t+"/"+a.S+" · "+a.read+"/"+a.N);var i,l=g.querySelector(".bar");o.style.top=(l?l.offsetHeight:0)+"px",o.hidden=!1,o.innerHTML='<div class="sbin"><div class="sbt"><span><b>Scanning · Set '+t+" of "+a.S+"</b> · application "+(r+1)+" of "+a.sets[t-1].n+" · "+a.read+" of "+a.N+" read · "+n+' overdue so far</span><span class="tools"><button id="stopset"'+(R?" disabled":"")+">"+(R?"Stopping after this set…":"Stop after this set")+'</button><button id="stop">Stop now</button></span></div><div class="prog"><i style="width:'+(a.N?Math.round(a.read/a.N*100):0)+'%"></i></div>'+((i=Ce(e,a.N-a.read))?'<div class="sspd">Last: '+i.last+"<br>Speed: "+i.avg+(i.eta?" · "+i.eta:"")+"</div>":"")+'<div class="sdots">'+a.sets.map((function(e){return'<span class="sdot'+(e.complete?" ok":e.no===t?" cur":"")+'">'+(e.complete?"✓ ":"")+"Set "+e.no+(e.no!==t||e.complete?"":" · "+r+"/"+e.n)+"</span>"})).join("")+"</div></div>",g.getElementById("stop").onclick=function(){P=!0,this.textContent="Stopping…",this.disabled=!0},g.getElementById("stopset").onclick=function(){R=!0,this.disabled=!0,this.textContent="Stopping after this set…"},D||(y.innerHTML='<div class="card"><h3>Reading Set '+t+" of "+a.S+'</h3><p class="muted" style="margin:0">Results appear here as soon as Set '+t+' is complete, so you can start working on it while the next sets are read. Every application is saved as soon as it is read, so nothing is lost if the scan stops.</p><div class="sets">'+a.sets.map((function(e){return'<div class="set '+(e.complete?"ok":e.no===t?"cur":"")+'"><b>Set '+e.no+"</b><span>"+(e.complete?"✓ "+(e.n-e.gone)+" read"+(e.od?" · "+e.od+" overdue":""):e.no===t?r+" of "+e.n:e.read?e.read+" of "+e.n:e.n+" apps")+"</span></div>"})).join("")+"</div></div>")}function Ce(e,t){var r=(e.timing||[]).filter((function(e){return e.tot}));if(!r.length)return"";function a(e){return(e/1e3).toFixed(1)+" s"}function n(e){return e>=1048576?(e/1048576).toFixed(1)+" MB":Math.max(1,Math.round(e/1024))+" KB"}function o(e){return r.reduce((function(t,r){return t+r[e]}),0)/r.length}var i=r[r.length-1],l=r.filter((function(e){return e.db})),s=l.length?l.reduce((function(e,t){return e+t.d}),0)/l.length:0,d=l.length?l.reduce((function(e,t){return e+t.db}),0)/l.length:0,p=o("tot"),c=t?Math.round(p*t/6e4):0;return{last:(i.db?"Dashboard reload "+a(i.d)+" ("+n(i.db)+") · ":"")+"application page "+a(i.a)+" ("+n(i.ab)+")",avg:"average "+a(p)+" per application"+(s?" — Dashboard reload "+a(s)+" ("+n(d)+"), application page "+a(o("a"))+" ("+n(o("ab"))+")":""),eta:t?c<1?"under a minute left":"about "+c+" min left":""}}function Re(){var e=g.getElementById("scanbar");e&&(e.hidden=!0,e.innerHTML="")}function De(e,t,r){var a=Ee(e),n={},o={};a.sets.forEach((function(e){e.complete&&(n[e.no]=1)})),e.plan.forEach((function(e,t){o[Se(e)]=t}));var i=e.items.filter((function(e){return!t||n[e.set]})).sort((function(e,t){return o[Se(e)]-o[Se(t)]}));return{at:e.at||Date.now(),items:i,partial:!a.complete,scanning:!!r,loggedOut:T,scan:{total:a.N,sets:a.S,setsDone:a.setsDone,read:a.read,gone:(e.gone||[]).length,speed:(Ce(e,0)||{}).avg||""}}}function Ae(e){var t=De(e,!0,!0);t.items.length&&(D?D.update(t):D=Fe(t))}async function ze(t){if(!k){k=!0,P=!1;try{window.Notification&&"default"===Notification.permission&&Notification.requestPermission()}catch(e){}var r,a,n,o={},i=[];try{var l=x.forms[0],s=[];if(t)for(var d=he(l),p=be(l),c=Array.prototype.filter.call(d.options,(function(e){return e.value&&"0"!==e.value&&"-1"!==e.value&&!/select/i.test(e.text)})),u=0;u<c.length&&!P;u++){r="Loading list: "+c[u].text,ye("⏳ "+(a=u)+"/"+(n=c.length)),y.innerHTML='<div class="card"><h3>'+M(r)+'</h3><div class="prog"><i style="width:'+(n?Math.round(a/n*100):0)+'%"></i></div><div class="muted">'+a+" of "+n+' read. Keep this tab open. You can switch to other tabs or windows; the progress shows in this tab\'s title.</div><div class="tools" style="margin-top:10px"><button id="stop">Stop</button></div></div>',g.getElementById("stop").onclick=function(){P=!0};var f=[[d.name,c[u].value]];p&&f.push([p.name,p.value||"View"]);var h=await ue(l,w,f,!0),b=B(h.html);s.push({service:I(c[u].text),svc:c[u].value,rows:F(b),baseUrl:h.url}),b.forms[0]&&(d=he(l=b.forms[0])||d,p=be(l)||p),await j(e)}else{var v=he(l);s.push({service:v?v.options[v.selectedIndex].text:"",svc:v?v.value:"",rows:F(x),baseUrl:w})}s.forEach((function(e){e.rows.forEach((function(t){var r={service:e.service,svc:e.svc||"",appNo:t.appNo,name:t.name,mobile:t.mobile,village:t.village,khasra:t.khasra,purpose:t.purpose,appDate:t.appDate,revert:t.revert,days:t.days,actionBy:t.actionBy};i.push(r),o[Se(r)]={row:t,baseUrl:e.baseUrl}}))}))}catch(e){return y.innerHTML='<div class="card warn"><b>Scan stopped:</b> '+M(e&&e.message||e)+"<br>Close this, make sure you are still logged in, and try again from the Dashboard.</div>",ye("⚠ Scan stopped"),void(k=!1)}if(P)return k=!1,void me();var m={started:Date.now(),allTypes:!!t,plan:i,items:[],gone:[]};Te(m),k=!1,await Le(m,o)}}async function Oe(){var e=Pe();if(!e)return me();e.items=e.items.filter((function(e){return!e.err})),await Le(e,{})}async function Le(r,a){if(!k){k=!0,P=!1,R=!1,T=!1;var n={},o=!0;D=null,Ee(r).setsDone&&Ae(r),r.items.forEach((function(e){n[Se(e)]=1})),(r.gone=r.gone||[]).forEach((function(e){n[e]=1}));for(var i=0;i<r.plan.length&&!P;i++){var l=r.plan[i],s=Se(l);if(!n[s]){var d=Math.floor(i/C)+1;Ne(r,d,i%C);var p={ok:!1},c=a[s],u=!1,f=Date.now(),h=f,b=0,v=0;try{var m,g=null;if(!o||!c){if(g=await we(l.appNo,l.svc),h=Date.now(),b=g.bytes||0,"logout"===g.why){P=!0,T=!0;break}if("gone"===g.why)u=!0;else if(!g.row){if(!c)throw new Error(E[g.why]||"The Dashboard did not load.");g=null}}if(!u){v=(m=g?await ue(g.row.form,g.baseUrl,[[g.row.btnName,g.row.btnValue]]):await ue(c.row.form,c.baseUrl,[[c.row.btnName,c.row.btnValue]])).html.length;var y=r.timing=r.timing||[];y.push({d:h-f,db:b,a:Date.now()-h,ab:v,tot:0}),y.length>200&&y.shift(),p=U(m.html);var x=g&&g.row&&null!=g.row.actionBy?g.row.actionBy:l.actionBy;if(p.ok&&null!=x&&/fard/i.test(l.service||"")){var w=!!I(x)&&!/^(na|n\/a|-+|nil)$/i.test(I(x));p.patTopPending=!w,p.patReportPending=!w,w||(p.area="")}if(!p.ok){if(ke(B(m.html),m.url)||/session\s*(has\s*)?expired|login/i.test(I(B(m.html).body?B(m.html).body.textContent:"").slice(0,400))){P=!0,T=!0;break}p.diag=fe(m),p.err=!0,A={app:l.appNo,at:(new Date).toLocaleString("en-IN"),dash:g&&g.html||"",first:m.diag&&m.diag.html||"",firstUrl:m.diag&&m.diag.url||"",final:m.html,finalUrl:m.url,button:g?g.row.btnName+" = "+g.row.btnValue:c?c.row.btnName+" = "+c.row.btnValue:""}}}}catch(e){p={ok:!1,err:!0,diag:"Error: "+String(e&&"AbortError"===e.name?"the portal did not respond in time":e&&e.message||e)}}if(o=!1,u)r.gone.push(s);else{var S=_(p),z={service:l.service,appNo:l.appNo,name:l.name,mobile:l.mobile,village:l.village,khasra:l.khasra,purpose:l.purpose,appDate:l.appDate,revert:l.revert,days:l.days,khewat:p.khewat||"",pat:p.pat||"",gir:p.gir||"",nt:p.nt||"",teh:p.teh||"",stage:S.stage,flag:S.flag,diag:p.diag||"",holder:S.holder||"",lastBy:S.lastBy||"",lastT:S.lastT||0,lastRemark:S.lastRemark||"",stageDays:null==S.stageDays?null:S.stageDays,svc:l.svc||"",docs:[],fields:null,adj:null,mut:null,patReport:S.patReport||"",level:S.level||"",levelBy:S.levelBy||"",levelT:S.levelT||0,history:S.history||[],vendee:p.vendee||"",area:p.area||"",set:d,err:!!p.err,unmarked:!!p.unmarked,assigned:p.assigned||null,actionBy:null==l.actionBy?null:l.actionBy};try{z._od=We(Ie(z))}catch(e){}r.items.push(z)}if(r.timing&&r.timing.length&&(r.timing[r.timing.length-1].tot=Date.now()-f+e),n[s]=1,Te(r),(i+1)%C==0||i===r.plan.length-1){try{Ae(r)}catch(e){}R&&(P=!0)}await j(e)}}k=!1;var O=Ee(r);r.complete=O.complete,r.at=Date.now(),Te(r);var L={};r.plan.forEach((function(e,t){L[Se(e)]=t}));var M=r.items.slice().sort((function(e,t){return L[Se(e)]-L[Se(t)]})),W=De(r,!1,!1);M=W.items;try{le(M,W.at)}catch(e){}try{localStorage.setItem(t,JSON.stringify(W))}catch(e){}if(O.complete&&!r.items.some((function(e){return e.err})))try{localStorage.removeItem(N)}catch(e){}Re(),D?D.update(W):Fe(W),D=null;var G=M.filter((function(e){return e._od})).length;T?(ye("⚠ Logged out · "+O.read+"/"+O.N),xe("Revenue Plus scan paused","The portal logged you out after "+O.read+" of "+O.N+". Log in again, run Tracker and tap Resume.")):O.complete?(ye("✅ Done · "+M.length+(G?" · "+G+" overdue":"")),xe("Revenue Plus scan finished",M.length+" applications read"+(G?", "+G+" overdue":"")+".")):(ye("⏸ "+O.read+"/"+O.N+" · "+O.setsDone+"/"+O.S+" sets"),xe("Revenue Plus scan paused",O.read+" of "+O.N+" read. Run Tracker and tap Resume to continue."))}}function Ie(e){if("Could not read"===e.stage)return{role:"?",label:"Could not read",kind:"unread"};var t=se(e),r=ee();if(e.unmarked){var a=ne(e),n=+J().tot||10,o=a.base?ae(a.base,r):0;return{role:"Tehsildar",label:Q("Tehsildar",e),kind:o>n?"overdue":"running",atTeh:!0,unmarked:!0,days:o,limit:n,over:Math.max(0,o-n),left:Math.max(0,n-o)}}if(t&&t.submitted){var i=+J().tot||10,l=t.dayNow||0;return{role:"Tehsildar",label:Q("Tehsildar",e),kind:l>i?"overdue":"running",atTeh:!0,days:l,limit:i,over:Math.max(0,l-i),left:Math.max(0,i-l)}}if(t&&t.reverted){var s=t.reverted,d=oe()[ie(e)]||{},p="Patwari"===s.role?"Patwari · "+(e.village||"—"):Q(s.role,e),c=d.sig===s.role+"|"+s.sinceT?d.sigSince:0;return{role:s.role,label:p,kind:"reverted",over:s.over,days:s.total,limit:s.limit,sinceT:s.sinceT,sinceBy:s.sinceBy,seenSince:c,seenDays:c?ae(c,r):null,firstSeenNow:c&&c>=ee()&&(!d.touch||d.touch-c<6e4)}}if(t&&t.cur){var u=t.cur,f="Patwari"===u.role?"Patwari · "+(e.village||"—"):u.by&&u.by!==u.role?u.by:Q(u.role,e),h=e.stage.replace("With ",""),b=t.visits.indexOf(u),v=b>0?t.visits[b-1]:null,m=v&&v.to&&t.base&&v.to>t.base?v.to:t.base||u.from;return{role:u.role,label:f,kind:u.status,days:u.days,limit:u.limit,over:u.over,left:u.left,inherited:u.inherited,cause:u.cause,note:u.note,elsewhere:h&&z.indexOf(h)>z.indexOf(u.role)?h:"",reachedT:m,reachedDays:m?ae(m,r):null}}var g=e.stage.replace("With ","")||"?",y="Patwari"===g?"Patwari · "+(e.village||"—"):e.holder&&e.holder!==g?e.holder:Q(g,e);return{role:z.indexOf(g)>=0?g:"?",label:y,kind:"since",since:e.lastT,sinceDays:e.lastT?ae(e.lastT,r):null}}function je(e){return"reverted"===e.kind?e.seenSince&&!e.firstSeenNow?{t:e.seenSince,n:e.seenDays,note:"from scans"}:{t:0,n:null,note:"first seen today"}:"since"===e.kind?{t:e.since,n:e.sinceDays}:"overdue"===e.kind||"running"===e.kind?{t:e.reachedT,n:e.reachedDays}:{t:0,n:null}}function Me(e,t){if("unread"===e.kind)return'<div style="color:#5b6475">Could not read this application. Tap the row to see why.</div>';var r=se(t),a=[];function n(e,t){a.push('<div style="color:'+e+'">'+t+"</div>")}function o(e){return e+" day"+(1===e?"":"s")}return r&&!e.unmarked&&r.visits.forEach((function(e){var t=M(e.role);"late"===e.status?n("#5b6475","● "+t+" late by "+o(e.over)+(e.overMax&&e.overMax>e.over?"–"+e.overMax:"")+(e.est?' <span class="muted">(from scans)</span>':"")):"overdue"===e.status?n(e.inherited?f:u,"● "+t+" overdue by "+o(e.over)+" — "+M(e.inherited?e.cause:"Patwari"===e.role?"no report or comment yet":"not acted yet")):"running"===e.status&&n(e.left<=1?f:"#3b4456","● "+t+(0===e.left?" due today":" due in "+o(e.left)))})),"reverted"===e.kind&&n(e.over?u:f,"● "+("Patwari"===e.role?"Reverted to Patwari":"Back with "+M(e.role))+(e.over?" — overall overdue by "+o(e.over):"")),e.unmarked?n(e.over?u:"#3b4456","● With Tehsildar — not yet marked to the Patwari, Girdawar and Naib Tehsildar (no remarks yet); "+(e.over?"overall limit passed by "+o(e.over):o(e.left)+" left in the overall "+e.limit+"-day limit")):e.atTeh&&n(e.over?u:"#3b4456","● With Tehsildar — all three levels have submitted; "+(e.over?"overall limit of "+e.limit+" days passed by "+o(e.over):0===e.left?"overall limit ends today":o(e.left)+" left in the overall "+e.limit+"-day limit")),"since"===e.kind&&n("#5b6475","No time limit at this stage"),"unread"===e.kind&&n("#5b6475","Could not read"),a.length||n("#3b4456","No delays"),a.join("")}function Be(e){return"reverted"===e.kind?e.over?0:2:"overdue"===e.kind?e.inherited?1:0:"running"===e.kind?2:"since"===e.kind?3:"returned"===e.kind?4:5}function We(e){return"overdue"===e.kind||"reverted"===e.kind&&e.over>0}function Ge(e){if(!e||"Could not read"===e.stage)return"";if("Submitted"===e.patReport)return"report";var t=ne(e).base||0;return(e.history||[]).some((function(e){return"Patwari"===$(e.by)&&(!t||!e.t||e.t>=t)}))?"comment":"none"}function Fe(e){e.scanning||Re();var t=e.items;function r(e){var t=Ie(e);return{it:e,pw:t,si:je(t),od:We(t)}}X(t);var n=t.map(r),o=n,i={who:"",level:"",status:"all",q:"",sort:"risk",open:{},edit:!1,set:0},d=["Patwari","Girdawar","Naib Tehsildar","Tehsildar"];function p(){var e={total:n.length,od:0,ok:0,rev:0,nolim:0,oldest:null,lv:{}};return d.concat(["Tehsildar","?"]).forEach((function(t){e.lv[t]={n:0,od:0}})),n.forEach((function(t){t.od&&(e.od++,(!e.oldest||t.pw.over>e.oldest.pw.over)&&(e.oldest=t)),"running"===t.pw.kind&&e.ok++,"reverted"===t.pw.kind&&e.rev++,"since"===t.pw.kind&&e.nolim++;var r=e.lv[t.pw.role]||(e.lv[t.pw.role]={n:0,od:0});r.n++,t.od&&r.od++})),e}function c(t){var r=t.total?Math.round(t.od/t.total*100):0;return'<div class="rp-kpis"><div class="rp-kpi"><span>'+(i.set?"Pending in set "+i.set:"Total pending")+"</span><b>"+t.total+"</b><em>"+(e.partial&&e.scan&&!i.set?"read so far, of "+e.scan.total:"applications in the list")+'</em></div><div class="rp-kpi red"><span>Overdue</span><b>'+t.od+"</b><em>"+r+'% of pending</em><div class="rp-kbar"><i style="width:'+r+'%"></i></div></div><div class="rp-kpi green"><span>Within limit</span><b>'+t.ok+'</b><em>still inside the time limit</em></div><div class="rp-kpi amber"><span>Oldest delay</span><b>'+(t.oldest?t.oldest.pw.over+"<small> days</small>":"—")+"</b><em>"+(t.oldest?M(t.oldest.pw.label)+" · "+M(t.oldest.it.name):"no overdue files")+"</em></div></div>"}function u(e,t){d.reduce((function(t,r){return t+e.lv[r].n}),0);var r=d.map((function(r){var a=O[r],n=i.level===r;return e.lv[r].n?'<button class="rp-seg'+(n?" on":"")+'"'+(t?' data-lv="'+r+'"':"")+' style="flex:'+e.lv[r].n+";background:"+a[0]+";color:"+a[1]+'"><b>'+e.lv[r].n+"</b> "+M(r)+(e.lv[r].od?'<span class="rp-segod">'+e.lv[r].od+" overdue</span>":"")+"</button>":'<div class="rp-seg zero" style="flex:0.6;background:'+a[0]+";color:"+a[1]+'"><b>0</b> '+M(r)+'<span class="rp-segok">Nothing pending</span></div>'})).join("");return'<div class="rp-card"><div class="rp-ch"><h4>Pending by level</h4>'+(t&&i.level?'<button class="rp-clear" data-lv="">Show all levels ✕</button>':'<span class="rp-hint">'+(t?"Tap a level to filter":"")+"</span>")+'</div><div class="rp-segs">'+r+"</div></div>"}function f(e){var t={};n.forEach((function(e){var r=e.pw;if(!("unread"===r.kind||z.indexOf(r.role)<0)){var a=t[r.label]=t[r.label]||{label:r.label,role:r.role,n:0,od:0,amber:0,ok:0,rev:0,oldest:0,prep:0,pcom:0};if(a.n++,r.unmarked&&(a.unm=(a.unm||0)+1),"Patwari"!==r.role){var n=Ge(e.it);"report"===n?a.prep++:"comment"===n&&a.pcom++}e.od?("overdue"===r.kind&&r.inherited?a.amber++:a.od++,a.oldest=Math.max(a.oldest,r.over||0)):"running"===r.kind&&a.ok++,"reverted"===r.kind&&a.rev++}}));var r=Object.keys(t).map((function(e){return t[e]})).filter((function(e){return!i.level||e.role===i.level}));r.sort((function(e,t){return t.od+t.amber-(e.od+e.amber)||t.oldest-e.oldest||t.n-e.n||e.label.localeCompare(t.label)}));var a={Patwari:"Submit report / comment on",Girdawar:"Verify and forward","Naib Tehsildar":"Examine and forward",Tehsildar:"Decide on"};function o(e){return e+" file"+(1===e?"":"s")}var l={n:0,od:0,ok:0};return r.forEach((function(e){l.n+=e.n,l.od+=e.od+e.amber,l.ok+=e.ok})),'<div class="rp-card rp-actpanel"><div class="rp-ah"><div><h3>Who needs to act</h3><span>'+r.length+" official"+(1===r.length?"":"s")+" · "+l.n+" files · "+l.od+" overdue</span></div>"+(e&&i.who?'<button class="rp-chipw" data-w="">'+M(i.who)+" ✕</button>":"")+'</div><div class="scroll"><table class="rp-at"><thead><tr><th>Official</th><th class="c">Pending</th><th class="c">Overdue</th><th class="c">Within limit</th><th>Action needed</th></tr></thead><tbody>'+r.map((function(t){var r=O[t.role]||O["?"],n=t.od+t.amber;return t.n&&Math.round(t.ok/t.n*100),t.n&&Math.round(n/t.n*100),'<tr class="rp-ar'+(i.who===t.label?" sel":"")+'"'+(e?' data-w="'+M(t.label)+'"':"")+' style="--acc:'+(n?t.od?"#d92d20":"#d98a00":"#1f8a52")+'"><td class="acc"><span class="pill" style="background:'+r[0]+";color:"+r[1]+'">'+M(t.role)+'</span><div class="rp-on">'+M(t.label.replace(/^(Patwari · |Naib Tehsildar |Girdawar |Tehsildar )/,"")||t.label)+'</div></td><td class="c" data-l="Pending"><b class="rp-big">'+t.n+'</b></td><td class="c" data-l="Overdue">'+(n?'<b class="rp-odn'+(t.od?"":" lo")+'"'+(t.od?"":' style="color:var(--amb)"')+">"+n+"</b>"+(t.amber?'<div class="rp-sub amb">'+t.amber+" from earlier stage</div>":""):'<span class="rp-nil">—</span>')+'</td><td class="c" data-l="Within limit">'+(t.ok?'<b class="rp-okn">'+t.ok+"</b>":'<span class="rp-nil">—</span>')+'</td><td class="rp-actc">'+function(e){var t=e.n-e.rev-(e.unm||0),r=[];return e.unm&&r.push("Mark "+o(e.unm)+" to officials (new)"),t>0&&r.push(a[e.role]+" "+o(t)),e.rev&&r.push(("Patwari"===e.role?"Rectify ":"Act on ")+o(e.rev)+" reverted"),'<span class="rp-act">'+r.join('<span class="rp-sep">·</span>')+"</span>"+(e.od+e.amber?'<span class="otag">oldest '+e.oldest+" d</span>":"")+(e.prep||e.pcom?'<div class="rp-pstl">'+(e.prep?'<span class="rp-pst report">'+e.prep+" with Patwari report</span>":"")+(e.pcom?'<span class="rp-pst comment">'+e.pcom+" on Patwari comment only</span>":"")+"</div>":"")}(t)+"</td></tr>"})).join("")+'<tr class="rp-tot"><td>Total</td><td class="c">'+l.n+'</td><td class="c">'+l.od+'</td><td class="c">'+l.ok+"</td><td></td></tr></tbody></table></div></div>"}function b(){var e=i.q.toLowerCase(),t={risk:function(e,t){return Be(e.pw)-Be(t.pw)||(t.pw.over||0)-(e.pw.over||0)||(t.si.n||0)-(e.si.n||0)},since:function(e,t){return(null==t.si.n?-1:t.si.n)-(null==e.si.n?-1:e.si.n)},village:function(e,t){return String(e.it.village).localeCompare(String(t.it.village))||Be(e.pw)-Be(t.pw)},newest:function(e,t){return(ne(t.it).base||0)-(ne(e.it).base||0)}};return n.filter((function(t){return!(i.who&&t.pw.label!==i.who||i.level&&t.pw.role!==i.level||"overdue"===i.status&&!t.od||"ok"===i.status&&"running"!==t.pw.kind||"reverted"===i.status&&"reverted"!==t.pw.kind||!("prep"!==i.status&&"pcom"!==i.status||"Patwari"!==t.pw.role&&Ge(t.it)===("prep"===i.status?"report":"comment"))||e&&[t.it.appNo,t.it.name,t.it.mobile,t.it.village,t.it.khasra,t.pw.label,t.it.service,t.it.purpose].join(" ").toLowerCase().indexOf(e)<0)})).sort(t[i.sort]||t.risk)}function v(e,t,r){var a={all:n.length,overdue:r.od,ok:r.ok,reverted:r.rev,prep:0,pcom:0};n.forEach((function(e){if("Patwari"!==e.pw.role&&"unread"!==e.pw.kind){var t=Ge(e.it);"report"===t?a.prep++:"comment"===t&&a.pcom++}}));var o=[["all","All"],["overdue","Overdue"],["ok","Within limit"],["reverted","Reverted"],["prep","Patwari report"],["pcom","Patwari comment only"]].filter((function(e){return"all"===e[0]||a[e[0]]||i.status===e[0]})).map((function(e){return'<button class="rp-fc'+(i.status===e[0]?" on":"")+("overdue"===e[0]?" red":"")+'" data-st="'+e[0]+'">'+e[1]+" <b>"+a[e[0]]+"</b></button>"})).join("");return'<div class="rp-card rp-apps"><div class="rp-ah"><div><h3>Applications</h3><span>'+e.length+" shown"+(i.who?" · "+M(i.who):"")+(i.level?" · "+M(i.level):"")+"</span></div></div>"+(t?'<div class="rp-tools"><div class="rp-search"><input id="q" placeholder="Search application no, name, village, khasra, official" value="'+M(i.q)+'"></div><div class="rp-fcs">'+o+'</div><label class="rp-sort">Sort <select id="sort"><option value="risk"'+("risk"===i.sort?" selected":"")+'>Most overdue first</option><option value="since"'+("since"===i.sort?" selected":"")+'>Longest with official</option><option value="village"'+("village"===i.sort?" selected":"")+'>Village A–Z</option><option value="newest"'+("newest"===i.sort?" selected":"")+">Newest application</option></select></label></div>":'<div class="rp-tools"><div class="rp-search"><input id="q" placeholder="Search application no, name, village, khasra, official"></div><div class="rp-fcs"><button class="rp-fc red" id="odf">Overdue only</button><button class="rp-fc" id="exp">Expand all</button></div></div>')+'<div class="scroll"><table class="rp-t"><thead><tr><th>Application</th><th>Applicant · Village</th><th>Pending with</th><th>With official since</th><th>Last comment</th><th class="c">Overdue</th><th>Remark</th><th></th></tr></thead><tbody>'+(e.length?e.map((function(e){return function(e,t){var r=e.it,a=e.pw,n=r.appNo+"|"+r.service,o=t||i.open[n],l=O[a.role]||O["?"],s=e.od?"overdue"===a.kind&&a.inherited?"#d98a00":"#d92d20":"running"===a.kind?a.left<=1?"#d98a00":"#1f8a52":"#b8bfcc";return'<tr class="rp-r'+(o?" open":"")+'" data-k="'+M(n)+'"'+(e.od?' data-od="1"':"")+' style="--acc:'+s+'"><td class="acc"><div class="rp-app">'+M(r.appNo)+'</div><div class="rp-sub">'+M(r.service)+" · "+M(r.purpose)+(r.revert?' · <span class="rp-rv">reverted '+r.revert+"×</span>":"")+'</div></td><td><div class="rp-nm">'+M(r.name)+'</div><div class="rp-sub">'+M(r.village)+" · "+M(r.khasra)+'</div></td><td data-l="Pending with"><span class="pill" style="background:'+l[0]+";color:"+l[1]+'">'+M("?"===a.role?"Not read":a.role)+'</span><div class="rp-pw">'+M(a.label.replace(/^(Patwari · |Naib Tehsildar |Girdawar |Tehsildar )/,"")||a.label)+"</div>"+(a.elsewhere?'<div class="rp-sub">file shows with '+M(a.elsewhere)+"</div>":"")+function(e,t){if("Patwari"===e.role||"unread"===e.kind)return"";var r=Ge(t);return L[r]?'<div class="rp-pst '+r+'">'+L[r]+"</div>":""}(a,r)+'</td><td data-l="With official">'+function(e){if(null==e.n)return'<span class="rp-sb muted">'+M(e.note||"—")+"</span>";var t,r=null==(t=e.n)?["#eceef2","#5b6475"]:t<=5?["#eef1f6","#1d2a3c"]:t<=10?["#fff4dc","#8a5300"]:["#fbeceb","#b42318"];return'<span class="rp-sb" style="background:'+r[0]+";color:"+r[1]+'">'+e.n+"<small> day"+(1===e.n?"":"s")+'</small></span><div class="rp-sub">since '+M(Y(e.t))+(e.note?" · "+M(e.note):"")+"</div>"}(e.si)+'</td><td class="rp-lcc" data-l="Last comment">'+function(e){var t=e.history||[],r=t[t.length-1];if(!r||"Tehsildar"===$(r.by)&&/^\s*process(\s*under\s*rules)?\s*\.?\s*$/i.test(r.remark||""))return"";var a=O[$(r.by)]||O["?"];return'<div class="rp-lc" title="'+M(r.remark)+'"><div><span class="pill" style="background:'+a[0]+";color:"+a[1]+'">'+M(r.by)+'</span><span class="rp-d">'+M(Y(r.t)||r.date)+"</span></div><p>"+M(r.remark)+"</p></div>"}(r)+'</td><td class="c" data-l="Overdue">'+function(e){return We(e)?'<span class="rp-ob'+("overdue"===e.kind&&e.inherited?" amb":e.over>h?"":" lo")+'">'+e.over+"<small>d</small></span>"+("reverted"===e.kind?'<div class="rp-sub">overall</div>':""):"running"===e.kind?'<span class="rp-okb">'+(0===e.left?"due today":e.left+"d left")+"</span>":'<span class="rp-nil">—</span>'}(a)+'</td><td class="rp-rmk" data-l="Remark">'+Me(a,r)+'</td><td class="rp-chev"><span>›</span></td></tr><tr class="rp-x'+(o?" open":"")+'"><td colspan="8"><div class="rp-xin">'+function(e,t){var r=e.history||[],a=ne(e),n=[];r.forEach((function(e,t){var r=$(e.by),o=O[r]||O["?"],i=a.base&&e.t&&e.t<a.base;n.push({t:e.t||0,i:t,html:'<li class="'+(i?"old":"")+'"><i style="background:'+o[1]+'"></i><div class="rp-tlh"><b>'+M(e.by)+"</b><span>"+M(Y(e.t)||e.date)+(i?" · earlier round":"")+"</span></div><p>"+M(e.remark)+"</p></li>"})})),a.resub&&n.push({t:a.resub,i:-.5,html:'<li class="mark"><i></i><div class="rp-tlh"><b>Resubmitted by applicant</b><span>'+M(Y(a.resub))+"</span></div><p>Current round counted from here.</p></li>"}),n.sort((function(e,t){return e.t-t.t||e.i-t.i}));var o=n.map((function(e){return e.html})),i='<li class="now'+(We(t)?" bad":"")+'"><i></i><div class="rp-tlh"><b>Now pending with '+M(t.label)+"</b></div><p>"+Me(t,e)+"</p></li>";return'<ul class="rp-tl">'+o.join("")+i+"</ul>"}(r,a)+'<div class="rp-meta"><div><span>Applied / resubmitted</span><b>'+M(r.appDate||"—")+"</b></div><div><span>Mobile</span><b>"+M(r.mobile||"—")+"</b></div><div><span>Days passed (portal)</span><b>"+M(r.days)+"</b></div>"+(r.diag?"<div><span>Read problem</span><b>"+M(r.diag)+"</b></div>":"")+"</div></div></td></tr>"}(e)})).join(""):'<tr><td colspan="8" class="rp-empty">No applications match these filters.</td></tr>')+"</tbody></table></div></div>"}function m(t){var r=J();return'<div class="rp-top"><div><div class="rp-title">Pendency overview</div><div class="rp-sub">Scanned '+M(new Date(e.at).toLocaleString("en-IN"))+(e.loggedOut?" · stopped: logged out — log in again, run Tracker and tap Resume":e.partial&&!e.scanning?" · stopped early":"")+" · limits P "+r.pat+" / G "+r.gir+" / NT "+r.nt+" / overall "+(r.tot||10)+" days"+(t?' · <a href="#" id="sedit">change</a>':"")+"</div></div>"+(t?'<div class="rp-btns"><button id="html">⤓ Report</button><button id="pdf">⤓ PDF ▾</button><button id="csv">⤓ Excel</button><button id="wa">⧉ Summary</button>'+(e.scanning?"":'<button class="pri" id="again">↻ New scan</button>')+"</div>":"")+"</div>"+(t?'<div class="rp-pdfm" id="pdfm" hidden><b>Download PDF</b><button data-pdf="all">Full report<span>everything on one report</span></button><button data-pdf="pat">Patwari level<span>village-wise files pending with Patwaris</span></button><button data-pdf="gir">Girdawar level<span>files pending with each Girdawar</span></button><button data-pdf="nt">Naib Tehsildar &amp; Tehsildar level<span>files pending with each Naib Tehsildar and the Tehsildar</span></button></div>':"")+(t&&i.edit?'<div class="rp-card" style="padding:12px 16px">'+function(e){return'<div class="tools" style="margin:0 0 8px">Patwari <input class="num" id="sp" type="number" min="1" value="'+e.pat+'"> Girdawar <input class="num" id="sg" type="number" min="1" value="'+e.gir+'"> Naib Tehsildar <input class="num" id="sn" type="number" min="1" value="'+e.nt+'"> Overall <input class="num" id="st" type="number" min="1" value="'+(e.tot||10)+'"> days, counted <select id="sm"><option value="app"'+("app"===e.mode?" selected":"")+'>from the Application / Resubmit date</option><option value="stage"'+("stage"===e.mode?" selected":"")+'>from when each official receives the file</option></select> <button class="pri" id="ssave">Save</button></div><div class="muted">Holidays skipped in the count (one date per line, YYYY-MM-DD). Sundays are always skipped.</div><textarea id="shol" rows="6" style="width:100%;max-width:420px;font:12px ui-monospace,monospace;border:1px solid #c9ced8;border-radius:6px;padding:6px">'+M((e.holidays||l).join(" ")).replace(/ /g,"\n")+"</textarea>"}(r)+"</div>":"")}function w(t){var r=e.scan;if(!r)return"";var a={};o.forEach((function(e){var t=e.it.set||0,r=a[t]=a[t]||{n:0,od:0};r.n++,e.od&&r.od++}));var n='<div class="rp-setl"><b>'+(e.partial?"Scan incomplete":"Scan complete")+"</b> · "+r.read+" of "+r.total+" applications read · "+r.setsDone+" of "+r.sets+" sets of "+C+" complete"+(r.gone?" · "+r.gone+" no longer pending":"")+"</div>",l=r.sets>1?'<div class="rp-fcs"><button class="rp-fc'+(i.set?"":" on")+'"'+(t?' data-set="0"':"")+">All sets <b>"+o.length+"</b></button>"+Object.keys(a).filter((function(e){return+e})).sort((function(e,t){return e-t})).map((function(e){return'<button class="rp-fc'+(i.set===+e?" on":"")+'"'+(t?' data-set="'+e+'"':"")+">Set "+e+" <b>"+a[e].n+(a[e].od?" · "+a[e].od+" overdue":"")+"</b></button>"})).join("")+"</div>":"";e.scanning&&(n='<div class="rp-setl"><b>Scanning in progress</b> · showing the '+r.setsDone+" completed set"+(1===r.setsDone?"":"s")+" ("+o.length+" applications) · "+r.read+" of "+r.total+" read so far. New sets are added here as they finish.</div>");var s=o.filter((function(e){return e.it.err})).length;s&&(n+='<div class="rp-setl" style="padding-top:0;margin-top:-4px;color:#8a5300">'+s+" application"+(1===s?"":"s")+" could not be read"+(e.scanning?" — they will be retried when you tap Resume / Retry after the scan.":".")+(A&&t?' <a href="#" id="diagdl">Download diagnostic file</a>':"")+"</div>");var d=!e.scanning&&t?e.partial?'<button class="pri rp-resume" id="resume2">Resume scan ('+(r.total-r.read+s)+" left)</button>":s?'<button class="pri rp-resume" id="resume2">Retry '+s+" unread</button>":"":"";return r.speed&&(n+='<div class="rp-setl" style="padding-top:0;margin-top:-4px">Speed: '+M(r.speed)+"</div>"),'<div class="rp-card rp-sets'+(e.partial?" part":"")+'"><div class="rp-setsin"><div>'+n+"</div>"+d+"</div>"+l+(i.set?'<div class="rp-setl" style="padding-top:0">Showing <b>Set '+i.set+"</b> only. Tap “All sets” for the combined figures.</div>":"")+"</div>"}function k(){n=i.set?o.filter((function(e){return e.it.set===i.set})):o;var l=p(),d=b();y.innerHTML='<div class="rp">'+m(!0)+w(!0)+c(l)+u(l,!0)+f(!0)+v(d,!0,l)+"</div>",function(){Array.prototype.forEach.call(y.querySelectorAll("[data-lv]"),(function(e){e.onclick=function(){i.level=i.level===e.dataset.lv?"":e.dataset.lv,i.who="",k()}})),Array.prototype.forEach.call(y.querySelectorAll("[data-w]"),(function(e){e.onclick=function(){if(i.who=i.who===e.dataset.w?"":e.dataset.w,k(),i.who){var t=y.querySelector(".rp-apps");t&&t.scrollIntoView({behavior:"smooth",block:"start"})}}})),Array.prototype.forEach.call(y.querySelectorAll("[data-set]"),(function(e){e.onclick=function(){i.set=+e.dataset.set,i.who="",k()}}));var l=g.getElementById("resume2");l&&(l.onclick=function(){Oe()});var d=g.getElementById("diagdl");d&&(d.onclick=function(e){e.preventDefault();var t=A;if(t){var r="Revenue Plus Tracker diagnostic\nApplication: "+t.app+"\nTime: "+t.at+"\nButton pressed: "+t.button+"\nFirst reply: "+t.firstUrl+"\nFinal page: "+t.finalUrl+"\n\n===== DASHBOARD (reloaded before Process) =====\n"+t.dash+"\n\n===== FIRST REPLY AFTER PROCESS =====\n"+t.first+"\n\n===== FINAL PAGE =====\n"+t.final,a=document.createElement("a");a.href=URL.createObjectURL(new Blob([r],{type:"text/plain"})),a.download="tracker-diagnostic-"+t.app+".txt",document.body.appendChild(a),a.click(),a.remove()}}),Array.prototype.forEach.call(y.querySelectorAll("[data-st]"),(function(e){e.onclick=function(){i.status=e.dataset.st,k()}})),Array.prototype.forEach.call(y.querySelectorAll("tr.rp-r"),(function(e){e.onclick=function(){var t=e.dataset.k;i.open[t]=!i.open[t],e.classList.toggle("open"),e.nextElementSibling.classList.toggle("open")}}));var E=g.getElementById("q");E.oninput=function(){i.q=E.value;var e=E.selectionStart;k();var t=g.getElementById("q");t.focus(),t.setSelectionRange(e,e)},g.getElementById("sort").onchange=function(){i.sort=this.value,k()},g.getElementById("sedit").onclick=function(e){e.preventDefault(),i.edit=!i.edit,k()};var N=g.getElementById("ssave");N&&(N.onclick=function(){var e=g.getElementById("shol").value.split(/[\s,]+/).filter((function(e){return/^\d{4}-\d{2}-\d{2}$/.test(e)})),n={pat:Math.max(1,+g.getElementById("sp").value||5),gir:Math.max(1,+g.getElementById("sg").value||7),nt:Math.max(1,+g.getElementById("sn").value||9),tot:Math.max(1,+g.getElementById("st").value||10),mode:g.getElementById("sm").value,holidays:e};try{localStorage.setItem(a,JSON.stringify(n))}catch(e){}s=null,i.edit=!1,o=t.map(r),k()}),g.getElementById("csv").onclick=function(){!function(e,t){var r=function(e){return'"'+(e=String(null==e?"":e)).replace(/"/g,'""')+'"'},a=[["Application No","Service","Applicant","Mobile","Village","Khasra","Purpose","Applied / Resubmitted","Pending with","Patwari stage","With official since","Last comment","Overdue by","Delays (all stages)"].map(r).join(",")].concat(e.map((function(e){var t=e.it,a=e.pw,n=t.history||[],o=n[n.length-1],i=document.createElement("div");i.innerHTML=Me(a,t);var l=Array.prototype.map.call(i.children,(function(e){return e.textContent.replace(/^●\s*/,"")})).join(" | "),s=je(a);return[r("⁠"+t.appNo),r(t.service),r(t.name),r("⁠"+t.mobile),r(t.village),r(t.khasra),r(t.purpose),r(t.appDate),r(a.label.replace(/^(Patwari · )/,"Patwari ")),r("Patwari"===a.role?"Pending with Patwari":{report:"Report submitted",comment:"Comment only, no report",none:""}[Ge(t)]||""),r(s.t?Y(s.t)+(null!=s.n?" ("+s.n+" days)":""):s.note||""),r(o?(Y(o.t)||o.date)+" "+o.by+": "+o.remark:""),r(a.over||""),r(l)].join(",")}))),n=new Blob(["\ufeff"+a.join("\r\n")],{type:"text/csv;charset=utf-8"}),o=document.createElement("a");o.href=URL.createObjectURL(n),o.download="Pendency R.plus "+te(t)+".csv",document.body.appendChild(o),o.click(),o.remove(),setTimeout((function(){URL.revokeObjectURL(o.href)}),5e3)}(n,e.at)},g.getElementById("wa").onclick=function(){!function(e,t,r){var a={};e.forEach((function(e){var t=e.pw.label,r=a[t]=a[t]||{role:e.pw.role,n:0,od:0};r.n++,("overdue"===e.pw.kind||"reverted"===e.pw.kind&&e.pw.over)&&r.od++}));var n=Object.keys(a).sort((function(e,t){return z.indexOf(a[e].role)-z.indexOf(a[t].role)||a[t].od-a[e].od||a[t].n-a[e].n})),o=e.filter((function(e){return"overdue"===e.pw.kind||"reverted"===e.pw.kind&&e.pw.over})).length,i=["*Revenue Plus — pending with ("+new Date(t).toLocaleDateString("en-IN")+")*","Total pending: "+e.length+" · Overdue: "+o,""];n.forEach((function(e){i.push(e+": "+a[e].n+(a[e].od?" ("+a[e].od+" overdue)":""))}));var l=i.join("\n");navigator.clipboard&&navigator.clipboard.writeText?navigator.clipboard.writeText(l).then((function(){r.textContent="Copied ✓",setTimeout((function(){r.textContent="Copy summary"}),1500)}),(function(){prompt("Copy this:",l)})):prompt("Copy this:",l)}(n,e.at,this)},g.getElementById("html").onclick=function(){!function(){var t=new Date(e.at),r=JSON.parse(JSON.stringify({who:i.who,level:i.level,status:i.status,q:i.q,sort:i.sort}));i.who="",i.level="",i.status="all",i.q="",i.sort="risk";var a=p(),n=b(),o='<div class="rp">'+m(!1)+w(!1)+c(a)+u(a,!1)+f(!1)+v(n,!1,a)+"</div>";Object.assign(i,r);var l=g.querySelector("style").textContent.replace(":host{all:initial}","")+"body{margin:0;background:#eef1f6}.wrap{position:static;overflow:visible}@media print{.rp-tools{display:none}.rp-x{display:table-row!important}}",s='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pendency overview — '+t.toLocaleDateString("en-IN")+"</title><style>"+l+'</style></head><body><div class="wrap"><div class="bar"><b>Revenue Plus Tracker<small>Pendency overview · read-only snapshot</small></b></div><div class="box">'+o+'</div></div><script>(function(){var q=document.getElementById("q"),o=false,R=[].slice.call(document.querySelectorAll("tr.rp-r"));R.forEach(function(r){r.onclick=function(){r.classList.toggle("open");r.nextElementSibling.classList.toggle("open");};});function f(){var t=q.value.toLowerCase();R.forEach(function(r){var x=r.nextElementSibling;var s=(!t||(r.textContent+x.textContent).toLowerCase().indexOf(t)>=0)&&(!o||r.dataset.od);r.style.display=s?"":"none";if(!s)x.classList.remove("open");x.style.display=s?"":"none";});}q.oninput=f;document.getElementById("odf").onclick=function(){o=!o;this.classList.toggle("on",o);f();};var e=false;document.getElementById("exp").onclick=function(){e=!e;this.textContent=e?"Collapse all":"Expand all";R.forEach(function(r){r.classList.toggle("open",e);r.nextElementSibling.classList.toggle("open",e);});};})();<\/script></body></html>',d=new Blob([s],{type:"text/html;charset=utf-8"}),h=document.createElement("a");h.href=URL.createObjectURL(d),h.download="Pendency R.plus "+te(t)+".html",document.body.appendChild(h),h.click(),h.remove(),setTimeout((function(){URL.revokeObjectURL(h.href)}),5e3)}()},g.getElementById("pdf").onclick=function(){var e=g.getElementById("pdfm");e.hidden=!e.hidden},Array.prototype.forEach.call(y.querySelectorAll("[data-pdf]"),(function(t){t.onclick=function(){var r=t.dataset.pdf,a=g.getElementById("pdf"),o=a.textContent;g.getElementById("pdfm").hidden=!0,a.textContent="Preparing…",a.disabled=!0,("all"===r?async function(){window.jspdf&&window.jspdf.jsPDF&&window.jspdf.jsPDF.API.autoTable||(await P("https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"),await P("https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"));var t=J(),r=p(),a=new Date(e.at),o=(/Logged\s*In\s*As\s*:?\s*([A-Za-z .]+?)\s*(Statistics|$)/i.exec(x&&x.body?I(x.body.textContent):"")||[])[1]||"",l=new window.jspdf.jsPDF({orientation:"landscape",unit:"mm",format:"a4"}),s=l.internal.pageSize.getWidth(),d=10,c=[18,53,91],u=[91,100,117],f=[180,35,24],b=[138,83,0];l.setFont("helvetica","bold"),l.setFontSize(14),l.setTextColor.apply(l,c),l.text("Revenue Plus - Pendency Report",d,14),l.setFont("helvetica","normal"),l.setFontSize(8),l.setTextColor.apply(l,u);var v=e.scan?i.set?"Set "+i.set+" of "+e.scan.sets:e.partial?"Incomplete scan: "+e.scan.read+" of "+e.scan.total+" read":"All "+e.scan.total+" applications":"";l.text(T((o?o+"  |  ":"")+"Scanned "+a.toLocaleString("en-IN")+(v?"  |  "+v:"")),d,19),l.text("Time limits: Patwari "+t.pat+", Girdawar "+t.gir+", Naib Tehsildar "+t.nt+", Overall "+(t.tot||10)+" days",s-d,14,{align:"right"}),l.text("Counted from Application / Resubmit date, excluding Sundays and holidays",s-d,19,{align:"right"}),l.setDrawColor.apply(l,c),l.setLineWidth(.6),l.line(d,21.5,s-d,21.5);var m=[["PENDING",String(r.total),0],["OVERDUE",String(r.od),r.od?1:0],["WITHIN LIMIT",String(r.ok),0],["REVERTED",String(r.rev),0],["OLDEST DELAY",r.oldest?r.oldest.pw.over+" days":"-",0]],g=(s-20-16)/5;m.forEach((function(e,t){var r=d+t*(g+4);l.setDrawColor(213,219,230),l.setLineWidth(.2),l.roundedRect(r,24,g,12,1,1),l.setFontSize(6.5),l.setTextColor.apply(l,u),l.text(e[0],r+3,28),l.setFont("helvetica","bold"),l.setFontSize(12),l.setTextColor.apply(l,e[2]?f:c),l.text(e[1],r+3,34),l.setFont("helvetica","normal")}));var y={theme:"grid",styles:{font:"helvetica",fontSize:7,cellPadding:1.2,textColor:[24,33,47],lineColor:[221,226,234],lineWidth:.15,valign:"top"},headStyles:{fillColor:[233,237,243],textColor:[43,52,70],fontStyle:"bold",fontSize:6.6},alternateRowStyles:{fillColor:[248,249,251]}};function w(e){var t={};return Object.keys(y).forEach((function(e){t[e]=y[e]})),Object.keys(e).forEach((function(r){t[r]=e[r]})),l.autoTable(t),l.lastAutoTable.finalY}function k(e,t,r){l.setFont("helvetica","bold"),l.setFontSize(8.5),l.setTextColor.apply(l,c),l.text(e,t,r),l.setFont("helvetica","normal")}var E={};n.forEach((function(e){var t=e.pw;if("unread"!==t.kind){var r=E[t.label]=E[t.label]||{label:t.label,role:t.role,n:0,od:0,ok:0,rev:0,oldest:0,prep:0,pcom:0};if(r.n++,e.od?(r.od++,r.oldest=Math.max(r.oldest,t.over||0)):"running"===t.kind&&r.ok++,"reverted"===t.kind&&r.rev++,"Patwari"!==t.role){var a=Ge(e.it);"report"===a?r.prep++:"comment"===a&&r.pcom++}}}));var N=Object.keys(E).map((function(e){return E[e]})).sort((function(e,t){return z.indexOf(e.role)-z.indexOf(t.role)||t.od-e.od||t.n-e.n})),C={},R=["Patwari","Girdawar","Naib Tehsildar","Tehsildar"];n.forEach((function(e){var t=e.it.village||"-",r=C[t]=C[t]||{n:0,od:0,l:{}};r.n++,e.od&&r.od++,r.l[e.pw.role]=(r.l[e.pw.role]||0)+1}));var D=Object.keys(C).sort((function(e,t){return C[t].od-C[e].od||C[t].n-C[e].n||e.localeCompare(t)})),A=(s-20-8)/2;k("PENDING BY OFFICIAL",d,41.5),k("PENDING BY VILLAGE",d+A+8,41.5);var O=function(e){return function(t){"foot"===t.section&&t.column.index>=2&&(t.cell.styles.halign="center"),"body"===t.section&&e.indexOf(t.column.index)>=0&&"-"!==t.cell.raw&&""!==t.cell.raw&&(t.cell.styles.textColor=f,t.cell.styles.fontStyle="bold")}},j=w({startY:43,margin:{left:d,right:s-d-A},tableWidth:A,head:[["Official","Level","Pending","Overdue","Within limit","Oldest delay","Patwari report / comment only"]],body:N.map((function(e){return[T(e.label.replace(/^(Patwari · |Naib Tehsildar |Girdawar |Tehsildar )/,"")||e.label)+(e.rev?" ("+e.rev+" reverted)":""),e.role,e.n,e.od||"-",e.ok||"-",e.oldest?e.oldest+" d":"-","Patwari"===e.role?"":(e.prep||0)+" / "+(e.pcom||0)]})),foot:[["Total","",r.total,r.od,r.ok,"",""]],footStyles:{fillColor:c,textColor:255,fontStyle:"bold",fontSize:7},columnStyles:{2:{halign:"center"},3:{halign:"center"},4:{halign:"center"},5:{halign:"center"},6:{halign:"center"}},didParseCell:O([3])}),M=w({startY:43,margin:{left:d+A+8,right:d},tableWidth:A,head:[["Village","Patwari","Girdawar","Naib Teh.","Tehsildar","Total","Overdue"]],body:D.map((function(e){var t=C[e];return[T(e)].concat(R.map((function(e){return t.l[e]||"-"}))).concat([t.n,t.od||"-"])})),columnStyles:{1:{halign:"center"},2:{halign:"center"},3:{halign:"center"},4:{halign:"center"},5:{halign:"center"},6:{halign:"center"}},didParseCell:O([6])}),B=n.slice().sort((function(e,t){return Be(e.pw)-Be(t.pw)||(t.pw.over||0)-(e.pw.over||0)||String(e.it.village).localeCompare(String(t.it.village))})),W=[],G=B.map((function(e,t){var r=e.it,a=e.pw,n=e.si,o=r.history||[],i=o[o.length-1],l=S(a,r);i&&"Tehsildar"===$(i.by)&&/^\s*process(\s*under\s*rules)?\s*\.?\s*$/i.test(i.remark||"")&&(i=null);var s=We(a)?String(a.over)+("reverted"===a.kind?"\noverall":""):"running"===a.kind?0===a.left?"due today":a.left+" left":"-";return W.push({od:We(a),major:We(a)&&a.over>h&&!("overdue"===a.kind&&a.inherited),inh:"overdue"===a.kind&&a.inherited,col:l.col}),[t+1,T(r.appNo+"\n"+r.service+" - "+r.purpose+(r.revert?" - reverted "+r.revert+"x":"")),T(r.name+"\n"+r.village+" - "+r.khasra),T(r.appDate||"-"),T(a.label.replace(/^(Patwari · )/,"Patwari ")+("Patwari"!==a.role&&L[Ge(r)]?"\n("+("report"===Ge(r)?"Patwari report submitted":"Patwari comment only, no report")+")":"")),null!=n.n?n.n+" days\nsince "+T(Y(n.t)):T(n.note||"-"),s,T(l.now),T(l.past),i?T(i.by+", "+(Y(i.t)||i.date)+": "+i.remark):""]})),F=Math.max(j,M)+8;F>180&&(l.addPage(),F=16),k("APPLICATIONS ("+B.length+")",d,F-1.5),w({startY:F,margin:{left:d,right:d,top:12,bottom:12},head:[["#","Application","Applicant / Village / Khasra","Applied / Resub.","Pending with","With official","Overdue (days)","Current status","Earlier stage delays","Last comment"]],body:G,rowPageBreak:"avoid",columnStyles:{0:{cellWidth:6,halign:"center"},1:{cellWidth:33},2:{cellWidth:32},3:{cellWidth:20},4:{cellWidth:26},5:{cellWidth:17},6:{cellWidth:14,halign:"center"},7:{cellWidth:40},8:{cellWidth:30},9:{cellWidth:"auto"}},didParseCell:function(e){if("body"===e.section){var t=W[e.row.index];1!==e.column.index&&4!==e.column.index||(e.cell.styles.fontStyle="bold"),8===e.column.index&&(e.cell.styles.textColor=u),7===e.column.index&&"ink"!==t.col&&(e.cell.styles.textColor="red"===t.col?f:b),6===e.column.index&&t.od&&(e.cell.styles.fontStyle="bold",t.inh?e.cell.styles.textColor=b:t.major?(e.cell.styles.fillColor=f,e.cell.styles.textColor=255):e.cell.styles.textColor=f)}}}),l.setFontSize(6.6),l.setTextColor.apply(l,u);var U=l.lastAutoTable.finalY+5;U>200&&(l.addPage(),U=16),l.text("Read-only snapshot from JK Revenue Plus. An application is counted only at the first level that has not acted in the current round. A filled red overdue cell means more than "+h+" days past the limit.",d,U);for(var q=l.internal.getNumberOfPages(),H=1;H<=q;H++)l.setPage(H),l.setFontSize(7),l.setTextColor.apply(l,u),l.text("Revenue Plus Pendency Report - "+a.toLocaleDateString("en-IN"),d,205),l.text("Page "+H+" of "+q,s-d,205,{align:"right"});l.save("Pendency R.plus "+te(a)+(i.set?" Set"+i.set:e.partial?" partial":"")+".pdf")}():async function(t){window.jspdf&&window.jspdf.jsPDF&&window.jspdf.jsPDF.API.autoTable||(await P("https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"),await P("https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"));var r=J(),a=new Date(e.at),o=(ee(),{pat:{roles:["Patwari"],title:"Pendency at Patwari level",file:"Patwari",limit:"Patwari: "+r.pat+" days",unit:"Village",need:"Submit report / comment"},gir:{roles:["Girdawar"],title:"Pendency at Girdawar level",file:"Girdawar",limit:"Girdawar: "+r.gir+" days",unit:"Girdawar",need:"Verify and forward"},nt:{roles:["Naib Tehsildar","Tehsildar"],title:"Pendency at Naib Tehsildar and Tehsildar level",file:"Naib Tehsildar-Tehsildar",limit:"Naib Tehsildar: "+r.nt+" days  |  Tehsildar: within the overall "+(r.tot||10)+" days",unit:"Officer",need:"Examine and forward"}}[t]),l=n.filter((function(e){return o.roles.indexOf(e.pw.role)>=0&&"unread"!==e.pw.kind}));var s={},d=[];l.forEach((function(e){var t=function(e){return"Patwari"===e.pw.role?"Patwari - "+(e.it.village||"-"):e.pw.label}(e);s[t]||(s[t]={name:t,role:e.pw.role,rows:[],od:0,ok:0,oldest:0},d.push(t));var r=s[t];r.rows.push(e),e.od?(r.od++,r.oldest=Math.max(r.oldest,e.pw.over||0)):"running"===e.pw.kind&&r.ok++})),d.sort((function(e,t){var r=s[e],a=s[t];return z.indexOf(r.role)-z.indexOf(a.role)||a.od-r.od||a.oldest-r.oldest||a.rows.length-r.rows.length||e.localeCompare(t)}));var p=new window.jspdf.jsPDF({orientation:"landscape",unit:"mm",format:"a4"}),c=p.internal.pageSize.getWidth(),u=10,f=[18,53,91],b=[91,100,117],v=[180,35,24],m=[138,83,0],g=[20,92,54],y=e.scan?i.set?"Set "+i.set+" of "+e.scan.sets:e.partial?"Incomplete scan: "+e.scan.read+" of "+e.scan.total+" read":"":"";p.setFont("helvetica","bold"),p.setFontSize(15),p.setTextColor.apply(p,f),p.text(o.title,u,14),p.setFont("helvetica","normal"),p.setFontSize(8),p.setTextColor.apply(p,b),p.text(T("Revenue Plus  |  Scanned "+a.toLocaleString("en-IN")+(y?"  |  "+y:"")),u,19.5),p.text(T("Time limit - "+o.limit+". Days counted from Application / Resubmit date, excluding Sundays and holidays."),c-u,19.5,{align:"right"}),p.setDrawColor.apply(p,f),p.setLineWidth(.6),p.line(u,22,c-u,22);var x=l.filter((function(e){return e.od})).length,w=l.filter((function(e){return"running"===e.pw.kind})).length,k=l.reduce((function(e,t){return t.od?Math.max(e,t.pw.over||0):e}),0),E=[["FILES PENDING",String(l.length),0],["OVERDUE",String(x),x?1:0],["WITHIN LIMIT",String(w),0],[o.unit.toUpperCase()+"S WITH FILES",String(d.length),0],["OLDEST DELAY",k?k+" days":"-",0]],N=(c-20-16)/5;E.forEach((function(e,t){var r=u+t*(N+4);p.setDrawColor(213,219,230),p.setLineWidth(.2),p.roundedRect(r,25,N,12,1,1),p.setFontSize(6.5),p.setTextColor.apply(p,b),p.text(e[0],r+3,29),p.setFont("helvetica","bold"),p.setFontSize(12),p.setTextColor.apply(p,e[2]?v:f),p.text(e[1],r+3,35),p.setFont("helvetica","normal")}));var C={theme:"grid",styles:{font:"helvetica",fontSize:7.4,cellPadding:1.4,textColor:[24,33,47],lineColor:[221,226,234],lineWidth:.15,valign:"top"},headStyles:{fillColor:[233,237,243],textColor:[43,52,70],fontStyle:"bold",fontSize:6.8},alternateRowStyles:{fillColor:[248,249,251]},margin:{left:u,right:u,top:14,bottom:13}};function R(e){var t={};return Object.keys(C).forEach((function(e){t[e]=C[e]})),Object.keys(e).forEach((function(r){t[r]=e[r]})),p.autoTable(t),p.lastAutoTable.finalY}function D(e,t,r){if(p.setFont("helvetica","bold"),p.setFontSize(10),p.setTextColor.apply(p,f),p.text(T(e),u,t),r){var a=p.getTextWidth(T(e));p.setFont("helvetica","normal"),p.setFontSize(8),p.setTextColor.apply(p,b),p.text(T(r),u+a+4,t)}p.setFont("helvetica","normal")}if(l.length){D("Summary",44);var A=R({startY:46,head:[[o.unit,"nt"===t?"Level":"","Pending","Overdue","Within limit","Oldest delay","Action needed"]].map((function(e){return"nt"===t?e:e.filter((function(e,t){return 1!==t}))})),body:d.map((function(e){var r=s[e],a="Patwari"===r.role?e.replace(/^Patwari - /,""):e.replace(/^(Naib Tehsildar |Girdawar |Tehsildar )/,""),n=r.rows.filter((function(e){return"reverted"===e.pw.kind})).length,i=r.rows.filter((function(e){return e.pw.unmarked})).length,l=r.rows.length-n-i,d=[];i&&d.push("Mark "+i+" new file"+(1===i?"":"s")+" to officials"),l&&d.push(("Tehsildar"===r.role?"Decide on":"Patwari"===r.role?o.need:"Naib Tehsildar"===r.role?"Examine and forward":o.need)+" "+l+" file"+(1===l?"":"s")),n&&d.push(("Patwari"===r.role?"Rectify ":"Act on ")+n+" reverted");var p=[T(a||e),r.rows.length,r.od||"-",r.ok||"-",r.oldest?r.oldest+" days":"-",d.join("; ")];return"nt"===t&&p.splice(1,0,r.role),p})),foot:["nt"===t?["Total","",l.length,x,w,"",""]:["Total",l.length,x,w,"",""]],footStyles:{fillColor:f,textColor:255,fontStyle:"bold",fontSize:7.4},columnStyles:"nt"===t?{2:{halign:"center",cellWidth:18},3:{halign:"center",cellWidth:18},4:{halign:"center",cellWidth:20},5:{halign:"center",cellWidth:22}}:{1:{halign:"center",cellWidth:18},2:{halign:"center",cellWidth:18},3:{halign:"center",cellWidth:20},4:{halign:"center",cellWidth:22}},didParseCell:function(e){var r="nt"===t?3:2;"body"===e.section&&e.column.index===r&&"-"!==e.cell.raw&&(e.cell.styles.textColor=v,e.cell.styles.fontStyle="bold"),"foot"===e.section&&e.column.index>=1&&(e.cell.styles.halign="center")}});d.forEach((function(e){var t=s[e];t.rows.sort((function(e,t){return(t.pw.over||0)-(e.pw.over||0)||(t.pw.days||0)-(e.pw.days||0)})),(A+=9)>175&&(p.addPage(),A=18),D(e,A,t.rows.length+" file"+(1===t.rows.length?"":"s")+(t.od?"  |  "+t.od+" overdue":"")+(t.oldest?"  |  oldest "+t.oldest+" days late":""));var r,a=[],n=["#","Application","Applicant","Village / Khasra","Applied / Resub.","With official","Day","Overdue","What is pending"];"Patwari"!==t.role&&n.push("Patwari stage"),n.push("Last comment"),A=R({startY:A+2,head:[n],rowPageBreak:"avoid",body:t.rows.map((function(e,r){var n=e.it,o=e.pw,i=n.history||[],l=i[i.length-1],s=S(o,n);l&&"Tehsildar"===$(l.by)&&/^\s*process(\s*under\s*rules)?\s*\.?\s*$/i.test(l.remark||"")&&(l=null);var d=null!=o.days?o.days+" of "+(o.limit||"-"):"-";a.push({od:e.od,major:e.od&&o.over>h&&!o.inherited,inh:"overdue"===o.kind&&o.inherited,col:s.col});var p=e.si,c=p&&null!=p.n?p.n+" days\nsince "+T(Y(p.t)):T(p&&p.note||(o.atTeh?"date not known":"-")),u=[r+1,T(n.appNo+"\n"+n.service+" - "+n.purpose+(n.revert?" - reverted "+n.revert+"x":"")),T(n.name),T(n.village+"\n"+n.khasra),T(n.appDate||"-"),c,d,e.od?String(o.over)+" d":"running"===o.kind?0===o.left?"due today":o.left+" d left":"-",T(s.now)];if("Patwari"!==t.role){var f=Ge(n);u.push("report"===f?"Report submitted":"comment"===f?"Comment only, no report":"-")}return u.push(l?T(l.by+", "+(Y(l.t)||l.date)+": "+((l.remark||"").length>120?l.remark.slice(0,117)+"...":l.remark)):""),u})),columnStyles:(r={0:{cellWidth:6,halign:"center"},1:{cellWidth:33,fontStyle:"bold"},2:{cellWidth:27},3:{cellWidth:24},4:{cellWidth:20},5:{cellWidth:19},6:{cellWidth:12,halign:"center"},7:{cellWidth:14,halign:"center"},8:{cellWidth:"Patwari"===t.role?50:40}},"Patwari"!==t.role&&(r[9]={cellWidth:21}),r),didParseCell:function(e){if("body"===e.section){var r=a[e.row.index];r&&(5===e.column.index&&function(e){return/days/.test(String(e.cell.raw))}(e)&&(e.cell.styles.fontStyle="bold"),7===e.column.index&&r.od&&(e.cell.styles.fontStyle="bold",r.inh?e.cell.styles.textColor=m:r.major?(e.cell.styles.fillColor=v,e.cell.styles.textColor=255):e.cell.styles.textColor=v),8===e.column.index&&"ink"!==r.col&&(e.cell.styles.textColor="red"===r.col?v:m),"Patwari"!==t.role&&9===e.column.index&&(e.cell.styles.textColor=/Comment/.test(e.cell.raw)?m:g))}}})})),p.setFontSize(6.8),p.setTextColor.apply(p,b);var O=A+6;O>200&&(p.addPage(),O=16),p.text(T('"With official" is how long the file has been with that official (from his receipt, or from the scans when it came back to him). '),u,O),O+=3.5,p.text(T('"Day" is the working day reached out of the limit for that level. Overdue in a filled red cell means more than '+h+" days past the limit; amber means the delay began at an earlier level. Read-only snapshot from JK Revenue Plus."),u,O)}else p.setFontSize(11),p.setTextColor.apply(p,g),p.text("No files are pending at this level.",u,48);for(var L=p.internal.getNumberOfPages(),I=1;I<=L;I++)p.setPage(I),p.setFontSize(7),p.setTextColor.apply(p,b),p.text(T(o.title+" - "+a.toLocaleDateString("en-IN")),u,205),p.text("Page "+I+" of "+L,c-u,205,{align:"right"});p.save(o.file+" R.plus "+te(a)+(i.set?" Set"+i.set:e.partial?" partial":"")+".pdf")}(r)).catch((function(t){var a,o;"all"===r?function(){var t=J(),r=p(),a=new Date(e.at),o=(/Logged\s*In\s*As\s*:?\s*([A-Za-z .]+?)\s*(Statistics|$)/i.exec(x&&x.body?I(x.body.textContent):"")||[])[1]||"";function i(e){return e||"–"}function l(e,t){return e?'<b class="'+(t?"a":e>h?"r":"r lo")+'">'+e+"</b>":"–"}var s=n.slice().sort((function(e,t){return Be(e.pw)-Be(t.pw)||(t.pw.over||0)-(e.pw.over||0)||String(e.it.village).localeCompare(String(t.it.village))})),d={};n.forEach((function(e){var t=e.pw;if("unread"!==t.kind){var r=d[t.label]=d[t.label]||{label:t.label,role:t.role,n:0,od:0,ok:0,rev:0,oldest:0};r.n++,e.od?(r.od++,r.oldest=Math.max(r.oldest,t.over||0)):"running"===t.kind&&r.ok++,"reverted"===t.kind&&r.rev++}}));var c=Object.keys(d).map((function(e){return d[e]})).sort((function(e,t){return z.indexOf(e.role)-z.indexOf(t.role)||t.od-e.od||t.n-e.n})),u={},f=["Patwari","Girdawar","Naib Tehsildar","Tehsildar"];n.forEach((function(e){var t=u[e.it.village||"—"]=u[e.it.village||"—"]||{n:0,od:0,l:{}};t.n++,e.od&&t.od++,t.l[e.pw.role]=(t.l[e.pw.role]||0)+1}));var b=Object.keys(u).sort((function(e,t){return u[t].od-u[e].od||u[t].n-u[e].n||e.localeCompare(t)})),v=function(e,t,r){return'<div class="k"><span>'+e+"</span><b"+(r?' class="'+r+'"':"")+">"+t+"</b></div>"},m='<div class="hd"><div><h1>Revenue Plus · Pendency Report</h1><p>'+(o?M(o)+" · ":"")+"Scanned "+M(a.toLocaleString("en-IN"))+'</p></div><p class="lim">Time limits: Patwari '+t.pat+" · Girdawar "+t.gir+" · Naib Tehsildar "+t.nt+" · Overall "+(t.tot||10)+' days<br>Counted from Application / Resubmit date, excluding Sundays and holidays</p></div><div class="ks">'+v("Pending",r.total)+v("Overdue",r.od,r.od?"r lo":"")+v("Within limit",r.ok)+v("Reverted",r.rev)+v("Oldest delay",r.oldest?r.oldest.pw.over+" d":"–")+'</div><div class="two"><div><h2>Pending by official</h2><table><thead><tr><th>Official</th><th>Level</th><th class="c">Pending</th><th class="c">Overdue</th><th class="c">Within</th><th class="c">Oldest</th></tr></thead><tbody>'+c.map((function(e){return"<tr><td>"+M(e.label.replace(/^(Patwari · |Naib Tehsildar |Girdawar |Tehsildar )/,"")||e.label)+(e.rev?" <i>("+e.rev+" reverted)</i>":"")+"</td><td>"+M(e.role)+'</td><td class="c">'+e.n+'</td><td class="c">'+(e.od?'<b class="r lo">'+e.od+"</b>":"–")+'</td><td class="c">'+i(e.ok)+'</td><td class="c">'+(e.oldest?l(e.oldest)+" d":"–")+"</td></tr>"})).join("")+'<tr class="t"><td colspan="2">Total</td><td class="c">'+r.total+'</td><td class="c">'+r.od+'</td><td class="c">'+r.ok+'</td><td></td></tr></tbody></table></div><div><h2>Pending by village</h2><table><thead><tr><th>Village</th><th class="c">Patwari</th><th class="c">Girdawar</th><th class="c">Naib Teh.</th><th class="c">Total</th><th class="c">Overdue</th></tr></thead><tbody>'+b.map((function(e){var t=u[e];return"<tr><td>"+M(e)+"</td>"+f.map((function(e){return'<td class="c">'+i(t.l[e])+"</td>"})).join("")+'<td class="c">'+t.n+'</td><td class="c">'+(t.od?'<b class="r lo">'+t.od+"</b>":"–")+"</td></tr>"})).join("")+"</tbody></table></div></div><h2>Applications ("+s.length+')</h2><table class="apps"><thead><tr><th>#</th><th>Application</th><th>Applicant · Village · Khasra</th><th>Applied / Resub.</th><th>Pending with</th><th>With official</th><th class="c">Overdue (days)</th><th>Delays at each stage</th><th>Last comment</th></tr></thead><tbody>'+s.map((function(e,t){var r=e.it,a=e.pw,n=e.si,o=r.history||[],i=o[o.length-1];i&&"Tehsildar"===$(i.by)&&/^\s*process(\s*under\s*rules)?\s*\.?\s*$/i.test(i.remark||"")&&(i=null);var s=i?"<b>"+M(i.by)+"</b> "+M(Y(i.t)||i.date)+": "+M((i.remark||"").length>150?i.remark.slice(0,147)+"…":i.remark):"",d=We(a)?l(a.over,"overdue"===a.kind&&a.inherited)+("reverted"===a.kind?"<br><i>overall</i>":""):"running"===a.kind?0===a.left?"due today":a.left+" left":"–",p=null!=n.n?n.n+" d <i>since "+M(Y(n.t))+"</i>":"<i>"+M(n.note||"–")+"</i>";return"<tr"+(e.od?' class="od"':"")+'><td class="c">'+(t+1)+"</td><td><b>"+M(r.appNo)+"</b><br><i>"+M(r.service)+" · "+M(r.purpose)+(r.revert?" · reverted "+r.revert+"×":"")+"</i></td><td>"+M(r.name)+"<br><i>"+M(r.village)+" · "+M(r.khasra)+"</i></td><td>"+M(r.appDate||"–")+"</td><td><b>"+M(a.label.replace(/^(Patwari · )/,"Patwari "))+"</b></td><td>"+p+'</td><td class="c">'+d+'</td><td class="rm">'+Me(a,r).replace(/● /g,"")+'</td><td class="lc">'+s+"</td></tr>"})).join("")+'</tbody></table><p class="ft">Read-only snapshot from JK Revenue Plus. An application is counted only at the first level that has not acted in the current round. Overdue figures in bold red exceed the limit by more than '+h+" days.</p>",g='@page{size:A4 landscape;margin:9mm 8mm 10mm;@bottom-right{content:"Page " counter(page) " of " counter(pages);font:7pt Arial,sans-serif;color:#6b7385}@bottom-left{content:"Revenue Plus Pendency Report · '+a.toLocaleDateString("en-IN")+'";font:7pt Arial,sans-serif;color:#6b7385}}@media screen{#rpPrint{display:none}}@media print{html,body{background:#fff!important;margin:0!important}body>*:not(#rpPrint){display:none!important}#rpPrint{display:block}}#rpPrint{font:7.4pt/1.3 Arial,Helvetica,sans-serif;color:#18212f;-webkit-print-color-adjust:exact;print-color-adjust:exact}#rpPrint .hd{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #12355b;padding-bottom:4px;margin-bottom:6px}#rpPrint h1{font-size:13pt;margin:0;color:#12355b}#rpPrint .hd p{margin:1px 0 0;color:#4a5466}#rpPrint .lim{text-align:right;font-size:7pt}#rpPrint .ks{display:flex;gap:6px;margin-bottom:6px}#rpPrint .k{flex:1;border:1px solid #d5dbe6;border-radius:3px;padding:3px 6px}#rpPrint .k span{display:block;font-size:6.5pt;text-transform:uppercase;letter-spacing:.05em;color:#5b6475}#rpPrint .k b{font-size:12pt;color:#12355b}#rpPrint h2{font-size:8.5pt;margin:6px 0 3px;color:#12355b;text-transform:uppercase;letter-spacing:.05em}#rpPrint .two{display:flex;gap:10px}#rpPrint .two>div{flex:1;min-width:0}#rpPrint table{width:100%;border-collapse:collapse}#rpPrint th{background:#e9edf3;color:#2b3446;text-align:left;font-size:6.6pt;text-transform:uppercase;letter-spacing:.03em;padding:2.5px 4px;border-bottom:1px solid #b9c2d0}#rpPrint td{padding:2.5px 4px;border-bottom:.5px solid #dde2ea;vertical-align:top}#rpPrint .c{text-align:center}#rpPrint thead{display:table-header-group}#rpPrint tr{page-break-inside:avoid;break-inside:avoid}#rpPrint tr.t td{font-weight:bold;border-top:1px solid #12355b;background:#f3f5f8}#rpPrint i{font-style:normal;color:#5b6475}#rpPrint .apps td.rm{width:17%}#rpPrint .apps td.lc{width:24%}#rpPrint .apps td.rm div{margin:0}#rpPrint .r{color:#b42318}#rpPrint .r.lo{font-weight:bold}#rpPrint b.r:not(.lo){background:#b42318;color:#fff;padding:0 4px;border-radius:2px}#rpPrint .a{color:#8a5300}#rpPrint .ft{margin-top:6px;color:#5b6475;font-size:6.6pt}',y=document.getElementById("rpPrint");y&&y.remove();var w=document.getElementById("rpPrintCss");w&&w.remove();var k=document.createElement("style");k.id="rpPrintCss",k.textContent=g,document.head.appendChild(k);var P=document.createElement("div");P.id="rpPrint",P.innerHTML=m,document.body.appendChild(P);var T=document.title;document.title="RevenuePlus_Pendency_"+re(a),setTimeout((function(){window.print(),setTimeout((function(){document.title=T}),1500)}),150)}():(a="Could not make the PDF: "+(t&&t.message||t),(o=document.createElement("div")).textContent=a,o.style.cssText="position:fixed;left:12px;right:12px;bottom:12px;z-index:2147483647;background:%23b42318;color:%23fff;padding:12px;border-radius:8px;font:14px sans-serif".replace(/%23/g,"#"),document.body.appendChild(o),setTimeout((function(){o.remove()}),6e3))})).then((function(){a.textContent=o,a.disabled=!1}))}}));var C=g.getElementById("again");C&&(C.onclick=me)}()}function P(e){return new Promise((function(t,r){var a=document.createElement("script");a.src=e,a.onload=t,a.onerror=r,document.head.appendChild(a)}))}function T(e){return String(null==e?"":e).replace(/[—–]/g,"-").replace(/…/g,"...").replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[^\x09\x0a\x20-\x7e\xa0-\xff]/g,"")}function S(e,t){if("unread"===e.kind)return{past:"-",now:"Could not read",col:"ink"};var r=se(t),a=[],n=[],o="ink";function i(e){return e+" day"+(1===e?"":"s")}return r&&!e.unmarked&&r.visits.forEach((function(e){"late"===e.status?a.push(e.role+" late by "+i(e.over)+(e.overMax&&e.overMax>e.over?"-"+e.overMax:"")):"overdue"===e.status?(n.push(e.role+" overdue by "+i(e.over)+" - "+(e.inherited?e.cause:"Patwari"===e.role?"no report or comment yet":"not acted yet")),o=e.inherited?"amb":"red"):"running"===e.status&&n.push(e.role+(0===e.left?" due today":" due in "+i(e.left)))})),"reverted"===e.kind&&(n.push(("Patwari"===e.role?"Reverted to Patwari":"Back with "+e.role)+(e.over?" - overall overdue by "+i(e.over):"")),e.over&&(o="red")),e.unmarked?(n.push("With Tehsildar - not yet marked to officials - "+(e.over?"overall limit passed by "+i(e.over):i(e.left)+" left of "+e.limit)),e.over&&(o="red")):e.atTeh&&(n.push("With Tehsildar (all levels submitted) - "+(e.over?"overall limit passed by "+i(e.over):i(e.left)+" left of "+e.limit)),e.over&&(o="red")),"since"===e.kind&&n.push("No time limit at this stage"),"unread"===e.kind&&n.push("Could not read"),{past:a.join("\n")||"-",now:n.join("\n")||"No delay",col:o}}return k(),{update:function(a){e=a,X(t=a.items),o=t.map(r);var n=g.querySelector(".wrap"),i=n?n.scrollTop:0;k(),n&&(n.scrollTop=i)}}}}();
+!(function () {
+  "use strict";
+  if (window.__rpTracker) window.__rpTracker.open();
+  else {
+    var e = 400,
+      t = "rpTrackerLast",
+      a = [
+        "With Patwari",
+        "With Girdawar",
+        "With Naib Tehsildar",
+        "With Tehsildar",
+        "Returned to applicant",
+      ],
+      r = [
+        ["pat", /Patwari\s*Remarks\s*:/i],
+        ["gir", /Gird\w*\s*Remarks\s*:/i],
+        ["nt", /Naib\s*Tehsildar\s*Remarks\s*:/i],
+        ["teh", /(?<!Naib\s{0,3})Tehsildar\s*Remarks\s*:/i],
+        [
+          "_stop",
+          /Gist of all successive|Details of Final mutation|Enter Final Remarks/i,
+        ],
+      ],
+      n = [
+        ["svcType", "Service Type"],
+        ["appNoD", "Applica\\w* No\\.?"],
+        ["applicant", "Name of Applicant"],
+        ["address", "Address"],
+        ["mobileD", "Mobile"],
+        ["email", "Email"],
+        ["vendee", "Name of Vendee"],
+        ["vendeeParent", "Parentage of Vendee"],
+        ["_aadhaar", "Aadhaar No\\.? of Vendee"],
+        ["vendeeOcc", "Occupation Of Vendee"],
+        ["landUT", "Total land Owned in the UT"],
+        ["landVillage", "Total land Owned in the Village"],
+        ["vendeeMobile", "Mobile No\\.? of Vendee"],
+        ["vendeeEmail", "Email Id of Vendee"],
+        ["vendeeRes", "Resident\\w* Address of Vendee"],
+        ["vendeePerm", "Permanent Address of Vendee"],
+        ["_s", "Other Details"],
+        ["district", "District"],
+        ["tehsil", "Tehsil\\s*/\\s*Sub Tehsil"],
+        ["areaType", "Area Type"],
+        ["villageD", "Village"],
+        ["villageArea", "Village Area"],
+        ["areaCovered", "Area Covered"],
+        ["aKhewat", "Khewat"],
+        ["aKhata", "Khata"],
+        ["aKhasra", "Khasra"],
+        ["aOwnType", "Ownership Type"],
+        ["aOwners", "No\\.? Of Owners"],
+        ["aOwnPct", "Ownership Percentage"],
+        ["applicantRemarks", "Applicant Remarks"],
+        ["_s", "Uploaded Documents"],
+        ["_s", "Members Remarks"],
+        ["_s", "General Remarks"],
+        ["_s", "By Patwari\\s*:?"],
+        [
+          "areaProposed",
+          "Area Proposed for Alienation[^:]{0,60}?Purpose\\s*:?",
+        ],
+        ["_s", "Tatima Uploaded by Patwari"],
+        ["_s", "Other Supporting Documents"],
+        ["_s", "Certificate Details\\s*:?"],
+        ["cKhewat", "Khewat No\\.?\\s*:"],
+        ["cKhata", "Khata No\\.?\\s*:"],
+        ["cKhasra", "Khasra No\\.?\\s*:"],
+        ["cKanal", "Kanal\\s*:"],
+        ["cMarla", "Marla\\s*:"],
+        ["cSqft", "Sq\\.?\\s*Ft\\.?\\s*:"],
+        ["cOwnType", "Ownership Type\\s*:"],
+        ["owners", "Owner\\(s\\) name with full description\\s*:"],
+        [
+          "cultivator",
+          "Cultivator\\s*/\\s*Owner name with full description\\s*:",
+        ],
+        ["ownRecords", "Ownership Details as per Revenue Records\\s*:"],
+        ["shareKhewat", "Total share of applicant\\(s\\) in the Khewat\\s*:"],
+        ["alienKhewat", "Area Already alienated in the Khewat\\s*:"],
+        ["shareKhasra", "Total share of applicant\\(s\\) in the Khasra\\s*:"],
+        ["alienKhasra", "Area Already alienated in the Khasra\\s*:"],
+        ["cOwnType2", "Ownership Type"],
+        [
+          "possession",
+          "Whether applicant is in possession of land in question\\s*:",
+        ],
+        [
+          "encroach",
+          "Whether the applicant has encroached any govt land\\s*/\\s*common land\\s*:",
+        ],
+        [
+          "consent",
+          "Whether consent for alienation has been given by the co-sharers[^:]{0,40}:",
+        ],
+        [
+          "litigation",
+          "Whether there is any court case\\s*/\\s*litigation on this land\\s*:",
+        ],
+        ["masterPlan", "Under Any Master Plan\\s*/\\s*Development Plan\\s*:"],
+        [
+          "vesting",
+          "Whether the land has been given under Vesting of Ownership[^:]{0,40}:",
+        ],
+        [
+          "roshni",
+          "Has Been a Govt land in last 20 years or given under Rosh\\w* Scheme\\s*:",
+        ],
+        ["acquisition", "Under Land Acquisition Act\\s*:"],
+        ["mortgage", "Is Morta\\w*ed or on lease\\s*:"],
+        [
+          "municipal",
+          "Whether the land is situated within or outside Municipal Limits\\s*:",
+        ],
+        ["fit", "Whether the land is fit for alienation\\s*:"],
+        ["onspot", "Onspot position of Land\\s*:"],
+        ["possDuration", "Duration of possession\\s*:"],
+        ["lat", "Latitude of the spot\\s*:"],
+        ["lng", "Longitude of the spot\\s*:"],
+        ["soil", "Kind of Soil as per Jamabandi\\s*:"],
+        ["tatimaSource", "Source of Tatima\\s*:"],
+        ["_s", "Adjoining Khasra Details\\s*:?"],
+        ["lambardar", "Brief Summary of the statement of Lambardar[^:]{0,60}:"],
+        ["barred", "Whether the land is barred from alienation[^:]{0,60}:"],
+        ["patRemarks", "Patwari Remarks\\s*:"],
+        ["girRemarks", "Gird\\w* Remarks\\s*:"],
+        ["ntRemarks", "Naib Tehsildar Remarks\\s*:"],
+        ["_s", "Gist of all successive"],
+        ["_s", "Details of Final mutation"],
+        ["_s", "Enter Final Remarks"],
+        ["_s", "Documents Preview"],
+      ],
+      i = {
+        svcType: "Service type",
+        appNoD: "Application no.",
+        applicant: "Applicant",
+        address: "Applicant address",
+        mobileD: "Applicant mobile",
+        email: "Applicant email",
+        vendee: "Vendee",
+        vendeeParent: "Vendee parentage",
+        vendeeOcc: "Vendee occupation",
+        landUT: "Vendee land in UT",
+        landVillage: "Vendee land in village",
+        vendeeMobile: "Vendee mobile",
+        vendeeEmail: "Vendee email",
+        vendeeRes: "Vendee residential address",
+        vendeePerm: "Vendee permanent address",
+        district: "District",
+        tehsil: "Tehsil",
+        areaType: "Area type",
+        villageD: "Village",
+        villageArea: "Village area",
+        areaCovered: "Area covered",
+        aKhewat: "Khewat (application)",
+        aKhata: "Khata (application)",
+        aKhasra: "Khasra (application)",
+        aOwnType: "Ownership type (application)",
+        aOwners: "No. of owners",
+        aOwnPct: "Ownership %",
+        applicantRemarks: "Applicant remarks",
+        areaProposed: "Area proposed for alienation (Patwari)",
+        cKhewat: "Khewat (certificate)",
+        cKhata: "Khata (certificate)",
+        cKhasra: "Khasra (certificate)",
+        cKanal: "Kanal",
+        cMarla: "Marla",
+        cSqft: "Sq. ft",
+        cOwnType: "Ownership type (certificate)",
+        owners: "Owner(s) with full description",
+        cultivator: "Cultivator/owner",
+        ownRecords: "Ownership as per revenue records",
+        shareKhewat: "Applicant share in khewat",
+        alienKhewat: "Already alienated in khewat",
+        shareKhasra: "Applicant share in khasra",
+        alienKhasra: "Already alienated in khasra",
+        cOwnType2: "Ownership type",
+        possession: "Applicant in possession",
+        encroach: "Encroachment of govt/common land",
+        consent: "Co-sharer consent",
+        litigation: "Court case / litigation",
+        masterPlan: "Under master/development plan",
+        vesting: "Vesting of Ownership Act 2001",
+        roshni: "Govt land in last 20 yrs / Roshni",
+        acquisition: "Under Land Acquisition Act",
+        mortgage: "Mortgaged / on lease",
+        municipal: "Within municipal limits",
+        fit: "Fit for alienation",
+        onspot: "On-spot position",
+        possDuration: "Duration of possession",
+        lat: "Latitude",
+        lng: "Longitude",
+        soil: "Kind of soil (Jamabandi)",
+        tatimaSource: "Source of tatima",
+        lambardar: "Lambardar/Chowkidar statement",
+        barred: "Barred from alienation under",
+        patRemarks: "Patwari remarks",
+        girRemarks: "Girdawar remarks",
+        ntRemarks: "Naib Tehsildar remarks",
+      },
+      o =
+        /^(mst|smt|mrs?|ms|sh|shri|late|haji|dr|mohd|mohammad|muhammad|md|gh|ghulam|ab|abdul)$/,
+      s = "rpTrackerSLA",
+      l = 864e5,
+      d = { Patwari: "pat", Girdawar: "gir", "Naib Tehsildar": "nt" },
+      c = { role: {}, village: {} },
+      p = [
+        "2026-01-05",
+        "2026-01-17",
+        "2026-01-26",
+        "2026-02-15",
+        "2026-03-17",
+        "2026-03-19",
+        "2026-03-20",
+        "2026-03-21",
+        "2026-03-26",
+        "2026-04-14",
+        "2026-05-01",
+        "2026-05-27",
+        "2026-05-28",
+        "2026-06-26",
+        "2026-07-05",
+        "2026-08-15",
+        "2026-08-26",
+        "2026-08-28",
+        "2026-09-04",
+        "2026-09-23",
+        "2026-10-02",
+        "2026-10-20",
+        "2026-10-26",
+        "2026-11-08",
+        "2026-11-24",
+        "2026-12-25",
+      ],
+      u = null,
+      f = ["Patwari", "Girdawar", "Naib Tehsildar"],
+      h = "rpTrackerSeen",
+      v = null,
+      m = "#b42318",
+      g = "#b26a00",
+      b = document.createElement("div");
+    b.style.cssText = "position:fixed;inset:0;z-index:2147483647;";
+    var y = b.attachShadow({ mode: "open" });
+    y.innerHTML =
+      '<style>:host{all:initial}*{box-sizing:border-box}.wrap{position:fixed;inset:0;background:#f4f5f7;color:#1d2330;font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:auto;-webkit-text-size-adjust:100%}.bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:8px;padding:10px 14px;background:#12355b;color:#fff}.bar b{font-size:16px;flex:1}.bar small{opacity:.8;font-weight:400;display:block;font-size:11px}button{font:inherit;border:0;border-radius:8px;padding:9px 14px;cursor:pointer;background:#e6e9ef;color:#1d2330}button.pri{background:#1a7f5a;color:#fff}button.x{background:transparent;color:#fff;font-size:22px;padding:2px 8px}.box{max-width:1100px;margin:0 auto;padding:14px}.card{background:#fff;border:1px solid #e1e4ea;border-radius:12px;padding:14px;margin-bottom:12px}.warn{background:#fff7e0;border-color:#f0d58a}.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:12px}.tile{background:#fff;border:1px solid #e1e4ea;border-radius:10px;padding:10px;cursor:pointer}.tile.on{outline:2px solid #12355b}.tile .n{font-size:24px;font-weight:700}.tile .l{font-size:12px;color:#5b6475}.prog{height:10px;background:#e1e4ea;border-radius:6px;overflow:hidden;margin:10px 0}.prog i{display:block;height:100%;background:#1a7f5a;width:0}.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}input.s{flex:1;min-width:180px;padding:9px 12px;border:1px solid #c9ced8;border-radius:8px;font:inherit}.chip{padding:6px 10px;border-radius:20px;background:#e6e9ef;font-size:12px}.chip.on{background:#12355b;color:#fff}table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}th,td{text-align:left;padding:8px;border-bottom:1px solid #eceef2;vertical-align:top}th{background:#f0f2f6;font-size:12px}tr.r{cursor:pointer}tr.r:hover{background:#f7f9fc}.st{display:inline-block;padding:2px 8px;border-radius:10px;font-size:12px;white-space:nowrap}.s0{background:#fde2e2;color:#8a1c1c}.s1{background:#fff0d6;color:#7a4b00}.s2{background:#dcecff;color:#123f7a}.s3{background:#dff5e8;color:#145c36}.s9{background:#eee;color:#555}.apps tr.lv-p,.apps tr.lv-p td{background:#fff7da}.apps tr.lv-p td:first-child{box-shadow:inset 5px 0 0 #d9a400}.apps tr.lv-g,.apps tr.lv-g td{background:#ddf3ef}.apps tr.lv-g td:first-child{box-shadow:inset 5px 0 0 #1f9184}.apps tr.lv-n,.apps tr.lv-n td{background:#ece5fb}.apps tr.lv-n td:first-child{box-shadow:inset 5px 0 0 #6b48c8}.apps tr.lv-t,.apps tr.lv-t td{background:#eceef2}.apps tr.lv-t td:first-child{box-shadow:inset 5px 0 0 #6b7385}@media(max-width:640px){.apps tr.lv-p{box-shadow:inset 5px 0 0 #d9a400}.apps tr.lv-g{box-shadow:inset 5px 0 0 #1f9184}.apps tr.lv-n{box-shadow:inset 5px 0 0 #6b48c8}.apps tr.lv-t{box-shadow:inset 5px 0 0 #6b7385}.apps tr.r td:first-child{box-shadow:none}}.lvl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.lv{border-radius:10px;padding:10px;cursor:pointer;border:1px solid #e1e4ea;background:#fff}.lv .n{font-size:22px;font-weight:700}.lv .l{font-size:12px;color:#5b6475}.lv.on{outline:2px solid #12355b}.lv.k-p{background:#fff7da;border-left:5px solid #d9a400}.lv.k-g{background:#ddf3ef;border-left:5px solid #1f9184}.lv.k-n{background:#ece5fb;border-left:5px solid #6b48c8}.lv.k-t{background:#eceef2;border-left:5px solid #6b7385}.lv.k-0{border-left:5px solid #c9ced8}input.num{width:56px;padding:6px;border:1px solid #c9ced8;border-radius:6px;font:inherit}select{padding:6px;border:1px solid #c9ced8;border-radius:6px;font:inherit;max-width:100%}table.tlv tr.vrow{cursor:pointer}table.tlv tr.vrow:hover td{background:#f7f9fc}table.tlv tr.sel td{background:#e4ecf7}table.tl td,table.tl th{padding:5px 8px}.d{font-weight:700}.d.hi{color:#c62828}.flag{color:#c62828;font-size:12px}.det td{background:#fafbfd;font-size:12px}.det p{margin:4px 0}.scroll{overflow-x:auto;border-radius:10px;border:1px solid #e1e4ea}h3{margin:0 0 8px;font-size:15px}.muted{color:#5b6475;font-size:12px}@media(max-width:640px){.apps thead{display:none}.apps tr.r{display:block;padding:8px 6px;border-bottom:1px solid #eceef2}.apps tr.r td{display:inline-block;border:0;padding:2px 10px 2px 0;vertical-align:top}.apps tr.det td{display:block}.bar b{font-size:15px}}.modal{font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1d2330;position:fixed;inset:0;z-index:10;background:rgba(10,20,35,.6);display:flex;align-items:center;justify-content:center;padding:10px}.modal[hidden]{display:none}.mbox{background:#fff;border-radius:12px;width:min(980px,100%);height:min(92vh,960px);display:flex;flex-direction:column;overflow:hidden}.mhead{display:flex;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #e1e4ea}.mhead b{flex:1;font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mbody{flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;background:#eef0f4}.mbody img{max-width:100%;max-height:100%;object-fit:contain}.mbody iframe{width:100%;height:100%;border:0;background:#fff}.docs{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.docs button{padding:6px 10px;font-size:12px;background:#e4ecf7;color:#12355b}</style><div class="wrap"><div class="bar"><b>Revenue Plus Tracker<small>Read-only — never submits or changes anything</small></b><button class="x" id="close">×</button></div><div id="rpscanbar" hidden style="position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #d5dbe6;box-shadow:0 3px 8px rgba(16,32,60,.08)"></div><div class="box" id="main"></div></div><div class="modal" id="modal" hidden><div class="mbox"><div class="mhead"><b id="mtitle"></b><span id="macts" style="display:flex;gap:6px"></span><button id="mclose">Close</button></div><div class="mbody" id="mbody"></div></div></div>';
+    var w = y.getElementById("main");
+    (y.getElementById("close").onclick = function () {
+      location.assign(k.split("#")[0]);
+    }),
+      (y.getElementById("mclose").onclick = function () {
+        !(function () {
+          S && (S.hidden = !0);
+          R && (URL.revokeObjectURL(R), (R = null));
+        })();
+      }),
+      (y.getElementById("close").title = "Close and reload the dashboard");
+    var x = null,
+      k = location.href,
+      A = !1,
+      T = !1,
+      P = !1,
+      E = {
+        logout:
+          "Your Revenue Plus login has ended (the portal logs out after some time without use). Log in again, open the Dashboard, run Tracker and tap “Show last scan”. The documents will open again.",
+        gone: "This application is no longer in the pending list on the Dashboard. It may have been processed since the scan. Run a new scan.",
+        nolist: "The Dashboard did not show an application list when reloaded.",
+      },
+      S = null,
+      R = null,
+      N = {
+        stage: "",
+        age: "",
+        q: "",
+        flags: !1,
+        errs: !1,
+        scr: !1,
+        level: "",
+        village: "",
+        over: "",
+        tlBy: "village",
+        tlEdit: !1,
+        open: {},
+      },
+      O = [
+        ["None", "k-0", "", "No action yet"],
+        ["Patwari", "k-p", "lv-p", "Last comment: Patwari"],
+        ["Girdawar", "k-g", "lv-g", "Last comment: Girdawar"],
+        ["Naib Tehsildar", "k-n", "lv-n", "Last comment: Naib Tehsildar"],
+        ["Tehsildar", "k-t", "lv-t", "Last comment: Tehsildar (later)"],
+      ];
+    (window.__rpTracker = {
+      open: me,
+      _recordSeen: de,
+      _resetSeen: function () {
+        v = null;
+      },
+      _dayNum: ie,
+      _compliance: ce,
+      _scrutiny: H,
+      _caseText: W,
+      _stage: Q,
+      _jsDocUrl: function (e, t, a) {
+        var r = j(e);
+        return Pe(F(r)[t], r, a);
+      },
+      _parseDetail: I,
+      _parseList: G,
+      _stageOf: Q,
+    }),
+      me();
+  }
+  function D(e) {
+    return String(null == e ? "" : e)
+      .replace(/ /g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function C(e) {
+    return new Promise(function (t) {
+      setTimeout(t, e);
+    });
+  }
+  function L(e) {
+    return D(e).replace(/[&<>"']/g, function (e) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      }[e];
+    });
+  }
+  function j(e) {
+    return new DOMParser().parseFromString(e, "text/html");
+  }
+  function M(e) {
+    return (
+      !(e = D(e)) ||
+      /^(report\s*)?pending\.?$/i.test(e) ||
+      /^(na|n\/a|-+|nil|none)$/i.test(e)
+    );
+  }
+  function K(e) {
+    var t = new URLSearchParams();
+    return (
+      Array.prototype.forEach.call(e.elements, function (e) {
+        if (e.name && !e.disabled) {
+          var a = (e.type || "").toLowerCase();
+          ["submit", "button", "image", "reset", "file"].indexOf(a) >= 0 ||
+            ((("checkbox" !== a && "radio" !== a) || e.checked) &&
+              ("select-multiple" !== a
+                ? t.append(e.name, e.value)
+                : Array.prototype.forEach.call(e.options, function (a) {
+                    a.selected && t.append(e.name, a.value);
+                  })));
+        }
+      }),
+      t.set("__EVENTTARGET", ""),
+      t.set("__EVENTARGUMENT", ""),
+      t
+    );
+  }
+  function B(e) {
+    return Array.prototype.filter.call(
+      e.querySelectorAll("input[type=submit],button"),
+      function (e) {
+        return (
+          /process/i.test((e.value || "") + " " + (e.textContent || "")) &&
+          e.name
+        );
+      },
+    );
+  }
+  function G(e) {
+    var t = B(e),
+      a = [];
+    if (!t.length) return a;
+    for (
+      var r = t[0].closest("table"),
+        n = [],
+        i = r ? Array.prototype.slice.call(r.querySelectorAll("tr")) : [],
+        o = 0;
+      o < i.length;
+      o++
+    )
+      if (/application\s*no/i.test(i[o].textContent) && !B(i[o]).length) {
+        n = Array.prototype.map.call(i[o].children, function (e) {
+          return D(e.textContent);
+        });
+        break;
+      }
+    function s(e, t) {
+      for (var a in e) if (t.test(a)) return e[a];
+      return "";
+    }
+    return (
+      t.forEach(function (t) {
+        var r = t.closest("tr");
+        if (r) {
+          var i = Array.prototype.map.call(r.children, function (e) {
+              return D(e.textContent);
+            }),
+            o = {};
+          n.forEach(function (e, t) {
+            e && (o[e] = i[t] || "");
+          }),
+            a.push({
+              appNo: s(o, /application\s*no/i) || i[0] || "",
+              name: s(o, /name/i),
+              mobile: s(o, /mobile/i),
+              village: s(o, /village/i),
+              khasra: s(o, /khasra/i),
+              purpose: s(o, /purpose/i),
+              appDate: s(o, /application\s*date/i),
+              revert: parseInt(s(o, /revert/i), 10) || 0,
+              days: parseInt(s(o, /days/i), 10) || 0,
+              btnName: t.name,
+              btnValue: t.value || "Process",
+              form: t.form || e.forms[0],
+            });
+        }
+      }),
+      a
+    );
+  }
+  function I(e) {
+    var t = j(e),
+      a = D(t.body ? t.body.textContent : ""),
+      i = [];
+    r.forEach(function (e) {
+      var t = e[1].exec(a);
+      t && i.push({ k: e[0], s: t.index, e: t.index + t[0].length });
+    }),
+      i.sort(function (e, t) {
+        return e.s - t.s;
+      });
+    var o = { ok: !1 };
+    function s(e) {
+      var t = e.exec(a);
+      return t ? D(t[1]) : "";
+    }
+    i.forEach(function (e, t) {
+      if ("_stop" !== e.k) {
+        var r = t + 1 < i.length ? i[t + 1].s : Math.min(a.length, e.e + 500);
+        (o[e.k] = D(a.slice(e.e, r)).slice(0, 500)), (o.ok = !0);
+      }
+    }),
+      (o.khewat = s(/Khewat\s*No\.?\s*:\s*(\S+)/i)),
+      (o.khata = s(/Khata\s*No\.?\s*:\s*(\S+)/i)),
+      (o.patReportPending =
+        /Owner\(s\) name with full description\s*:\s*Report Pending/i.test(a)),
+      (o.vendee = s(/Name of Vendee\s*(.{0,80}?)\s*Parentage of Vendee/i)),
+      (o.area = s(
+        /Area Proposed for Alienation[^:]{0,60}?Purpose\s*:?\s*(.{0,60}?)\s*(?:Tatima|Other Supporting|Certificate Details)/i,
+      )),
+      /Area Proposed for Alienation/i.test(a)
+        ? (o.patTopPending = !o.area || /report\s*pending/i.test(o.area))
+        : (o.patTopPending = o.patReportPending),
+      o.patTopPending && (o.area = ""),
+      (o.docs = F(t).map(function (e, t) {
+        return { i: t, label: $(e) };
+      }));
+    try {
+      (o.fields = (function (e) {
+        var t = (function (e) {
+            var t = e.body.cloneNode(!0);
+            return (
+              Array.prototype.forEach.call(
+                t.querySelectorAll(
+                  "script,style,noscript,option:not([selected])",
+                ),
+                function (e) {
+                  e.remove();
+                },
+              ),
+              Array.prototype.forEach.call(
+                t.querySelectorAll("input"),
+                function (t) {
+                  var a = (t.getAttribute("type") || "text").toLowerCase();
+                  [
+                    "hidden",
+                    "submit",
+                    "button",
+                    "image",
+                    "reset",
+                    "file",
+                    "password",
+                  ].indexOf(a) >= 0
+                    ? t.remove()
+                    : ("checkbox" !== a && "radio" !== a) ||
+                        t.hasAttribute("checked")
+                      ? t.replaceWith(
+                          e.createTextNode(
+                            " " + (t.getAttribute("value") || "") + " ",
+                          ),
+                        )
+                      : t.remove();
+                },
+              ),
+              Array.prototype.forEach.call(
+                t.querySelectorAll(
+                  "br,p,div,tr,li,label,h1,h2,h3,h4,h5,td,th,span,b,strong",
+                ),
+                function (e) {
+                  e.insertAdjacentText("beforebegin", " "),
+                    e.insertAdjacentText("afterend", " ");
+                },
+              ),
+              D(t.textContent)
+            );
+          })(e),
+          a = 0,
+          r = [];
+        n.forEach(function (e) {
+          var n = new RegExp(e[1].replace(/ /g, "\\s+"), "i").exec(t.slice(a));
+          if (n) {
+            var i = a + n.index;
+            r.push({ k: e[0], s: i, e: i + n[0].length }),
+              (a = i + n[0].length);
+          }
+        });
+        var i = {};
+        return (
+          r.forEach(function (e, a) {
+            if ("_" !== e.k.charAt(0)) {
+              var n = D(
+                t.slice(e.e, a + 1 < r.length ? r[a + 1].s : e.e + 300),
+              ).replace(/^[:\-\s]+/, "");
+              /^View Uploaded Document/i.test(n) && (n = ""),
+                (i[e.k] = n.slice(0, 600));
+            }
+          }),
+          (function () {
+            // Aadhaar check digit (Verhoeff) — only the result is kept, never the number
+            var am = /Aadhaar\s*No\.?\s*of\s*Vendee\s*[:\-]?\s*(\d{4}\s?\d{4}\s?\d{4})(?!\d)/i.exec(t);
+            if (!am) return;
+            var num = am[1].replace(/\s/g, ""),
+              vd = [[0,1,2,3,4,5,6,7,8,9],[1,2,3,4,0,6,7,8,9,5],[2,3,4,0,1,7,8,9,5,6],[3,4,0,1,2,8,9,5,6,7],[4,0,1,2,3,9,5,6,7,8],[5,9,8,7,6,0,4,3,2,1],[6,5,9,8,7,1,0,4,3,2],[7,6,5,9,8,2,1,0,4,3],[8,7,6,5,9,3,2,1,0,4],[9,8,7,6,5,4,3,2,1,0]],
+              vp = [[0,1,2,3,4,5,6,7,8,9],[1,5,7,6,2,8,3,0,9,4],[5,8,0,3,7,9,6,1,4,2],[8,9,1,6,0,4,3,5,2,7],[9,4,5,3,1,2,6,8,7,0],[4,2,8,6,5,7,3,9,0,1],[2,7,9,3,8,0,6,4,1,5],[7,0,4,6,9,1,3,2,5,8]],
+              c = 0,
+              rv = num.split("").reverse();
+            for (var q = 0; q < rv.length; q++) c = vd[c][vp[q % 8][+rv[q]]];
+            i.vendeeAadhaarOk = 0 === c && !/^[01]/.test(num) ? "valid" : "invalid";
+          })(),
+          i
+        );
+      })(t)),
+        (o.adj = (function (e) {
+          var t = Array.prototype.find.call(
+            e.querySelectorAll("table"),
+            function (e) {
+              return (
+                /north/i.test(e.textContent) &&
+                /south/i.test(e.textContent) &&
+                /west/i.test(e.textContent)
+              );
+            },
+          );
+          if (!t) return null;
+          var a = Array.prototype.map.call(
+              t.querySelectorAll("tr"),
+              function (e) {
+                return Array.prototype.map.call(e.children, function (e) {
+                  return D(e.textContent);
+                });
+              },
+            ),
+            r = a[0] || [],
+            n = {};
+          return (
+            a.slice(1).forEach(function (e) {
+              var t = /owner/i.test(e[0])
+                ? "owner"
+                : /khasra/i.test(e[0])
+                  ? "khasra"
+                  : e[0];
+              r.forEach(function (a, r) {
+                r && a && ((n[a] = n[a] || {}), (n[a][t] = e[r] || ""));
+              });
+            }),
+            n
+          );
+        })(t)),
+        (o.mut = (function (e) {
+          var t = { gist: [], final: [] };
+          return (
+            Array.prototype.forEach.call(
+              e.querySelectorAll("table"),
+              function (e) {
+                var a = e.querySelector("tr");
+                if (
+                  a &&
+                  /mutation/i.test(a.textContent) &&
+                  !/forwarded/i.test(a.textContent)
+                ) {
+                  var r =
+                    (function (e) {
+                      for (
+                        var t = e, a = 0;
+                        t && a < 4;
+                        t = t.parentElement, a++
+                      )
+                        for (
+                          var r = t.previousElementSibling;
+                          r;
+                          r = r.previousElementSibling
+                        ) {
+                          var n = D(r.textContent);
+                          if (n) return n.slice(0, 120);
+                        }
+                      return "";
+                    })(e) +
+                    " " +
+                    (e.closest("div")
+                      ? D(e.closest("div").textContent).slice(0, 80)
+                      : "");
+                  (/final/i.test(r) ? t.final : t.gist).push.apply(
+                    /final/i.test(r) ? t.final : t.gist,
+                    (function (e) {
+                      var t = Array.prototype.slice.call(
+                        e.querySelectorAll("tr"),
+                      );
+                      if (!t.length) return [];
+                      var a = Array.prototype.map.call(
+                        t[0].children,
+                        function (e) {
+                          return D(e.textContent);
+                        },
+                      );
+                      return t
+                        .slice(1)
+                        .map(function (e) {
+                          var t = {};
+                          return (
+                            Array.prototype.forEach.call(
+                              e.children,
+                              function (e, r) {
+                                t[a[r] || "col" + r] = D(e.textContent);
+                              },
+                            ),
+                            t
+                          );
+                        })
+                        .filter(function (e) {
+                          return Object.keys(e).some(function (t) {
+                            return e[t];
+                          });
+                        });
+                    })(e),
+                  );
+                }
+              },
+            ),
+            t
+          );
+        })(t));
+    } catch (e) {
+      o.fields = o.fields || {};
+    }
+    o.history = [];
+    var l = Array.prototype.find.call(
+      t.querySelectorAll("table"),
+      function (e) {
+        var t = e.querySelector("tr");
+        return t && /forwarded\s*by/i.test(t.textContent);
+      },
+    );
+    return (
+      l &&
+        (Array.prototype.slice
+          .call(l.querySelectorAll("tr"), 1)
+          .forEach(function (e) {
+            var t = Array.prototype.map.call(e.children, function (e) {
+              return D(e.textContent);
+            });
+            if (!(t.length < 3) && t[1]) {
+              var a = t[t.length - 1];
+              o.history.push({
+                by: t[1],
+                remark: t.slice(2, t.length - 1).join(" "),
+                date: a,
+                t: J(a),
+              });
+            }
+          }),
+        o.history.length && (o.ok = !0)),
+      o
+    );
+  }
+  function U(e) {
+    if (!(e = String(e || "").toLowerCase()) || /pending|^na$|^nil/.test(e))
+      return null;
+    var t = /(\d+(?:\.\d+)?)\s*k(?:anal|nl)?\b/.exec(e),
+      a = /(\d+(?:\.\d+)?)\s*m(?:arla|rl)?\b/.exec(e),
+      r = /(\d+(?:\.\d+)?)\s*s(?:arsai|rs)\b/.exec(e),
+      n = /(\d+(?:\.\d+)?)\s*(?:sq\.?\s*ft|sqft|square\s*feet|sft)\b/.exec(e);
+    return t || a || r || n
+      ? (t ? 20 * +t[1] : 0) +
+          (a ? +a[1] : 0) +
+          (r ? +r[1] / 9 : 0) +
+          (n ? +n[1] / 272.25 : 0)
+      : null;
+  }
+  function q(e) {
+    if (null == e) return "—";
+    var t = Math.floor(e / 20 + 1e-9);
+    return (t ? t + " K " : "") + Math.round(100 * (e - 20 * t)) / 100 + " M";
+  }
+  function V(e, t) {
+    var a = String(t || "")
+        .toLowerCase()
+        .replace(/[^a-z ]/g, " ")
+        .split(/\s+/)
+        .filter(Boolean),
+      r = String(e || "")
+        .toLowerCase()
+        .replace(/[^a-z ]/g, " ")
+        .split(/\s+/)
+        .filter(function (e) {
+          return e && !o.test(e);
+        });
+    return r.length && a.length
+      ? a.some(function (e) {
+          return (
+            1 -
+              (function (e, t) {
+                for (var a = [], r = 0; r <= e.length; r++) a[r] = [r];
+                for (var n = 0; n <= t.length; n++) a[0][n] = n;
+                for (r = 1; r <= e.length; r++)
+                  for (n = 1; n <= t.length; n++)
+                    a[r][n] = Math.min(
+                      a[r - 1][n] + 1,
+                      a[r][n - 1] + 1,
+                      a[r - 1][n - 1] + (e[r - 1] === t[n - 1] ? 0 : 1),
+                    );
+                return a[e.length][t.length];
+              })(r[0], e) /
+                Math.max(r[0].length, e.length) >=
+            0.75
+          );
+        })
+      : null;
+  }
+  function _(e) {
+    return /^\s*(yes|y|haan|ha)\b/i.test(e || "");
+  }
+  function z(e) {
+    return /^\s*(no|n|nil|nill|none|na)\b/i.test(e || "");
+  }
+  function H(e) {
+    var t = e.fields || {},
+      a = [];
+    function r(e, t) {
+      a.push({ l: e, t: t });
+    }
+    if (!e.fields) return a;
+    if ("Pending" === e.patReport)
+      r("info", "Patwari report not yet submitted — report checks skipped.");
+    else {
+      _(t.roshni) &&
+        r("red", "Govt land in last 20 years / Roshni: " + t.roshni),
+        _(t.encroach) &&
+          r("red", "Encroachment of govt/common land: " + t.encroach),
+        _(t.litigation) && r("red", "Court case / litigation: " + t.litigation),
+        _(t.acquisition) &&
+          r("red", "Under Land Acquisition Act: " + t.acquisition),
+        _(t.vesting) &&
+          r("red", "Given under Vesting of Ownership Act 2001: " + t.vesting),
+        t.fit &&
+          z(t.fit) &&
+          r("red", "Patwari says land is NOT fit for alienation."),
+        !t.barred ||
+          z(t.barred) ||
+          /pending/i.test(t.barred) ||
+          r("red", "Barred from alienation under: " + t.barred),
+        _(t.mortgage) && r("amber", "Mortgaged / on lease: " + t.mortgage),
+        t.possession &&
+          z(t.possession) &&
+          r("amber", "Applicant not in possession."),
+        _(t.masterPlan) &&
+          r("amber", "Under master/development plan: " + t.masterPlan),
+        (+t.aOwners > 1 ||
+          (t.aOwnPct && +t.aOwnPct < 100) ||
+          /joint/i.test(t.cOwnType + " " + t.aOwnType)) &&
+          !_(t.consent) &&
+          r(
+            "amber",
+            'Joint holding but co-sharer consent is "' +
+              (t.consent || "blank") +
+              '".',
+          );
+      var n = U(t.areaProposed),
+        i = U(t.shareKhewat),
+        o = U(t.alienKhewat) || 0;
+      null != n &&
+        null != i &&
+        n > i - o + 0.01 &&
+        r(
+          "red",
+          "Area proposed (" +
+            q(n) +
+            ") exceeds share in khewat less already alienated (" +
+            q(i - o) +
+            ").",
+        );
+      var s =
+        20 * (+t.cKanal || 0) + (+t.cMarla || 0) + (+t.cSqft || 0) / 272.25;
+      null != n &&
+        s &&
+        Math.abs(n - s) > 0.05 &&
+        r(
+          "amber",
+          "Area proposed (" +
+            q(n) +
+            ") differs from certificate area (" +
+            q(s) +
+            ").",
+        ),
+        t.shareKhasra &&
+          /^\s*k(anal)?\s*$/i.test(t.shareKhasra) &&
+          r(
+            "amber",
+            'Share in khasra has no figure ("' + t.shareKhasra + '").',
+          ),
+        /pending/i.test(t.lambardar || "") &&
+          r("amber", 'Lambardar/Chowkidar statement still "Report Pending".'),
+        (D(t.lat) && D(t.lng)) ||
+          r("info", "Spot latitude/longitude not recorded.");
+      var l = String(t.applicant || e.name || "")
+          .split(/\s+and\s+|,|&/i)
+          .map(D)
+          .filter(Boolean),
+        d = [t.owners, t.ownRecords]
+          .concat(
+            ((e.mut && e.mut.final) || []).map(function (e) {
+              return Object.keys(e)
+                .map(function (t) {
+                  return e[t];
+                })
+                .join(" ");
+            }),
+          )
+          .join(" "),
+        c = l.filter(function (e) {
+          return !1 === V(e, d);
+        });
+      c.length &&
+        r(
+          "amber",
+          "Applicant name not found in owner details / final mutation: " +
+            c.join(", ") +
+            ".",
+        );
+    }
+    return (
+      t.aKhasra &&
+        t.cKhasra &&
+        !/pending/i.test(t.cKhasra) &&
+        D(t.aKhasra).toLowerCase() !== D(t.cKhasra).toLowerCase() &&
+        r(
+          "amber",
+          "Khasra on application (" +
+            t.aKhasra +
+            ") ≠ certificate (" +
+            t.cKhasra +
+            ").",
+        ),
+      t.aKhewat &&
+        t.cKhewat &&
+        !/pending/i.test(t.cKhewat) &&
+        D(t.aKhewat) !== D(t.cKhewat) &&
+        r(
+          "amber",
+          "Khewat on application (" +
+            t.aKhewat +
+            ") ≠ certificate (" +
+            t.cKhewat +
+            ").",
+        ),
+      e.mut &&
+        !e.mut.final.length &&
+        "Pending" !== e.patReport &&
+        r("amber", "No final mutation in the applicant's name is shown."),
+      (e.history || []).some(function (e) {
+        return /already issued|stands issued|previously issued/i.test(e.remark);
+      }) && r("info", "A remark says a Fard was already issued for this land."),
+      e.revert >= 2 && r("info", "Reverted " + e.revert + " times."),
+      a
+    );
+  }
+  function W(e) {
+    var t = e.fields || {},
+      a = [];
+    a.push(
+      "Please scrutinise this Revenue Plus application as a Naib Tehsildar in J&K would. Check ownership and share, area proposed against share and earlier alienations, restrictions (State/Kahcharai land, Roshni, Land Acquisition, Agrarian Reforms / Vesting Act 2001, mortgage, litigation, municipal or master-plan limits), consistency between the application, the Patwari report and the mutation record, and the movement history (delays, reverts). List the issues by severity, say what is missing, and draft a suitable remark and next action.",
+    ),
+      a.push(
+        "",
+        "## Application",
+        "Service: " +
+          (t.svcType || e.service) +
+          " · Application no.: " +
+          e.appNo +
+          " · Purpose: " +
+          e.purpose +
+          " · Applied/resubmitted: " +
+          e.appDate +
+          " · Revert count: " +
+          e.revert +
+          " · Days passed (portal): " +
+          e.days,
+      ),
+      a.push(
+        "Current stage (tracker): " +
+          e.stage +
+          (e.holder ? " — " + e.holder : "") +
+          (null != e.stageDays
+            ? ", " + e.stageDays + " days at this stage"
+            : "") +
+          " · Patwari report: " +
+          (e.patReport || "?"),
+      );
+    var r = {
+      mobileD: 1,
+      email: 1,
+      vendeeMobile: 1,
+      vendeeEmail: 1,
+      appNoD: 1,
+      svcType: 1,
+    };
+    a.push("", "## Details on the portal"),
+      Object.keys(i).forEach(function (e) {
+        !r[e] && t[e] && a.push("- " + i[e] + ": " + t[e]);
+      }),
+      e.adj &&
+        (a.push("", "## Adjoining khasras"),
+        Object.keys(e.adj).forEach(function (t) {
+          a.push(
+            "- " +
+              t +
+              ": khasra " +
+              (e.adj[t].khasra || "—") +
+              ", owner " +
+              (e.adj[t].owner || "—"),
+          );
+        })),
+      e.mut &&
+        [
+          ["gist", "Successive mutations on this land"],
+          ["final", "Final mutation in which applicant's name appears"],
+        ].forEach(function (t) {
+          a.push("", "## " + t[1]);
+          var r = e.mut[t[0]] || [];
+          r.length || a.push("- None shown"),
+            r.forEach(function (e) {
+              a.push(
+                "- " +
+                  Object.keys(e)
+                    .filter(function (t) {
+                      return e[t];
+                    })
+                    .map(function (t) {
+                      return t + ": " + e[t];
+                    })
+                    .join("; "),
+              );
+            });
+        }),
+      a.push("", "## Movement of file (Members Remarks)"),
+      (e.history || []).forEach(function (e, t) {
+        a.push(
+          t + 1 + ". " + (Z(e.t) || e.date) + " — " + e.by + ": " + e.remark,
+        );
+      });
+    var n = H(e);
+    return (
+      n.length &&
+        (a.push("", "## Automatic checks already flagged"),
+        n.forEach(function (e) {
+          a.push("- [" + e.l + "] " + e.t);
+        })),
+      a.push(
+        "",
+        "Note: on this portal the “Patwari / Naib Tehsildar Remarks” lines near the end often stay “Report Pending” even after action. The Members Remarks history is the real record. Whether the Patwari report is in is shown by “Area proposed for alienation (Patwari)”.",
+      ),
+      a.push(
+        "",
+        "(Mobile numbers, emails and Aadhaar are left out on purpose.)",
+      ),
+      a.join("\n")
+    );
+  }
+  function F(e) {
+    return Array.prototype.filter.call(
+      e.querySelectorAll(
+        "a,input[type=submit],input[type=button],input[type=image],button",
+      ),
+      function (e) {
+        return /(view|download)\s*uploaded\s*doc/i.test(
+          (e.value || "") +
+            " " +
+            (e.textContent || "") +
+            " " +
+            (e.getAttribute("title") || ""),
+        );
+      },
+    );
+  }
+  function $(e) {
+    if (/download/i.test((e.value || "") + " " + e.textContent))
+      return "All documents (download)";
+    for (var t = e, a = 0; a < 4 && t; a++) {
+      for (var r = t.previousElementSibling; r; r = r.previousElementSibling) {
+        var n = D(r.textContent);
+        if (n && n.length < 70 && !/uploaded\s*doc/i.test(n))
+          return n.replace(/\s*:$/, "");
+        if (n && /uploaded\s*doc/i.test(n)) break;
+      }
+      t = t.parentElement;
+    }
+    return "Document";
+  }
+  function J(e) {
+    var t = /([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/.exec(e);
+    if (t) {
+      var a = new Date(t[1] + " " + t[2] + " " + t[3]).getTime();
+      if (!isNaN(a)) return a;
+    }
+    if ((t = /(\d{1,2})\s+([A-Za-z]{3})[a-z]*\.?,?\s+(\d{4})/.exec(e))) {
+      var r = new Date(t[2] + " " + t[1] + " " + t[3]).getTime();
+      if (!isNaN(r)) return r;
+    }
+    return (t = /(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4})/.exec(e))
+      ? new Date(+t[3], +t[2] - 1, +t[1]).getTime()
+      : 0;
+  }
+  function X(e) {
+    return (
+      (e = String(e || "").toUpperCase()),
+      /^TEH/.test(e)
+        ? "Tehsildar"
+        : /^NT/.test(e)
+          ? "Naib Tehsildar"
+          : /^(GIR|GD|GQ|GR)/.test(e)
+            ? "Girdawar"
+            : /^(PAT|PT)/.test(e)
+              ? "Patwari"
+              : ""
+    );
+  }
+  function Y(e) {
+    var t = X(e);
+    if (!t) return e;
+    var a = String(e).replace(/^(TEH|NT|GIR|GD|GQ|GR|PAT|PT)/i, "");
+    return (
+      t +
+      ((a = a.charAt(0).toUpperCase() + a.slice(1).toLowerCase())
+        ? " " + a
+        : "")
+    );
+  }
+  function Z(e) {
+    return e
+      ? new Date(e).toLocaleDateString("en-IN", {
+          day: "2-digit",
+          month: "short",
+        })
+      : "";
+  }
+  // An officer's remark field (bottom of the page) is filled although Members Remarks has no entry yet
+  function rpFieldDone(o, role) {
+    var v = "Girdawar" === role ? o.gir : "Naib Tehsildar" === role ? o.nt : null;
+    return !!v && !M(v) && !/^\s*report\s*pending/i.test(v) && D(v).length > 8;
+  }
+  function Q(e) {
+    return e && e.ok
+      ? e.history && e.history.length
+        ? (function (e, t) {
+            var a,
+              r = e[e.length - 1],
+              n = X(r.by),
+              i = r.remark,
+              o = /revert|reject|return|mismatch|deficien|not legible/i;
+            a =
+              "Patwari" === n
+                ? "Girdawar"
+                : "Girdawar" === n
+                  ? "Naib Tehsildar"
+                  : "Naib Tehsildar" === n
+                    ? /patwari[^.]{0,60}\bdirected\b|\bdirected\b[^.]{0,60}patwari/i.test(
+                        i,
+                      )
+                      ? "Patwari"
+                      : "Tehsildar"
+                    : "Tehsildar" === n
+                      ? ae(i)
+                        ? "Applicant"
+                        : "Patwari"
+                      : "";
+            var fieldNote = "";
+            for (var hop = 0; hop < 2; hop++) {
+              if ("Girdawar" === a && t && rpFieldDone(t, "Girdawar"))
+                (a = "Naib Tehsildar"), (fieldNote = "Girdawar");
+              else if ("Naib Tehsildar" === a && t && rpFieldDone(t, "Naib Tehsildar"))
+                (a = "Tehsildar"), (fieldNote = "Naib Tehsildar");
+            }
+            for (
+              var s =
+                  "Applicant" === a
+                    ? "Returned to applicant"
+                    : a
+                      ? "With " + a
+                      : "Unknown holder",
+                l = a,
+                d = e.length - 1;
+              d >= 0;
+              d--
+            )
+              if (X(e[d].by) === a) {
+                l = Y(e[d].by);
+                break;
+              }
+            for (var c = 0, p = 1; p < e.length; p++) {
+              var u = X(e[p - 1].by),
+                f = X(e[p].by);
+              ("Naib Tehsildar" !== u && "Girdawar" !== u) ||
+                "Patwari" !== f ||
+                c++,
+                "Tehsildar" === f && ae(e[p].remark) && c++;
+            }
+            for (var h = [], v = -1, m = e.length - 1; m >= 0; m--)
+              if ("Tehsildar" === X(e[m].by)) {
+                v = m;
+                break;
+              }
+            var g = e.slice(v + 1).filter(function (e) {
+              var t = X(e.by);
+              return "Girdawar" === t || "Naib Tehsildar" === t;
+            });
+            t &&
+              t.patTopPending &&
+              g.length &&
+              h.push(
+                "Error: " +
+                  Y(g[0].by) +
+                  " acted but Patwari report is “Report Pending”",
+              );
+            c && h.push("Sent back " + c + "×");
+            fieldNote &&
+              h.push(fieldNote + " remark is on the page but not yet in Members Remarks — treated as done");
+            "Tehsildar" !== n &&
+              o.test(i) &&
+              h.push(Y(r.by) + " suggests revert/rejection");
+            var b = "Tehsildar" === X(e[0].by) ? e.slice(1) : e.slice(),
+              y = b.length ? b[b.length - 1] : null;
+            return {
+              level: fieldNote ? fieldNote : y ? X(y.by) || "Other" : "None",
+              levelBy: fieldNote ? fieldNote : y ? Y(y.by) : "",
+              levelT: fieldNote ? 0 : y ? y.t : 0,
+              stage: s,
+              holder: l,
+              flag: h.join("; "),
+              lastBy: Y(r.by),
+              lastT: r.t,
+              lastRemark: i,
+              patReport: t ? (t.patTopPending ? "Pending" : "Submitted") : "",
+              stageDays: r.t
+                ? Math.max(0, Math.floor((Date.now() - r.t) / 864e5))
+                : null,
+              history: e.map(function (e) {
+                return { by: Y(e.by), remark: e.remark, t: e.t, date: e.date };
+              }),
+            };
+          })(e.history, e)
+        : (function (e) {
+            "patTopPending" in e &&
+              (e = Object.assign({}, e, {
+                pat: e.patTopPending
+                  ? "Report Pending"
+                  : M(e.pat)
+                    ? "Report submitted"
+                    : e.pat,
+              }));
+            var t = [
+                ["Patwari", "pat"],
+                ["Girdawar", "gir"],
+                ["Naib Tehsildar", "nt"],
+                ["Tehsildar", "teh"],
+              ].filter(function (t) {
+                return t[1] in e;
+              }),
+              a = -1;
+            t.forEach(function (t, r) {
+              M(e[t[1]]) || (a = r);
+            });
+            var r,
+              n = [];
+            e.patTopPending &&
+              t.slice(1).some(function (t) {
+                return !M(e[t[1]]);
+              }) &&
+              n.push(
+                "Error: later officer acted but Patwari report is “Report Pending”",
+              );
+            r =
+              a + 1 < t.length
+                ? "With " + t[a + 1][0]
+                : "teh" in e
+                  ? "Tehsildar acted"
+                  : "With Tehsildar";
+            return {
+              stage: r,
+              flag: n.join("; "),
+              patReport: e.patTopPending ? "Pending" : "Submitted",
+            };
+          })(e)
+      : { stage: "Could not read", flag: "" };
+  }
+  function ee() {
+    var e = { pat: 5, gir: 7, nt: 9, mode: "app" };
+    try {
+      Object.assign(e, JSON.parse(localStorage.getItem(s) || "{}"));
+    } catch (e) {}
+    return "stage" !== e.mode && (e.mode = "app"), e;
+  }
+  function te(e) {
+    return (
+      (e = String(e || "")),
+      /^Naib Tehsildar/i.test(e)
+        ? "Naib Tehsildar"
+        : /^Tehsildar/i.test(e)
+          ? "Tehsildar"
+          : /^Patwari/i.test(e)
+            ? "Patwari"
+            : /^Girdawar/i.test(e)
+              ? "Girdawar"
+              : X(e)
+    );
+  }
+  function ae(e) {
+    return !/process\s*under\s*rules|forward|marked\s*to|to\s*(the\s*)?patwari/i.test(
+      e || "",
+    );
+  }
+  function re(e, t) {
+    return "Patwari" === e
+      ? c.village[t.village || "—"] || c.role.Patwari || e
+      : c.role[e] || e;
+  }
+  function ne(e) {
+    return (
+      e.getFullYear() +
+      "-" +
+      ("0" + (e.getMonth() + 1)).slice(-2) +
+      "-" +
+      ("0" + e.getDate()).slice(-2)
+    );
+  }
+  function ie(e, t) {
+    var a =
+        u ||
+        ((u = {}),
+        (ee().holidays || p).forEach(function (e) {
+          u[e] = 1;
+        }),
+        u),
+      r = 0,
+      n = new Date(e);
+    n.setHours(0, 0, 0, 0);
+    var i = new Date(t);
+    i.setHours(0, 0, 0, 0);
+    for (var o = 0; n < i && o < 3e3; o++)
+      n.setDate(n.getDate() + 1), 0 === n.getDay() || a[ne(n)] || r++;
+    return r;
+  }
+  function oe(e) {
+    var t = String(e.appDate || "").split("/"),
+      a = J(t[0] || ""),
+      r = J(t[1] || "");
+    return {
+      applied: a,
+      resub: r && r >= a ? r : 0,
+      base: r && r >= a ? r : a,
+    };
+  }
+  function se() {
+    if (v) return v;
+    try {
+      v = JSON.parse(localStorage.getItem(h) || "{}");
+    } catch (e) {
+      v = {};
+    }
+    return v;
+  }
+  function le(e) {
+    var t = oe(e);
+    return e.appNo + "|" + (t.base ? ne(new Date(t.base)) : "");
+  }
+  function de(e, t) {
+    var a = se();
+    e.forEach(function (e) {
+      if ("Pending" === e.patReport || "Submitted" === e.patReport) {
+        var r = le(e),
+          n = (a[r] = a[r] || {});
+        "Pending" === e.patReport
+          ? n.sub || (n.pend = Math.max(n.pend || 0, t))
+          : n.sub || (n.sub = t),
+          (n.touch = t);
+      }
+    });
+    var r = t - 200 * l;
+    Object.keys(a).forEach(function (e) {
+      (a[e].touch || 0) < r && delete a[e];
+    });
+    try {
+      localStorage.setItem(h, JSON.stringify(a));
+    } catch (e) {}
+  }
+  function ce(e, t) {
+    var a = e.history || [];
+    t = t || ee();
+    var r,
+      n,
+      i,
+      o = ((r = new Date()).setHours(0, 0, 0, 0), r.getTime()),
+      s = [],
+      l = oe(e);
+    if ("stage" !== t.mode && l.base) {
+      var c = [];
+      c.push({ base: l.base, end: 0, earlier: !1 });
+      var p = "Returned to applicant" === e.stage;
+      c.forEach(function (r) {
+        f.forEach(function (n) {
+          for (var i = +t[d[n]], c = null, u = 0; u < a.length; u++) {
+            var f = a[u].t;
+            if (
+              f &&
+              f >= r.base &&
+              (!r.end || f < r.end) &&
+              te(a[u].by) === n
+            ) {
+              c = a[u];
+              break;
+            }
+          }
+          var h = { role: n, from: r.base, limit: i, earlier: r.earlier };
+          if (c)
+            (h.to = c.t),
+              (h.by = c.by),
+              (h.acted = !0),
+              (h.days = ie(r.base, c.t)),
+              (h.over = Math.max(0, h.days - i)),
+              (h.status = h.over ? "late" : "ontime");
+          else if (!r.earlier && rpFieldDone(e, n))
+            (h.by = re(n, e)),
+              (h.acted = !0),
+              (h.days = null),
+              (h.over = 0),
+              (h.status = "reported"),
+              (h.note = "remark recorded on the application page; its date is not yet in Members Remarks");
+          else if ("Patwari" !== n || r.earlier || "Submitted" !== e.patReport)
+            r.earlier
+              ? ((h.by = re(n, e)),
+                (h.status = "notreached"),
+                (h.days = null),
+                (h.over = 0))
+              : p
+                ? ((h.by = re(n, e)),
+                  (h.status = "stopped"),
+                  (h.days = null),
+                  (h.over = 0))
+                : ((h.open = !0),
+                  (h.by = re(n, e)),
+                  (h.days = ie(r.base, o)),
+                  (h.over = Math.max(0, h.days - i)),
+                  (h.left = Math.max(0, i - h.days)),
+                  (h.status = h.over ? "overdue" : "running"));
+          else {
+            (h.by = re(n, e)), (h.acted = !0), (h.days = null), (h.over = 0);
+            var v = se()[le(e)] || {};
+            if (v.sub && v.pend && v.pend < v.sub) {
+              var m = ie(r.base, v.pend),
+                g = ie(r.base, v.sub);
+              (h.to = v.sub),
+                (h.days = g),
+                (h.est = !0),
+                (h.note =
+                  "report found in scan of " +
+                  Z(v.sub) +
+                  "; still pending in scan of " +
+                  Z(v.pend)),
+                g <= i
+                  ? (h.status = "ontime")
+                  : m >= i
+                    ? ((h.status = "late"),
+                      (h.over = m + 1 - i),
+                      (h.overMax = g - i))
+                    : ((h.status = "reported"),
+                      (h.note +=
+                        " — submitted between day " +
+                        (m + 1) +
+                        " and day " +
+                        g +
+                        ", so it may or may not be late"));
+            } else
+              (h.status = "reported"),
+                (h.note =
+                  "report is in; date unknown, because no earlier scan in this round saw it pending");
+          }
+          "Patwari" !== n ||
+            r.earlier ||
+            (h.acted &&
+              "Pending" === e.patReport &&
+              (h.note = "comment only, report still pending"),
+            h.open &&
+              (h.note =
+                "Pending" === e.patReport
+                  ? "no report or comment yet"
+                  : l.resub
+                    ? "no report or comment since resubmission"
+                    : "report filled, no comment yet")),
+            s.push(h);
+        });
+      });
+      var u = null;
+      if (
+        (s.forEach(function (e) {
+          !e.earlier &&
+            e.open &&
+            (u
+              ? ((e.open = !1),
+                (e.status = "waiting"),
+                (e.waitFor = u.role),
+                (e.over = 0),
+                (e.left = null),
+                (e.days = null),
+                delete e.note)
+              : (u = e));
+        }),
+        u && "overdue" === u.status)
+      ) {
+        var h = s.indexOf(u),
+          v = h > 0 ? s[h - 1] : null;
+        v &&
+          v.acted &&
+          null != v.days &&
+          v.days > u.limit &&
+          ((u.inherited = !0),
+          (u.cause = (v.by || v.role) + " acted only on day " + v.days));
+      }
+      return pe(s, {
+        mode: "app",
+        base: l.base,
+        resub: l.resub,
+        dayNow: ie(l.base, o),
+        stopped: p,
+      });
+    }
+    if (!a.length || !a[0].t) return null;
+    for (var m = 0; m < a.length; m++) {
+      var g = te(a[m].by),
+        b =
+          ((n = g),
+          (i = a[m].remark),
+          "Patwari" === n
+            ? "Girdawar"
+            : "Girdawar" === n
+              ? "Naib Tehsildar"
+              : "Naib Tehsildar" === n
+                ? /patwari[^.]{0,60}\bdirected\b|\bdirected\b[^.]{0,60}patwari/i.test(
+                    i,
+                  )
+                  ? "Patwari"
+                  : "Tehsildar"
+                : "Tehsildar" === n
+                  ? ae(i)
+                    ? "Applicant"
+                    : "Patwari"
+                  : ""),
+        y = d[b];
+      if (y && a[m].t) {
+        var w = a[m].t,
+          x = +t[y],
+          k = a[m + 1],
+          A = { role: b, from: w, limit: x };
+        k && k.t
+          ? ((A.to = k.t),
+            (A.acted = te(k.by) === b),
+            (A.days = ie(w, k.t)),
+            (A.over = Math.max(0, A.days - x)),
+            (A.by = k.by),
+            (A.status = A.acted ? (A.over ? "late" : "ontime") : "moved"),
+            A.acted ||
+              ((A.note =
+                k.by + " acted on " + Z(k.t) + " without a " + b + " entry"),
+              (A.by = re(b, e)),
+              (A.over = 0)))
+          : ((A.open = !0),
+            (A.days = ie(w, o)),
+            (A.over = Math.max(0, A.days - x)),
+            (A.left = Math.max(0, x - A.days)),
+            (A.status = A.over ? "overdue" : "running"),
+            (A.by =
+              e.holder && te(e.holder) === b && e.holder !== b
+                ? e.holder
+                : re(b, e)),
+            "Patwari" === b &&
+              (A.note =
+                "Pending" === e.patReport
+                  ? "no report or comment yet"
+                  : "report filled, not yet forwarded")),
+          s.push(A);
+      }
+    }
+    return pe(s, { mode: "stage" });
+  }
+  function pe(e, t) {
+    var a = e.filter(function (e) {
+        return e.open;
+      }),
+      r = e.filter(function (e) {
+        return "late" === e.status;
+      }),
+      n = {
+        visits: e,
+        open: a,
+        overdue: a.filter(function (e) {
+          return "overdue" === e.status;
+        }),
+        late: r,
+        lateDays: r.reduce(function (e, t) {
+          return e + t.over;
+        }, 0),
+        acted: e.filter(function (e) {
+          return e.acted && "reported" !== e.status;
+        }).length,
+        ontime: e.filter(function (e) {
+          return "ontime" === e.status;
+        }).length,
+      };
+    return (n.cur = n.overdue[0] || a[0] || null), Object.assign(n, t);
+  }
+  function rpFetch(u, o) {
+    o = o || {};
+    if (window.AbortController && !o.signal) {
+      var ac = new AbortController();
+      (o.signal = ac.signal),
+        setTimeout(function () {
+          ac.abort();
+        }, 9e4);
+    }
+    return fetch(u, o);
+  }
+  async function ue(e, t, a, r) {
+    var n = K(e);
+    a.forEach(function (e) {
+      n.set(e[0], e[1]);
+    });
+    var i = new URL(e.getAttribute("action") || t, t).href,
+      o = await rpFetch(i, {
+        method: "POST",
+        body: n,
+        credentials: "include",
+        redirect: "follow",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      }),
+      s = await o.text(),
+      l = o.url,
+      d = { status: o.status, url: l, html: s, followed: "" };
+    if (!r && !/Remarks\s*:/i.test(s)) {
+      var c =
+        /['"]([^'"\s<>]*Approve[A-Za-z]*\.aspx[^'"\s<>]*)['"]/i.exec(s) ||
+        /(?:location\.href|location\.replace|window\.location|window\.open)\s*(?:=|\()\s*['"]([^'"]+\.aspx[^'"]*)['"]/i.exec(
+          s,
+        ) ||
+        /pageRedirect\|\|([^|]+)\|/i.exec(s);
+      if (c) {
+        var p = new URL(decodeURIComponent(c[1]).replace(/&amp;/g, "&"), l)
+            .href,
+          u = await rpFetch(p, { credentials: "include" });
+        (s = await u.text()),
+          (l = u.url),
+          (d.followed = "HTTP " + u.status + " " + new URL(l).pathname);
+      }
+    }
+    return { html: s, url: l, diag: d };
+  }
+  function fe(e) {
+    function t(e) {
+      return D(e).replace(/\d{6,}/g, "XXXXX");
+    }
+    var a = e.diag,
+      r = j(a.html),
+      n = Array.prototype.map
+        .call(r.querySelectorAll("script:not([src])"), function (e) {
+          return e.textContent;
+        })
+        .filter(function (e) {
+          return /location|open\(|\.aspx|alert/i.test(e);
+        })
+        .map(t)
+        .join(" ¦ ")
+        .slice(0, 300),
+      i = t(r.body ? r.body.textContent : ""),
+      o =
+        /[^.]{0,60}(error|invalid|expired|not authori[sz]ed|unauthori[sz]ed|denied|exception|login|try again)[^.]{0,120}/i.exec(
+          i,
+        ),
+      s = o ? "message: " + D(o[0]) : i.slice(0, 220);
+    return (
+      "HTTP " +
+      a.status +
+      " " +
+      new URL(a.url).pathname +
+      (a.followed ? " → " + a.followed : "") +
+      " · title: " +
+      t(r.title || "—") +
+      " · has list: " +
+      (/application\s*no/i.test(a.html) ? "yes" : "no") +
+      (n ? " · scripts: " + n : "") +
+      " · text: " +
+      s +
+      (e.html !== a.html
+        ? " · final text: " +
+          t(j(e.html).body ? j(e.html).body.textContent : "").slice(0, 220)
+        : "")
+    );
+  }
+  function he(e) {
+    return (
+      Array.prototype.find.call(e.querySelectorAll("select"), function (e) {
+        return Array.prototype.some.call(e.options, function (e) {
+          return /fard/i.test(e.text);
+        });
+      }) || e.querySelector("select")
+    );
+  }
+  function ve(e) {
+    return Array.prototype.find.call(
+      e.querySelectorAll("input[type=submit],button"),
+      function (e) {
+        return /^\s*view\s*$/i.test(e.value || e.textContent || "");
+      },
+    );
+  }
+  function me() {
+    x ||
+      ((x = j(document.documentElement.outerHTML)),
+      (document.head.innerHTML =
+        '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Revenue Plus Tracker</title>'),
+      (document.body.innerHTML = ""),
+      document.body.removeAttribute("class"),
+      document.body.setAttribute("style", "margin:0;background:#f4f5f7"),
+      document.body.appendChild(b),
+      window.scrollTo(0, 0)),
+      ge();
+  }
+  function ge() {
+    var e = x.forms[0],
+      a = G(x),
+      r = e && he(e),
+      n = r
+        ? r.options[r.selectedIndex] && r.options[r.selectedIndex].text
+        : "",
+      i = null;
+    try {
+      i = JSON.parse(localStorage.getItem(t) || "null");
+    } catch (e) {}
+    var rpU = rpScanLoad(),
+      rpUS = rpU && rpU.plan ? rpScanStats(rpU) : null,
+      rpCard =
+        !rpUS || (rpUS.complete && !rpUS.errs)
+          ? ""
+          : '<div class="card" style="border:2px solid #1b4a7a"><h3>Unfinished scan</h3><p class="muted" style="margin:0 0 8px">Started ' +
+            L(new Date(rpU.started).toLocaleString("en-IN")) +
+            (rpU.allTypes ? " · all service types" : "") +
+            " · <b>" + rpUS.read + " of " + rpUS.N + "</b> applications read · <b>" + rpUS.setsDone + " of " + rpUS.S + "</b> sets of " + 10 + " complete.</p>" +
+            (rpUS.errs ? '<p class="muted" style="margin:0 0 8px;color:#8a5300">' + rpUS.errs + " could not be read and will be retried:</p>" + rpUnreadHtml(rpU) : "") +
+            (rpU.lastRun ? '<p class="muted" style="margin:6px 0 8px">Last run: ' + L(rpU.lastRun) + "</p>" : "") +
+            '<div class="tools"><button class="pri" id="rpresume">' +
+            (rpUS.complete ? "Retry " + rpUS.errs + " unread" : "Resume scan (" + (rpUS.N - rpUS.read + rpUS.errs) + " left)") +
+            '</button><button id="rpsofar">Show results so far</button></div><p class="muted" style="margin:8px 0 0">Starting a new scan below discards this unfinished one.</p></div>';
+    function rpBindResume() {
+      var rb = y.getElementById("rpresume");
+      rb &&
+        (rb.onclick = function () {
+          rpResume();
+        });
+      var dl2 = y.getElementById("rpdiagdl");
+      dl2 &&
+        (dl2.onclick = function (ev) {
+          ev.preventDefault(), rpDiagDownload();
+        });
+      var sf = y.getElementById("rpsofar");
+      sf &&
+        (sf.onclick = function () {
+          Ne({ at: rpU.at || Date.now(), items: rpOrdered(rpU), partial: !0 });
+        });
+    }
+    if (e && (a.length || r)) {
+      w.innerHTML =
+        rpCard +
+        '<div class="card"><h3>' + (rpCard ? "Or start a new scan" : "Scan pending applications") + '</h3><p class="muted">The tracker presses “Process” for each application in the background, only to read the Patwari, Girdawar and Naib Tehsildar remarks. It never types remarks or presses Submit.</p><div class="tools"><button class="pri" id="one">Scan this list' +
+        (n ? " (" + L(n) + ")" : "") +
+        " — " +
+        a.length +
+        " applications (" + Math.max(1, Math.ceil(a.length / 10)) + " sets)</button>" +
+        (r ? '<button id="all">Scan all service types</button>' : "") +
+        '</div></div><div class="card warn"><b>Before you start:</b> close any other Revenue Plus tab where an application is open. When you are done, tap <b>×</b> — it reloads the Dashboard. Always reload before processing an application, because the portal remembers the last application opened.</div>' +
+        (i
+          ? '<div class="card"><div class="tools"><span>Last scan: <b>' +
+            L(new Date(i.at).toLocaleString()) +
+            "</b> — " +
+            i.items.length +
+            ' applications</span><button id="showlast">Show last scan</button></div></div>'
+          : "");
+      var o = y.getElementById("one");
+      o &&
+        (o.onclick = function () {
+          Se(!1);
+        });
+      var s = y.getElementById("all");
+      s &&
+        (s.onclick = function () {
+          Se(!0);
+        });
+      var l = y.getElementById("showlast");
+      l &&
+        (l.onclick = function () {
+          Ne(i), rpStartBackground(i.items);
+        });
+      rpBindResume();
+    } else {
+      w.innerHTML =
+        rpCard +
+        '<div class="card warn"><b>No application list found.</b><br>Open the Revenue Plus <b>Dashboard</b>, choose a Service Type, press <b>View</b>, then run Tracker again.</div>' +
+        (i
+          ? '<div class="card"><button id="showlast">Show last scan (' +
+            L(new Date(i.at).toLocaleString()) +
+            ")</button></div>"
+          : "");
+      var d = y.getElementById("showlast");
+      d &&
+        (d.onclick = function () {
+          Ne(i), rpStartBackground(i.items);
+        });
+      rpBindResume();
+    }
+  }
+  function be(e, t, a) {
+    (w.innerHTML =
+      '<div class="card"><h3>' +
+      L(e) +
+      '</h3><div class="prog"><i style="width:' +
+      (a ? Math.round((t / a) * 100) : 0) +
+      '%"></i></div><div class="muted">' +
+      t +
+      " of " +
+      a +
+      ' read. Keep this tab open.</div><div class="tools" style="margin-top:10px"><button id="stop">Stop</button></div></div>'),
+      (y.getElementById("stop").onclick = function () {
+        T = !0;
+      });
+  }
+  async function ye(e, t) {
+    var a = await rpFetch(k.split("#")[0], { credentials: "include" }),
+      r = a.url,
+      rawDash = await a.text(),
+      bytes = rawDash.length,
+      n = j(rawDash);
+    if (we(n, r)) return { why: "logout" };
+    var i = function (t) {
+        return G(t).filter(function (t) {
+          return D(t.appNo) === D(e);
+        })[0];
+      },
+      o = i(n);
+    if (!o && t && n.forms[0]) {
+      var s = n.forms[0],
+        l = he(s),
+        d = ve(s);
+      if (l && d) {
+        var c = await ue(
+          s,
+          r,
+          [
+            [l.name, t],
+            [d.name, d.value || "View"],
+          ],
+          !0,
+        );
+        if (((bytes += c.html.length), (rawDash = c.html), (r = c.url), !(o = i((n = j(c.html)))) && we(n, r)))
+          return { why: "logout" };
+      }
+    }
+    return o
+      ? { row: o, baseUrl: r, bytes: bytes, dash: rawDash }
+      : {
+          why: G(n).length ? "gone" : "nolist",
+          bytes: bytes,
+          dash: rawDash,
+          detail: fe({
+            html: n.documentElement.outerHTML,
+            diag: {
+              status: a.status,
+              url: r,
+              html: n.documentElement.outerHTML,
+              followed: "",
+            },
+          }),
+        };
+  }
+  function we(e, t) {
+    return (
+      !!e.querySelector("input[type=password]") ||
+      (/login|signin|sessionexpired|default\.html/i.test(new URL(t).pathname) &&
+        !/App\/Default\.aspx/i.test(t))
+    );
+  }
+  async function xe(e, t, a) {
+    var r = K(e);
+    a.forEach(function (e) {
+      r.set(e[0], e[1]);
+    });
+    var n = new URL(e.getAttribute("action") || t, t).href;
+    return fetch(n, {
+      method: "POST",
+      body: r,
+      credentials: "include",
+      redirect: "follow",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    });
+  }
+  function ke(e) {
+    return Array.prototype.map.call(
+      e.querySelectorAll(
+        "iframe[src],embed[src],object[data],img[src],a[href]",
+      ),
+      function (e) {
+        return {
+          tag: e.tagName,
+          src:
+            e.getAttribute("src") ||
+            e.getAttribute("data") ||
+            e.getAttribute("href") ||
+            "",
+        };
+      },
+    );
+  }
+  async function Ae(e, t, a) {
+    var r = (e.headers.get("content-type") || "").toLowerCase();
+    if (!/text\/html/.test(r)) {
+      var n = e.headers.get("content-disposition") || "",
+        i = /filename\*?=(?:UTF-8'')?["']?([^"';]+)/i.exec(n);
+      return {
+        blob: await e.blob(),
+        type: r.split(";")[0],
+        name: i ? decodeURIComponent(i[1]) : "",
+      };
+    }
+    var o = await e.text(),
+      s = j(o),
+      l = e.url,
+      d = {};
+    (t || []).forEach(function (e) {
+      d[e.src] = 1;
+    });
+    var c = ke(s).filter(function (e) {
+        return (
+          e.src &&
+          !d[e.src] &&
+          !/^(javascript:|#|mailto:)/i.test(e.src) &&
+          !/logo|emblem|banner|icon/i.test(e.src) &&
+          ("A" !== e.tag ||
+            /\.(pdf|jpe?g|png|gif|tiff?|zip)(\?|$)|\.ashx|handler|download|viewdoc|getdoc|file/i.test(
+              e.src,
+            ))
+        );
+      }),
+      p =
+        c.filter(function (e) {
+          return "A" !== e.tag && "IMG" !== e.tag;
+        })[0] ||
+        c.filter(function (e) {
+          return "IMG" === e.tag;
+        })[0] ||
+        c[0],
+      u = p && p.src;
+    if (!u) {
+      var f = ke(s).filter(function (e) {
+        return (
+          "A" !== e.tag &&
+          "IMG" !== e.tag &&
+          e.src &&
+          !/^(about:|javascript:)/i.test(e.src)
+        );
+      });
+      f.length && (u = f[f.length - 1].src);
+    }
+    if (!u) {
+      var h =
+        /(?:window\.open|location\.href\s*=|location\.replace)\s*\(?\s*['"]([^'"]+)['"]/i.exec(
+          o,
+        );
+      h && (u = h[1]);
+    }
+    if (!u)
+      throw new Error(
+        "The portal did not return a document. " +
+          fe({
+            html: o,
+            diag: { status: e.status, url: l, html: o, followed: "" },
+          }),
+      );
+    if (/^data:/i.test(u)) {
+      var v = await (await fetch(u)).blob();
+      return { blob: v, type: v.type, name: "" };
+    }
+    if (a > 2)
+      throw new Error("Too many redirects while opening the document.");
+    return Ae(
+      await fetch(new URL(u.replace(/&amp;/g, "&"), l).href, {
+        credentials: "include",
+      }),
+      ke(s),
+      a + 1,
+    );
+  }
+  function Te(e) {
+    function t(e) {
+      return D(e)
+        .replace(/\d{8,}/g, "XXXXX")
+        .slice(0, 160);
+    }
+    return (
+      "<" +
+      e.tagName.toLowerCase() +
+      (e.getAttribute("type") ? " type=" + e.getAttribute("type") : "") +
+      (e.name ? " name=" + t(e.name) : "") +
+      (e.getAttribute("href") ? " href=" + t(e.getAttribute("href")) : "") +
+      (e.getAttribute("onclick")
+        ? " onclick=" + t(e.getAttribute("onclick"))
+        : "") +
+      (e.getAttribute("data-url") || e.getAttribute("data-src")
+        ? " data=" + t(e.getAttribute("data-url") || e.getAttribute("data-src"))
+        : "") +
+      ">"
+    );
+  }
+  function Pe(e, t, a) {
+    var r =
+        (e.getAttribute("onclick") || "") +
+        " " +
+        (e.getAttribute("href") || ""),
+      n = e.getAttribute("data-url") || e.getAttribute("data-src");
+    if (n) return new URL(n, a).href;
+    var i = [];
+    r.replace(/['"]([^'"]{3,})['"]/g, function (e, t) {
+      i.push(t);
+    });
+    var o = i.filter(function (e) {
+        return /[\/\\].*\.\w{2,4}$|\.(pdf|jpe?g|png|tiff?)$|\.as[hp]x/i.test(e);
+      })[0],
+      s = /([A-Za-z_$][\w$]*)\s*\(/.exec(
+        r.replace(/^javascript:/i, "").replace(/return\s+/i, ""),
+      ),
+      l = "";
+    s &&
+      Array.prototype.forEach.call(
+        t.querySelectorAll("script:not([src])"),
+        function (e) {
+          var t = e.textContent.indexOf("function " + s[1]);
+          t >= 0 && (l = e.textContent.slice(t, t + 2e3));
+        },
+      );
+    var d = /['"]([^'"]*\.(?:aspx|ashx)[^'"]*?)['"]/i.exec(l),
+      c =
+        /getElementById\(\s*['"]([^'"]+)['"]\s*\)\.value|\$\(\s*['"]#([^'"]+)['"]\s*\)\.val\(\)/.exec(
+          l,
+        ),
+      p = c
+        ? (t.getElementById(c[1] || c[2]) || {}).value ||
+          (
+            t.getElementById(c[1] || c[2]) || {
+              getAttribute: function () {
+                return "";
+              },
+            }
+          ).getAttribute("value")
+        : "",
+      u = o || p || i[0] || "",
+      f = d
+        ? d[1] + (u && !/\.(pdf|jpe?g|png)$/i.test(d[1]) ? u : "")
+        : o || "";
+    return f
+      ? new URL(f.replace(/^~\//, "/revenueplus/").replace(/\\/g, "/"), a).href
+      : "";
+  }
+  async function Ee(e, t, lab) {
+    if (A) throw new Error("A scan is reading the portal right now — wait for it to finish (or stop it), then open documents.");
+    var a = await ye(e.appNo, e.svc);
+    if (!a.row)
+      throw new Error(
+        E[a.why] +
+          ("nolist" === a.why && a.detail ? " Details: " + a.detail : ""),
+      );
+    var r = await ue(a.row.form, a.baseUrl, [[a.row.btnName, a.row.btnValue]]),
+      n = j(r.html),
+      allb = F(n),
+      byLab = lab
+        ? allb.filter(function (b) {
+            return D($(b)).toLowerCase() === D(lab).toLowerCase();
+          })
+        : [],
+      i = byLab.length === 1 ? byLab[0] : allb[t] || byLab[0];
+    if (!i)
+      throw new Error(
+        "Could not find this document button on the application page (" +
+          allb.length +
+          " document buttons found: " +
+          allb.map($).join(", ") +
+          ").",
+      );
+    var o,
+      s = i.form || i.closest("form") || n.forms[0],
+      l = i.getAttribute("href") || "",
+      d = i.getAttribute("onclick") || "",
+      c =
+        /__doPostBack\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]*)['"]/.exec(
+          l + " " + d,
+        ) ||
+        /WebForm_PostBackOptions\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]*)['"]/.exec(
+          l + " " + d,
+        ),
+      p = /open\(\s*['"]([^'"]+)['"]/.exec(d);
+    if (c)
+      o = await xe(s, r.url, [
+        ["__EVENTTARGET", c[1]],
+        ["__EVENTARGUMENT", c[2]],
+      ]);
+    else if ("A" === i.tagName && l && !/^(javascript:|#)/i.test(l))
+      o = await fetch(new URL(l, r.url).href, { credentials: "include" });
+    else if (p)
+      o = await fetch(new URL(p[1], r.url).href, { credentials: "include" });
+    else if (i.name) o = await xe(s, r.url, [[i.name, i.value || ""]]);
+    else {
+      var u = Pe(i, n, r.url);
+      u && (o = await fetch(u, { credentials: "include" }));
+    }
+    if (!o)
+      throw new Error(
+        "This document button works in a way the tracker does not recognise yet. " +
+          Te(i),
+      );
+    try {
+      return await Ae(o, ke(n), 0);
+    } catch (e) {
+      throw new Error(e.message + " — Button: " + Te(i));
+    }
+  }
+  // ───── Scan in sets of 10, saved after every application, resumable ─────
+  var rpStopSet = !1; // set size and storage name are fixed values below (the start screen draws before vars initialise)
+  function rpScanKey(e) {
+    return (e.svc || "") + "|" + e.appNo;
+  }
+  function rpScanLoad() {
+    try {
+      return JSON.parse(localStorage.getItem("rpTrackerScan") || "null");
+    } catch (x) {
+      return null;
+    }
+  }
+  function rpScanSave(r) {
+    try {
+      localStorage.setItem("rpTrackerScan", JSON.stringify(r));
+    } catch (x) {
+      try {
+        // storage full: keep the status, drop the heavy per-application details
+        r.items.forEach(function (e) {
+          (e.docs = []), (e.mut = null), (e.adj = null), (e.fields = null);
+        });
+        localStorage.setItem("rpTrackerScan", JSON.stringify(r));
+      } catch (q) {}
+    }
+  }
+  function rpScanStats(r) {
+    var N = r.plan.length,
+      S = Math.max(1, Math.ceil(N / 10)),
+      got = {},
+      sets = [];
+    r.items.forEach(function (e) {
+      got[rpScanKey(e)] = e;
+    });
+    (r.gone || []).forEach(function (k) {
+      got[k] = "gone";
+    });
+    for (var i = 0; i < S; i++) sets.push({ no: i + 1, n: 0, read: 0, err: 0, gone: 0 });
+    r.plan.forEach(function (e, i) {
+      var st = sets[Math.floor(i / 10)],
+        g = got[rpScanKey(e)];
+      st.n++;
+      "gone" === g ? (st.read++, st.gone++) : g && (st.read++, g.err && st.err++);
+    });
+    sets.forEach(function (st) {
+      st.complete = st.read === st.n;
+    });
+    var read = sets.reduce(function (a, st) {
+      return a + st.read;
+    }, 0);
+    return {
+      N: N, S: S, sets: sets, read: read,
+      setsDone: sets.filter(function (st) { return st.complete; }).length,
+      complete: read >= N,
+      errs: r.items.filter(function (e) { return e.err; }).length,
+    };
+  }
+  function rpOrdered(r) {
+    var pos = {};
+    r.plan.forEach(function (e, i) {
+      pos[rpScanKey(e)] = i;
+    });
+    return r.items.slice().sort(function (a, b) {
+      return pos[rpScanKey(a)] - pos[rpScanKey(b)];
+    });
+  }
+  function rpShowResults(obj) {
+    var wr = y.querySelector(".wrap"),
+      top = wr ? wr.scrollTop : 0;
+    Ne(obj);
+    wr && (wr.scrollTop = top);
+  }
+  var rpDiag = null;
+  function rpSpeed(r, left) {
+    var tm = (r.timing || []).filter(function (x) {
+      return x.tot;
+    });
+    if (!tm.length) return null;
+    function sec(v) {
+      return (v / 1e3).toFixed(1) + " s";
+    }
+    function kb(v) {
+      return v >= 1048576 ? (v / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(v / 1024)) + " KB";
+    }
+    function avg(f) {
+      return tm.reduce(function (a, x) { return a + x[f]; }, 0) / tm.length;
+    }
+    var last = tm[tm.length - 1],
+      wd = tm.filter(function (x) { return x.db; }),
+      dAvg = wd.length ? wd.reduce(function (a, x) { return a + x.d; }, 0) / wd.length : 0,
+      dbAvg = wd.length ? wd.reduce(function (a, x) { return a + x.db; }, 0) / wd.length : 0,
+      per = avg("tot"),
+      mins = left ? Math.round((per * left) / 6e4) : 0;
+    return {
+      last: (last.db ? "Dashboard reload " + sec(last.d) + " (" + kb(last.db) + ") · " : "") + "application page " + sec(last.a) + " (" + kb(last.ab) + ")",
+      avg:
+        "average " + sec(per) + " per application (" + (per ? (6e4 / per).toFixed(1) : "–") + " per minute)" +
+        (dAvg ? " — Dashboard reload " + sec(dAvg) + " (" + kb(dbAvg) + "), application page " + sec(avg("a")) + " (" + kb(avg("ab")) + ")" : ""),
+      eta: left ? (mins < 1 ? "under a minute left" : "about " + mins + " min left") : "",
+      slow: last.d + last.a > 3e4,
+    };
+  }
+  function rpUnreadHtml(r) {
+    var un = r.items.filter(function (x) {
+      return x.err;
+    });
+    if (!un.length) return "";
+    var by = {};
+    un.forEach(function (x) {
+      var k = x.errWhy || "could not be read";
+      (by[k] = by[k] || []).push(x.appNo);
+    });
+    return (
+      '<div style="font-size:12px;color:#5b6475;margin-top:4px">' +
+      Object.keys(by)
+        .map(function (k) {
+          return "<b>" + by[k].length + "</b> — " + L(k) + ' <span style="font-size:11px">(' + L(by[k].slice(0, 4).join(", ")) + (by[k].length > 4 ? " …" : "") + ")</span>";
+        })
+        .join("<br>") +
+      (rpDiag ? '<br><a href="#" id="rpdiagdl" style="color:#12355b;font-weight:600">Download diagnostic file</a> — send it to whoever maintains the tracker' : "") +
+      "</div>"
+    );
+  }
+  function rpDiagDownload() {
+    var t = rpDiag;
+    if (!t) return;
+    function clean(h) {
+      return String(h || "")
+        .replace(/[\w.+-]+@[\w-]+\.[\w.]+/g, "[email removed]")
+        .replace(/\b\d{4}\s?\d{4}\s?\d{4}\b/g, "[number removed]")
+        .replace(/\b[6-9]\d{9}\b/g, "[number removed]");
+    }
+    var txt =
+      "Revenue Plus Tracker diagnostic\nApplication: " + t.app + "\nTime: " + t.at + "\nReason: " + t.why +
+      "\nButton pressed: " + t.button + "\nFirst reply: " + t.firstUrl + "\nFinal page: " + t.finalUrl +
+      (t.timing ? "\nTiming: dashboard " + t.timing.d + " ms / " + t.timing.db + " bytes, application page " + t.timing.a + " ms / " + t.timing.ab + " bytes" : "") +
+      "\n\n===== DASHBOARD (reloaded before Process) =====\n" + clean(t.dash) +
+      "\n\n===== FIRST REPLY AFTER PROCESS =====\n" + clean(t.first) +
+      "\n\n===== FINAL PAGE =====\n" + clean(t.final),
+      a = document.createElement("a");
+    (a.href = URL.createObjectURL(new Blob([txt], { type: "text/plain" }))),
+      (a.download = "tracker-diagnostic-" + t.app + ".txt"),
+      document.body.appendChild(a),
+      a.click(),
+      a.remove();
+  }
+  function rpScanBar(r, setNo, inSet, msg, extra) {
+    var b = y.getElementById("rpscanbar"),
+      bar = y.querySelector(".bar");
+    if (!b) return;
+    b.style.top = (bar ? bar.offsetHeight : 0) + "px";
+    if (null === r) return void (b.hidden = !0);
+    var s = rpScanStats(r);
+    b.hidden = !1;
+    if (msg) {
+      b.innerHTML =
+        '<div style="max-width:1100px;margin:0 auto;padding:8px 14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px"><b style="color:#8a5300;flex:1">' +
+        L(msg) +
+        '</b><button id="rpsbx" style="padding:6px 10px;font-size:12.5px">Hide</button>' + (extra ? '<div style="flex-basis:100%">' + extra + "</div>" : "") + "</div>";
+      y.getElementById("rpsbx").onclick = function () {
+        b.hidden = !0;
+      };
+      var dl = y.getElementById("rpdiagdl");
+      dl &&
+        (dl.onclick = function (ev) {
+          ev.preventDefault(), rpDiagDownload();
+        });
+      return;
+    }
+    b.innerHTML =
+      '<div style="max-width:1100px;margin:0 auto;padding:8px 14px"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px"><span><b style="color:#12355b">Scanning · Set ' +
+      setNo + " of " + s.S + "</b> · application " + (inSet + 1) + " of " + s.sets[setNo - 1].n + " · " + s.read + " of " + s.N +
+      ' read</span><span style="display:flex;gap:6px"><button id="rpstopset" style="padding:6px 10px;font-size:12.5px"' +
+      (rpStopSet ? " disabled" : "") + ">" + (rpStopSet ? "Stopping after this set…" : "Stop after this set") +
+      '</button><button id="rpstopnow" style="padding:6px 10px;font-size:12.5px">Stop now</button></span></div><div class="prog" style="height:6px;margin:6px 0"><i style="width:' +
+      (s.N ? Math.round((s.read / s.N) * 100) : 0) +
+      '%"></i></div>' +
+      (function () {
+        var sp = rpSpeed(r, s.N - s.read);
+        return sp
+          ? '<div style="font-size:11.5px;color:#4a5466;margin:0 0 6px;line-height:1.4">Last: ' + L(sp.last) + "<br>Speed: " + L(sp.avg) + (sp.eta ? " · <b>" + L(sp.eta) + "</b>" : "") +
+              (sp.slow ? '<br><span style="color:#8a5300">The portal is responding slowly right now.</span>' : "") +
+              (s.errs ? '<br><span style="color:#8a5300">' + s.errs + " could not be read so far — they are retried on Resume.</span>" : "") + "</div>"
+          : "";
+      })() +
+      '<div style="display:flex;flex-wrap:wrap;gap:4px">' +
+      s.sets
+        .map(function (st) {
+          var cur = st.no === setNo && !st.complete;
+          return (
+            '<span style="font-size:11px;padding:2px 7px;border-radius:10px;' +
+            (st.complete ? "background:#e3f4ea;color:#145c36;font-weight:600" : cur ? "background:#12355b;color:#fff;font-weight:600" : "background:#eef1f6;color:#64708a") +
+            '">' + (st.complete ? "✓ " : "") + "Set " + st.no + (cur ? " · " + inSet + "/" + st.n : "") + "</span>"
+          );
+        })
+        .join("") +
+      '</div><div class="muted" style="margin-top:4px">Results of each completed set appear below while the next set is read. Every application is saved as soon as it is read — if the scan stops, run Tracker again and tap Resume.</div></div>';
+    y.getElementById("rpstopnow").onclick = function () {
+      (T = !0), (this.textContent = "Stopping…"), (this.disabled = !0);
+    };
+    y.getElementById("rpstopset").onclick = function () {
+      (rpStopSet = !0), (this.disabled = !0), (this.textContent = "Stopping after this set…");
+    };
+  }
+  async function Se(a) {
+    rpBG.gen++, (rpBG.queue = []), (rpBG.total = 0);
+    if (!A) {
+      (A = !0), (T = !1);
+      var refs = {},
+        plan = [];
+      P = !1;
+      try {
+        var n = x.forms[0],
+          i = [];
+        if (a)
+          for (
+            var o = he(n),
+              s = ve(n),
+              l = Array.prototype.filter.call(o.options, function (e) {
+                return e.value && "0" !== e.value && "-1" !== e.value && !/select/i.test(e.text);
+              }),
+              d = 0;
+            d < l.length && !T;
+            d++
+          ) {
+            be("Loading list: " + l[d].text, d, l.length);
+            var c = [[o.name, l[d].value]];
+            s && c.push([s.name, s.value || "View"]);
+            var p = await ue(n, k, c, !0),
+              u = j(p.html),
+              f = G(u);
+            i.push({ service: D(l[d].text), svc: l[d].value, rows: f, form: f.length ? f[0].form : u.forms[0], baseUrl: p.url }),
+              u.forms[0] && ((o = he((n = u.forms[0])) || o), (s = ve(n) || s)),
+              await C(e);
+          }
+        else {
+          var h = he(n);
+          i.push({ service: h ? h.options[h.selectedIndex].text : "", svc: h ? h.value : "", rows: G(x), form: n, baseUrl: k });
+        }
+        i.forEach(function (b) {
+          b.rows.forEach(function (E) {
+            var pl = {
+              service: b.service, svc: b.svc || "", appNo: E.appNo, name: E.name, mobile: E.mobile, village: E.village,
+              khasra: E.khasra, purpose: E.purpose, appDate: E.appDate, revert: E.revert, days: E.days,
+            };
+            plan.push(pl), (refs[rpScanKey(pl)] = { row: E, baseUrl: b.baseUrl });
+          });
+        });
+      } catch (err) {
+        return (
+          (w.innerHTML =
+            '<div class="card warn"><b>Scan stopped:</b> ' +
+            L((err && err.message) || err) +
+            "<br>Close this, make sure you are still logged in, and try again from the Dashboard.</div>"),
+          void (A = !1)
+        );
+      }
+      if (T) return (A = !1), void ge();
+      var prog = { started: Date.now(), allTypes: !!a, plan: plan, items: [], gone: [] };
+      rpScanSave(prog), (A = !1), await rpRunPlan(prog, refs);
+    }
+  }
+  async function rpResume() {
+    var r = rpScanLoad();
+    if (!r || !r.plan) return ge();
+    (r.items = r.items.filter(function (e) {
+      return !e.err; // unread ones are tried again
+    })),
+      await rpRunPlan(r, {});
+  }
+  async function rpRunPlan(r, refs) {
+    if (A) return;
+    (A = !0), (T = !1), (P = !1), (rpStopSet = !1), (rpDiag = null);
+    rpBG.gen++, (rpBG.queue = []), (rpBG.total = 0);
+    var runStart = Date.now(),
+      runRead = 0,
+      done = {},
+      first = !0;
+    r.items.forEach(function (e) {
+      done[rpScanKey(e)] = 1;
+    });
+    (r.gone = r.gone || []).forEach(function (k) {
+      done[k] = 1;
+    });
+    var st0 = rpScanStats(r);
+    st0.setsDone
+      ? rpShowResults({ at: Date.now(), items: rpOrdered(r), partial: !0 })
+      : (w.innerHTML = '<div class="card"><h3>Reading applications in sets of ' + 10 + '</h3><p class="muted" style="margin:0">Results appear here as soon as Set 1 is complete, so you can start working on it while the next sets are read.</p></div>');
+    for (var ix = 0; ix < r.plan.length && !T; ix++) {
+      var E = r.plan[ix],
+        key = rpScanKey(E);
+      if (done[key]) continue;
+      var setNo = Math.floor(ix / 10) + 1;
+      rpScanBar(r, setNo, ix % 10);
+      var S = { ok: !1 },
+        mem = refs[key],
+        gone = !1,
+        tf = Date.now(),
+        th = tf,
+        tdb = 0,
+        tab = 0,
+        dashRaw = "";
+      try {
+        var R,
+          Nn = null;
+        if (!first || !mem) {
+          Nn = await ye(E.appNo, E.svc);
+          (th = Date.now()), (tdb = (Nn && Nn.bytes) || 0), (dashRaw = (Nn && Nn.dash) || "");
+          if (Nn && "logout" === Nn.why) {
+            (T = !0), (P = !0);
+            break;
+          }
+          if (Nn && "gone" === Nn.why) gone = !0;
+          else if (!Nn.row) {
+            if (!mem) throw new Error(E_MSG(Nn.why));
+            Nn = null;
+          }
+        }
+        if (!gone) {
+          R = Nn
+            ? await ue(Nn.row.form, Nn.baseUrl, [[Nn.row.btnName, Nn.row.btnValue]])
+            : await ue(mem.row.form, mem.baseUrl, [[mem.row.btnName, mem.row.btnValue]]);
+          tab = R.html.length;
+          var tm = (r.timing = r.timing || []);
+          tm.push({ d: th - tf, db: tdb, a: Date.now() - th, ab: tab, tot: 0 }), tm.length > 200 && tm.shift();
+          S = I(R.html);
+          if (!S.ok) {
+            var dd = j(R.html);
+            if (we(dd, R.url)) {
+              (T = !0), (P = !0);
+              break;
+            }
+            (S.diag = fe(R)), (S.err = !0);
+            S.why = /Remarks\s*:/i.test(R.html) ? "page opened but its layout was not recognised" : "the portal did not return the application page";
+            rpDiag = {
+              app: E.appNo, at: new Date().toLocaleString("en-IN"), why: S.why,
+              button: Nn ? Nn.row.btnName + " = " + Nn.row.btnValue : mem ? mem.row.btnName + " = " + mem.row.btnValue : "",
+              dash: dashRaw, first: (R.diag && R.diag.html) || "", firstUrl: (R.diag && R.diag.url) || "",
+              final: R.html, finalUrl: R.url, timing: tm[tm.length - 1],
+            };
+          }
+        }
+      } catch (err) {
+        var why =
+          err && "AbortError" === err.name
+            ? "the portal did not respond within 90 s"
+            : /Dashboard/i.test(String(err && err.message))
+              ? "the Dashboard did not load / application not found on it"
+              : "error: " + String((err && err.message) || err).slice(0, 120);
+        S = { ok: !1, err: !0, why: why, diag: "Error: " + why };
+        rpDiag = { app: E.appNo, at: new Date().toLocaleString("en-IN"), why: why, button: "", dash: dashRaw, first: "", firstUrl: "", final: "", finalUrl: "" };
+      }
+      (first = !1), runRead++;
+      if (gone) r.gone.push(key);
+      else {
+        var O = Q(S);
+        r.items.push({
+          service: E.service, appNo: E.appNo, name: E.name, mobile: E.mobile, village: E.village, khasra: E.khasra,
+          purpose: E.purpose, appDate: E.appDate, revert: E.revert, days: E.days,
+          khewat: S.khewat || "", pat: S.pat || "", gir: S.gir || "", nt: S.nt || "", teh: S.teh || "",
+          stage: O.stage, flag: O.flag, diag: S.diag || "", holder: O.holder || "", lastBy: O.lastBy || "",
+          lastT: O.lastT || 0, lastRemark: O.lastRemark || "", stageDays: null == O.stageDays ? null : O.stageDays,
+          svc: E.svc || "", docs: S.docs || [], fields: S.fields || null, adj: S.adj || null, mut: S.mut || null,
+          patReport: O.patReport || "", level: O.level || "", levelBy: O.levelBy || "", levelT: O.levelT || 0,
+          history: O.history || [], vendee: S.vendee || "", area: S.area || "", set: setNo, err: !!S.err, errWhy: S.why || "",
+        });
+      }
+      r.timing && r.timing.length && !r.timing[r.timing.length - 1].tot && (r.timing[r.timing.length - 1].tot = Date.now() - tf + e);
+      (done[key] = 1), rpScanSave(r);
+      if ((ix + 1) % 10 == 0 || ix === r.plan.length - 1) {
+        try {
+          rpShowResults({ at: Date.now(), items: rpOrdered(r), partial: !0 });
+        } catch (x) {}
+        rpStopSet && (T = !0);
+      }
+      await C(e);
+    }
+    A = !1;
+    var fin = rpScanStats(r);
+    (r.complete = fin.complete), (r.at = Date.now()), rpScanSave(r);
+    var items = rpOrdered(r),
+      M = { at: r.at, items: items, partial: !fin.complete, loggedOut: P };
+    try {
+      de(items, M.at);
+    } catch (x) {}
+    try {
+      localStorage.setItem(t, JSON.stringify(M));
+    } catch (x) {}
+    if (fin.complete && !fin.errs)
+      try {
+        localStorage.removeItem("rpTrackerScan");
+      } catch (x) {}
+    rpShowResults(M);
+    var spd = rpSpeed(r, 0),
+      took = Math.round((Date.now() - runStart) / 1000),
+      runLine = runRead ? runRead + " read in " + (took >= 60 ? Math.floor(took / 60) + " min " + (took % 60) + " s" : took + " s") + (spd ? " · " + spd.avg : "") : "";
+    r.lastRun = runLine;
+    (fin.complete && !fin.errs) || rpScanSave(r); // a finished, clean scan stays cleared
+    var endMsg =
+      P
+        ? "The portal logged you out after " + fin.read + " of " + fin.N + ". Log in again, run Tracker and tap Resume."
+        : !fin.complete
+          ? "Scan stopped after " + fin.read + " of " + fin.N + " (" + fin.setsDone + " of " + fin.S + " sets). Run Tracker again and tap Resume to continue."
+          : fin.errs
+            ? fin.errs + " application(s) could not be read — run Tracker again and tap “Retry unread”." + (runLine ? " (" + runLine + ")" : "")
+            : null;
+    endMsg || (endMsg = runLine ? "Scan complete — " + runLine : null);
+    endMsg ? rpScanBar(r, 0, 0, endMsg, fin.errs ? rpUnreadHtml(r) : "") : rpScanBar(null);
+    rpStartBackground(M.items);
+  }
+  function E_MSG(why) {
+    return E[why] || "The Dashboard did not load.";
+  }
+  // ───── Analyse with village records (hosted version) ─────
+  var rpAnaCache = {},
+    rpChain = Promise.resolve(),
+    rpCurrent = null,
+    rpBG = { gen: 0, paused: !1, running: !1, queue: [], done: 0, total: 0, failed: 0, cur: "", userWaiting: 0 },
+    RP_LS = "rpAnaCache2";
+  function rpBlobB64(b) {
+    return new Promise(function (ok, bad) {
+      var fr = new FileReader();
+      fr.onload = function () {
+        ok(String(fr.result).split(",")[1] || "");
+      };
+      fr.onerror = function () {
+        bad(fr.error);
+      };
+      fr.readAsDataURL(b);
+    });
+  }
+  function rpKey(e) {
+    return e.appNo + "|" + e.service;
+  }
+  function rpVer(e) {
+    // changes when the file moves, the Patwari report changes or documents change → old analysis is not reused
+    return [(e.history || []).length, e.patReport || "", (e.docs || []).length, e.appDate || ""].join("|");
+  }
+  function rpCacheGet(e) {
+    var k = rpKey(e),
+      c = rpAnaCache[k];
+    if (!c) {
+      try {
+        c = (JSON.parse(localStorage.getItem(RP_LS) || "{}") || {})[k];
+      } catch (x) {}
+    }
+    return c && c.ver === rpVer(e) ? c : null;
+  }
+  function rpCachePut(e, html) {
+    var k = rpKey(e),
+      c = { ver: rpVer(e), html: html, at: Date.now() };
+    rpAnaCache[k] = c;
+    try {
+      var all = JSON.parse(localStorage.getItem(RP_LS) || "{}") || {};
+      all[k] = c;
+      var keys = Object.keys(all).sort(function (a, b) {
+        return all[b].at - all[a].at;
+      });
+      keys.slice(12).forEach(function (x) {
+        delete all[x];
+      });
+      for (var n = 0; n < 5; n++) {
+        try {
+          localStorage.setItem(RP_LS, JSON.stringify(all));
+          break;
+        } catch (q) {
+          keys = Object.keys(all).sort(function (a, b) {
+            return all[a].at - all[b].at;
+          });
+          if (!keys.length) break;
+          delete all[keys[0]];
+        }
+      }
+    } catch (x) {}
+  }
+  function rpGetKey(ask) {
+    var key = "";
+    try {
+      key = localStorage.getItem("rpApiKey") || "";
+    } catch (x) {}
+    if (!key && ask) {
+      key = (prompt("Access key for the analyser (the ACCESS_KEY set on Render):") || "").trim();
+      if (key)
+        try {
+          localStorage.setItem("rpApiKey", key);
+        } catch (x) {}
+    }
+    return key;
+  }
+  // One analysis at a time (the portal session can only have one application open)
+  function rpSerial(fn) {
+    var p = rpChain.then(fn, fn);
+    rpChain = p.catch(function () {});
+    return p;
+  }
+  // Core: fetch documents of application e, send to Render, return report html
+  function rpAbortErr() {
+    var x = new Error("stopped to give way to your request");
+    x.stage = "aborted";
+    return x;
+  }
+  async function rpCore(e, key, status, ctl) {
+    var API = window.__rpApiBase || "",
+      stage = "connecting";
+    ctl = ctl || { aborted: !1, ac: null };
+    function chk() {
+      if (ctl.aborted) throw rpAbortErr();
+    }
+    try {
+      var pr = await fetch(API + "/api/ping", { cache: "no-store", signal: ctl.ac && ctl.ac.signal });
+      if (!pr.ok) throw new Error("HTTP " + pr.status);
+    } catch (err) {
+      if (ctl.aborted) throw rpAbortErr();
+      var x = new Error(
+        "Cannot reach the analyser (" + String((err && err.message) || err) + "). If Render was asleep, wait 30–50 s and try again; if it keeps failing, the portal is blocking the connection.",
+      );
+      x.stage = stage;
+      throw x;
+    }
+    try {
+      stage = "fetching documents";
+      var list = (e.docs || []).filter(function (d) {
+          return !/^All documents/.test(d.label) && !/identity|aadhaar|aadhar|id proof|voter|pan card/i.test(d.label);
+        }),
+        docs = [],
+        size = 0;
+      for (var i = 0; i < list.length; i++) {
+        chk();
+        var d = list[i];
+        status("Fetching document " + (i + 1) + " of " + list.length + ": " + d.label + " …");
+        try {
+          var res = await Ee(e, d.i, d.label),
+            blob = res.blob.type ? res.blob : new Blob([res.blob], { type: res.type || "" });
+          if (/zip/.test(res.type || blob.type)) throw new Error("ZIP skipped");
+          if (size + blob.size > 30e6) throw new Error("too large to send");
+          size += blob.size;
+          docs.push({ label: d.label, type: res.type || blob.type, data: await rpBlobB64(blob) });
+        } catch (err) {
+          docs.push({ label: d.label, error: String((err && err.message) || err).slice(0, 200) });
+        }
+        await C(400);
+      }
+      chk();
+      stage = "sending to the analyser";
+      status(
+        "Reading " +
+          docs.filter(function (d) {
+            return d.data;
+          }).length +
+          " document(s) and checking the village Jamabandi and map … this can take up to a minute.",
+      );
+      var resp = await fetch(API + "/api/analyse", {
+        signal: ctl.ac && ctl.ac.signal,
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Access-Key": key },
+        body: JSON.stringify({
+          app: {
+            appNo: e.appNo, name: e.name, village: e.village, khasra: e.khasra, service: e.service,
+            purpose: e.purpose, appDate: e.appDate, area: e.area, fields: e.fields, adj: e.adj, mut: e.mut, history: e.history,
+          },
+          docs: docs,
+        }),
+      });
+      if (401 === resp.status) {
+        try {
+          localStorage.removeItem("rpApiKey");
+        } catch (x) {}
+        var k = new Error("Wrong access key.");
+        k.stage = "key";
+        throw k;
+      }
+      var j = await resp.json();
+      if (!resp.ok) throw new Error(j.error || "HTTP " + resp.status);
+      rpCachePut(e, j.html);
+      rpMarkButtons();
+      return j.html;
+    } catch (err) {
+      if (ctl.aborted) throw rpAbortErr();
+      err.stage = err.stage || stage;
+      throw err;
+    }
+  }
+  // bg = true for background jobs. A request from you stops a running background job (it is re-queued) and goes first.
+  function rpRunFor(e, status, bg) {
+    var ck = rpKey(e);
+    if (rpCurrent && rpCurrent.ck === ck) {
+      if (!bg) rpCurrent.bg = !1; // you asked for the one already running: let it finish
+      return rpCurrent.promise;
+    }
+    if (!bg) {
+      rpBG.userWaiting++;
+      if (rpCurrent && rpCurrent.bg) {
+        rpCurrent.ctl.aborted = !0;
+        try {
+          rpCurrent.ctl.ac && rpCurrent.ctl.ac.abort();
+        } catch (x) {}
+      }
+    }
+    var key = rpGetKey(!1);
+    var job = rpSerial(async function () {
+      var hit = rpCacheGet(e);
+      if (hit) return hit.html;
+      if (bg && rpBG.userWaiting) throw rpAbortErr(); // let your request go first
+      var ctl = { aborted: !1, ac: window.AbortController ? new AbortController() : null };
+      var p = rpCore(e, key, status, ctl);
+      rpCurrent = { ck: ck, promise: p, bg: !!bg, ctl: ctl };
+      try {
+        return await p;
+      } finally {
+        rpCurrent = null;
+      }
+    });
+    if (!bg)
+      job.then(
+        function () {
+          rpBG.userWaiting--, rpKick();
+        },
+        function () {
+          rpBG.userWaiting--, rpKick();
+        },
+      );
+    return job;
+  }
+  function rpKick() {
+    // resume background after your request is done
+    !rpBG.userWaiting && !rpBG.running && !rpBG.paused && rpBG.queue.length && !rpBG.needKey && rpLoop(rpBG.gen);
+  }
+  async function rpAnalyse(e, force) {
+    var API = window.__rpApiBase || "";
+    S = y.getElementById("modal");
+    var ttl = y.getElementById("mtitle"),
+      body = y.getElementById("mbody"),
+      acts = y.getElementById("macts");
+    ttl.textContent = "Analysis — " + (e.name || e.appNo);
+    acts.innerHTML = "";
+    S.hidden = !1;
+    function st(msg, err) {
+      body.innerHTML =
+        '<div style="padding:18px;max-width:640px;align-self:flex-start;' + (err ? "color:#b42318" : "color:#5b6475") + '">' + L(msg) + "</div>";
+    }
+    function again() {
+      acts.innerHTML = '<button id="rpaRe">Run again</button>';
+      y.getElementById("rpaRe").onclick = function () {
+        rpAnalyse(e, !0);
+      };
+    }
+    function show(html, cachedAt) {
+      body.innerHTML =
+        '<div style="align-self:flex-start;width:100%;background:#f4f5f7">' +
+        (cachedAt
+          ? '<div style="max-width:900px;margin:8px auto 0;padding:0 14px;font-size:12px;color:#5b6475">Prepared in the background at ' +
+            L(new Date(cachedAt).toLocaleTimeString()) +
+            " · tap “Run again” for a fresh analysis</div>"
+          : "") +
+        html +
+        "</div>";
+      Array.prototype.forEach.call(body.querySelectorAll("[data-copy]"), function (b) {
+        b.onclick = function () {
+          var el = body.querySelector("#" + b.dataset.copy),
+            txt = el ? el.textContent : "";
+          navigator.clipboard && navigator.clipboard.writeText
+            ? navigator.clipboard.writeText(txt).then(
+                function () {
+                  b.textContent = "Copied ✓";
+                },
+                function () {
+                  prompt("Copy this:", txt);
+                },
+              )
+            : prompt("Copy this:", txt);
+        };
+      });
+      again();
+    }
+    if (!API) return st("This tracker was not loaded from the Render app.", !0);
+    if (A) return st("A scan is reading the portal right now. Analyse becomes available when it finishes — or tap “Stop after this set”.", !0);
+    if (!e.fields) return st("Run a new scan first — this application was read by an older tracker version.", !0);
+    var hit = !force && rpCacheGet(e);
+    if (hit) return show(hit.html, hit.at);
+    if (!rpGetKey(!0)) return (S.hidden = !0), void 0;
+    if (force) {
+      delete rpAnaCache[rpKey(e)];
+      try {
+        var all = JSON.parse(localStorage.getItem(RP_LS) || "{}") || {};
+        delete all[rpKey(e)];
+        localStorage.setItem(RP_LS, JSON.stringify(all));
+      } catch (x) {}
+    }
+    st(
+      rpCurrent && rpCurrent.ck !== rpKey(e) && rpCurrent.bg
+        ? "Stopping the background analysis to take up your application first …"
+        : "Connecting to the analyser …",
+    );
+    try {
+      var html = await rpRunFor(e, st);
+      show(html);
+      rpStartBackground(); // key may have just been entered
+    } catch (err) {
+      st(
+        "Analysis failed while " +
+          (err.stage || "working") +
+          ": " +
+          String((err && err.message) || err) +
+          (err.stage === "sending to the analyser"
+            ? " The analyser was reachable but dropped this request — usually it ran out of memory or time on Render. Tap Run again; if it repeats, send a screenshot of the Render Logs."
+            : ""),
+        !0,
+      );
+      again();
+    }
+  }
+  // ───── Status PDF (pendency only — no remarks, documents or analysis) ─────
+  var rpScanAt = 0;
+  async function rpStatusPdf(items, btn) {
+    var API = window.__rpApiBase || "";
+    if (!API) return alert("Status PDF needs the tracker loaded from the Render app.");
+    var key = rpGetKey(!0);
+    if (!key) return;
+    var old = btn.textContent;
+    btn.textContent = "Preparing PDF …";
+    btn.disabled = !0;
+    try {
+      var set = ee(),
+        office = "";
+      items.some(function (e) {
+        var tf = e.fields && e.fields.tehsil;
+        return tf && (office = "Tehsil " + tf.replace(/\s*\/.*$/, ""));
+      });
+      var rows = items.map(function (e) {
+        var c = null;
+        try {
+          c = ce(e, set);
+        } catch (x) {}
+        var cur = c && c.cur ? c.cur : null,
+          ob = oe(e);
+        return {
+          appNo: e.appNo, name: e.name, village: e.village, khasra: e.khasra, service: e.service, purpose: e.purpose,
+          appDate: ob.applied ? new Date(ob.applied).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : (e.appDate || "").split("/")[0],
+          resub: ob.resub ? new Date(ob.resub).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "",
+          stage: e.stage, holder: e.holder, revert: e.revert,
+          withSince: (function () {
+            var hh = e.history || [], w = e.lastT || (hh.length && hh[hh.length - 1].t) || ob.base;
+            return w ? new Date(w).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "";
+          })(),
+          withDays: (function () {
+            var hh = e.history || [], w = e.lastT || (hh.length && hh[hh.length - 1].t) || ob.base;
+            if (!w) return null;
+            try {
+              var td = new Date();
+              td.setHours(0, 0, 0, 0);
+              return ie(w, td.getTime());
+            } catch (x) {
+              return null;
+            }
+          })(),
+          dayNow: c && c.dayNow != null ? c.dayNow : null,
+          cur: cur ? { role: cur.role, limit: cur.limit, days: cur.days, over: cur.over || 0, left: cur.left, status: cur.status } : null,
+          late: c ? c.late.map(function (v) { return { who: v.by || v.role, over: v.over }; }) : [],
+        };
+      });
+      var resp = await fetch(API + "/api/status-pdf", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Access-Key": key },
+        body: JSON.stringify({ scanAt: rpScanAt || Date.now(), office: office, limits: { pat: +set.pat, gir: +set.gir, nt: +set.nt }, mode: set.mode, items: rows }),
+      });
+      if (401 === resp.status) {
+        try {
+          localStorage.removeItem("rpApiKey");
+        } catch (x) {}
+        throw new Error("Wrong access key — tap again to re-enter it.");
+      }
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      var blob = await resp.blob(),
+        a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Pendency_Status_" + new Date(rpScanAt || Date.now()).toISOString().slice(0, 10) + ".pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function () {
+        URL.revokeObjectURL(a.href);
+      }, 5000);
+      btn.textContent = "PDF downloaded ✓";
+    } catch (err) {
+      btn.textContent = "PDF failed";
+      prompt("Status PDF could not be made:", String((err && err.message) || err));
+    } finally {
+      btn.disabled = !1;
+      setTimeout(function () {
+        btn.textContent = old;
+      }, 3000);
+    }
+  }
+  // ───── Background pre-analysis while the tracker stays open ─────
+  function rpEligible(e) {
+    var docs = (e.docs || []).filter(function (d) {
+      return !/^All documents/.test(d.label);
+    });
+    return (
+      !!e.fields &&
+      "Submitted" === e.patReport &&
+      docs.some(function (d) {
+        return /tatima/i.test(d.label);
+      }) &&
+      docs.some(function (d) {
+        return !/tatima/i.test(d.label) && !/identity|aadhaar|aadhar|id proof|voter|pan card/i.test(d.label);
+      })
+    );
+  }
+  function rpPanel() {
+    var p = y.getElementById("rpbg");
+    if (!p) {
+      p = document.createElement("div");
+      p.id = "rpbg";
+      p.style.cssText =
+        "position:fixed;left:12px;bottom:12px;z-index:5;max-width:min(420px,calc(100vw - 24px));background:#12355b;color:#fff;border-radius:10px;padding:10px 12px;font:13px/1.4 system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25)";
+      y.appendChild(p);
+    }
+    var b = rpBG,
+      left = b.queue.length + (b.cur ? 1 : 0);
+    if (!b.total) return (p.style.display = "none"), p;
+    p.style.display = "block";
+    p.innerHTML =
+      "<b>Background analysis</b> — " +
+      b.done +
+      " of " +
+      b.total +
+      " ready" +
+      (b.failed ? ", " + b.failed + " failed" : "") +
+      (b.userWaiting && left ? '<div style="opacity:.85">Paused for your request — resumes automatically.</div>' : "") +
+      (b.cur && !b.paused ? '<div style="opacity:.85">Now: ' + L(b.cur) + "</div>" : "") +
+      (left && !b.paused
+        ? '<div style="opacity:.85;font-size:12px;margin-top:2px">Don’t process applications on the portal in another tab until this finishes.</div>'
+        : "") +
+      (b.needKey ? '<div style="margin-top:2px">Tap “Analyse” on any application once to enter the access key — background analysis starts after that.</div>' : "") +
+      '<div style="margin-top:6px;display:flex;gap:6px">' +
+      (left
+        ? '<button id="rpbgP" style="padding:5px 10px;font-size:12px">' + (b.paused ? "Resume" : "Pause") + "</button>"
+        : "") +
+      '<button id="rpbgX" style="padding:5px 10px;font-size:12px">Hide</button></div>';
+    var pb = y.getElementById("rpbgP");
+    pb &&
+      (pb.onclick = function () {
+        b.paused = !b.paused;
+        rpPanel();
+        b.paused || rpLoop(b.gen);
+      });
+    y.getElementById("rpbgX").onclick = function () {
+      p.style.display = "none";
+    };
+    return p;
+  }
+  function rpMarkButtons() {
+    Array.prototype.forEach.call(w.querySelectorAll(".ana"), function (btn) {
+      var it = (rpBG.items || []).filter(function (t) {
+        return rpKey(t) === btn.dataset.k;
+      })[0];
+      if (!it) return;
+      var ready = rpCacheGet(it);
+      btn.textContent = ready ? "Open analysis ✓ (ready)" : "Analyse with village records";
+      btn.style.background = ready ? "#1a7f5a" : "#12355b";
+    });
+  }
+  function rpStartBackground(items) {
+    if (!window.__rpApiBase) return;
+    if (items) {
+      rpBG.gen++;
+      rpBG.items = items;
+      rpBG.queue = items.filter(function (e) {
+        return rpEligible(e) && !rpCacheGet(e);
+      });
+      rpBG.total = items.filter(rpEligible).length;
+      rpBG.done = rpBG.total - rpBG.queue.length;
+      rpBG.failed = 0;
+      rpBG.paused = !1;
+    }
+    rpBG.needKey = !rpGetKey(!1) && rpBG.queue.length > 0;
+    rpPanel();
+    rpMarkButtons();
+    if (!rpBG.needKey && !rpBG.running) rpLoop(rpBG.gen);
+  }
+  async function rpLoop(gen) {
+    if (rpBG.running) return;
+    rpBG.running = !0;
+    try {
+      while (rpBG.queue.length && !rpBG.paused && gen === rpBG.gen && !A && !rpBG.userWaiting) {
+        var e = rpBG.queue.shift();
+        if (rpCacheGet(e)) {
+          rpBG.done++;
+          continue;
+        }
+        rpBG.cur = (e.name || e.appNo) + (e.village ? " · " + e.village : "") + (e.khasra ? " · khasra " + e.khasra : "");
+        rpPanel();
+        try {
+          await rpRunFor(e, function () {}, !0);
+          rpBG.done++;
+        } catch (err) {
+          if (err && err.stage === "aborted") {
+            rpBG.queue.unshift(e); // put it back; resume after your request
+            rpBG.cur = "";
+            rpPanel();
+            break;
+          }
+          rpBG.failed++;
+          if (err && err.stage === "key") {
+            rpBG.needKey = !0;
+            rpBG.queue.unshift(e);
+            break;
+          }
+          if (err && err.stage === "connecting") {
+            rpBG.queue.unshift(e);
+            rpBG.failed--;
+            await C(30000); // Render waking up — retry in 30 s
+          }
+        }
+        rpBG.cur = "";
+        rpPanel();
+        rpMarkButtons();
+        await C(1500);
+      }
+    } finally {
+      rpBG.running = !1;
+      rpBG.cur = "";
+      rpPanel();
+    }
+  }
+  function Re(e) {
+    return null != e.stageDays ? e.stageDays : e.days;
+  }
+  function Ne(e) {
+    var t = e.items;
+    rpScanAt = e.at;
+    function r(e) {
+      return t.filter(e).length;
+    }
+    !(function (e) {
+      var t = {},
+        a = {};
+      e.forEach(function (e) {
+        (e.history || []).forEach(function (r) {
+          var n = te(r.by);
+          if (
+            n &&
+            r.by !== n &&
+            (((t[n] = t[n] || {})[r.by] = 1), "Patwari" === n)
+          ) {
+            var i = e.village || "—";
+            (a[i] = a[i] || {})[r.by] = ((a[i] || {})[r.by] || 0) + 1;
+          }
+        });
+      }),
+        (c = { role: {}, village: {} }),
+        Object.keys(t).forEach(function (e) {
+          var a = Object.keys(t[e]);
+          1 === a.length && (c.role[e] = a[0]);
+        }),
+        Object.keys(a).forEach(function (e) {
+          var t = Object.keys(a[e]).sort(function (t, r) {
+            return a[e][r] - a[e][t];
+          });
+          c.village[e] = t[0];
+        });
+    })(t);
+    var n = a
+      .concat(["Tehsildar acted", "Unknown holder", "Could not read"])
+      .filter(function (e) {
+        return r(function (t) {
+          return t.stage === e;
+        });
+      });
+    !(function i() {
+      var o = (function () {
+          var e = N.q.toLowerCase();
+          return t
+            .filter(function (t) {
+              if (N.stage && t.stage !== N.stage) return !1;
+              if (
+                N.age &&
+                ((a = Re(t)) <= 7 ? "0–7" : a <= 15 ? "8–15" : "16+") !== N.age
+              )
+                return !1;
+              var a;
+              if (N.flags && !t.flag) return !1;
+              if (N.errs && !/Error:/.test(t.flag)) return !1;
+              if (N.level && t.level !== N.level) return !1;
+              if (N.village && (t.village || "—") !== N.village) return !1;
+              if (N.over) {
+                var r = ce(t);
+                if (
+                  !r ||
+                  !r.overdue.length ||
+                  ("all" !== N.over && r.overdue[0].role !== N.over)
+                )
+                  return !1;
+              }
+              return !(
+                (N.scr &&
+                  !H(t).some(function (e) {
+                    return "red" === e.l;
+                  })) ||
+                (e &&
+                  [
+                    t.appNo,
+                    t.name,
+                    t.mobile,
+                    t.village,
+                    t.khasra,
+                    t.khewat,
+                    t.service,
+                    t.holder,
+                    t.vendee,
+                  ]
+                    .join(" ")
+                    .toLowerCase()
+                    .indexOf(e) < 0)
+              );
+            })
+            .sort(function (e, t) {
+              return Re(t) - Re(e) || t.days - e.days;
+            });
+        })(),
+        l =
+          '<div class="tiles"><div class="tile' +
+          (N.stage || N.flags || N.errs || N.scr ? "" : " on") +
+          '" data-s=""><div class="n">' +
+          t.length +
+          '</div><div class="l">All pending</div></div>' +
+          n
+            .map(function (e) {
+              return (
+                '<div class="tile' +
+                (N.stage === e ? " on" : "") +
+                '" data-s="' +
+                L(e) +
+                '"><div class="n">' +
+                r(function (t) {
+                  return t.stage === e;
+                }) +
+                '</div><div class="l">' +
+                L(e) +
+                "</div></div>"
+              );
+            })
+            .join("") +
+          '<div class="tile' +
+          (N.errs ? " on" : "") +
+          '" data-e="1"><div class="n" style="color:#c62828">' +
+          r(function (e) {
+            return /Error:/.test(e.flag);
+          }) +
+          '</div><div class="l">Errors (report pending but moved ahead)</div></div><div class="tile' +
+          (N.scr ? " on" : "") +
+          '" data-c="1"><div class="n" style="color:#b42318">' +
+          r(function (e) {
+            return H(e).some(function (e) {
+              return "red" === e.l;
+            });
+          }) +
+          '</div><div class="l">Serious scrutiny issues</div></div><div class="tile' +
+          (N.flags ? " on" : "") +
+          '" data-f="1"><div class="n" style="color:#c62828">' +
+          r(function (e) {
+            return e.flag;
+          }) +
+          '</div><div class="l">Flagged</div></div></div>',
+        d = {};
+      t.forEach(function (e) {
+        var t = e.village || "—";
+        (d[t] = d[t] || { t: 0 }),
+          d[t].t++,
+          (d[t][e.stage] = (d[t][e.stage] || 0) + 1);
+      });
+      var c = Object.keys(d)
+        .sort(function (e, t) {
+          return d[t].t - d[e].t;
+        })
+        .map(function (e) {
+          return (
+            "<tr><td>" +
+            L(e) +
+            "</td>" +
+            n
+              .map(function (t) {
+                return "<td>" + (d[e][t] || "") + "</td>";
+              })
+              .join("") +
+            "<td><b>" +
+            d[e].t +
+            "</b></td></tr>"
+          );
+        })
+        .join("");
+      (w.innerHTML =
+        '<div class="tools"><span class="muted">Scanned ' +
+        L(new Date(e.at).toLocaleString()) +
+        (e.loggedOut
+          ? " (stopped: the portal logged you out — log in again and rescan)"
+          : e.partial
+            ? " (stopped early)"
+            : "") +
+        '</span><span style="flex:1"></span><button id="stpdf" style="background:#12355b;color:#fff">Status PDF</button><button id="csv">Download Excel (CSV)</button><button id="json">Download all data</button><button id="wa">Copy summary</button><button id="again">New scan</button></div>' +
+        l +
+        (t.some(function (e) {
+          return e.level;
+        })
+          ? '<div class="card"><h3>Who commented last</h3><div class="lvl">' +
+            O.map(function (e) {
+              var t = r(function (t) {
+                return t.level === e[0];
+              });
+              return t || "Tehsildar" !== e[0]
+                ? '<div class="lv ' +
+                    e[1] +
+                    (N.level === e[0] ? " on" : "") +
+                    '" data-l="' +
+                    e[0] +
+                    '"><div class="n">' +
+                    t +
+                    '</div><div class="l">' +
+                    e[3] +
+                    "</div></div>"
+                : "";
+            }).join("") +
+            "</div></div>"
+          : "") +
+        (function () {
+          var e = ee(),
+            a = t
+              .map(function (t) {
+                return { it: t, c: ce(t, e) };
+              })
+              .filter(function (e) {
+                return e.c;
+              });
+          if (!a.length) return "";
+          var r = {
+              Patwari: [0, 0],
+              Girdawar: [0, 0],
+              "Naib Tehsildar": [0, 0],
+            },
+            n = 0;
+          a.forEach(function (e) {
+            var t = e.c.overdue[0];
+            t && (r[t.role][t.inherited ? 1 : 0]++, n++);
+          });
+          var i = N.tlEdit
+            ? '<div class="tools" style="margin:6px 0">Patwari <input class="num" id="sp" type="number" min="1" value="' +
+              e.pat +
+              '"> Girdawar <input class="num" id="sg" type="number" min="1" value="' +
+              e.gir +
+              '"> Naib Tehsildar <input class="num" id="sn" type="number" min="1" value="' +
+              e.nt +
+              '"> days, counted <select id="sm"><option value="app"' +
+              ("app" === e.mode ? " selected" : "") +
+              '>from the Application / Resubmit date (as the portal counts)</option><option value="stage"' +
+              ("stage" === e.mode ? " selected" : "") +
+              '>from when each officer receives the file</option></select> <button class="pri" id="ssave">Save</button></div><div style="margin:6px 0"><div class="muted">Holidays skipped in the count (one date per line, YYYY-MM-DD). Sundays are always skipped.</div><textarea id="shol" rows="6" style="width:100%;max-width:420px;font:12px ui-monospace,monospace;border:1px solid #c9ced8;border-radius:6px;padding:6px">' +
+              L((e.holidays || p).join(" ")).replace(/ /g, "\n") +
+              "</textarea></div>"
+            : '<div class="muted" style="margin-bottom:8px">Limits: Patwari ' +
+              e.pat +
+              " · Girdawar " +
+              e.gir +
+              " · Naib Tehsildar " +
+              e.nt +
+              " days from the " +
+              ("app" === e.mode
+                ? "Application / Resubmit date"
+                : "date each officer receives the file") +
+              ', Sundays and holidays excluded · <a href="#" id="sedit">Change</a></div>';
+          function o(e, t) {
+            var a = "all" === e ? n : r[e][0] + r[e][1],
+              i = "all" === e ? 0 : r[e][1];
+            return (
+              '<div class="tile' +
+              (N.over === e ? " on" : "") +
+              '" data-o="' +
+              e +
+              '"><div class="n" style="color:' +
+              (a ? m : "#145c36") +
+              '">' +
+              a +
+              '</div><div class="l">' +
+              t +
+              (i
+                ? '<br><span style="color:' +
+                  g +
+                  '">' +
+                  i +
+                  " due to earlier stage</span>"
+                : "") +
+              "</div></div>"
+            );
+          }
+          var s =
+              '<div class="tiles" style="margin-bottom:10px">' +
+              o("all", "Files overdue now") +
+              o("Patwari", "Overdue with Patwari") +
+              o("Girdawar", "Overdue with Girdawar") +
+              o("Naib Tehsildar", "Overdue with Naib Tehsildar") +
+              "</div>",
+            l = {};
+          function d(e) {
+            return (l[e] = l[e] || {
+              files: 0,
+              run: 0,
+              P: [0, 0],
+              G: [0, 0],
+              N: [0, 0],
+              own: [0, 0],
+            });
+          }
+          var c = { Patwari: "P", Girdawar: "G", "Naib Tehsildar": "N" };
+          a.forEach(function (e) {
+            var t = e.c,
+              a = t.overdue[0] || t.open[0];
+            if ("village" === N.tlBy) {
+              var r = d(e.it.village || "—");
+              r.files++,
+                !t.overdue.length && t.open.length && r.run++,
+                t.overdue[0] &&
+                  r[c[t.overdue[0].role]][t.overdue[0].inherited ? 1 : 0]++;
+            } else if (a) {
+              var n = d(
+                "Patwari" === a.role
+                  ? "Patwari · " + (e.it.village || "—")
+                  : a.by || a.role,
+              );
+              (n.role = a.role),
+                n.files++,
+                "overdue" === a.status ? n.own[a.inherited ? 1 : 0]++ : n.run++;
+            }
+          });
+          var u,
+            f = Object.keys(l).sort(function (e, t) {
+              function a(e) {
+                return (
+                  e.P[0] +
+                  e.P[1] +
+                  e.G[0] +
+                  e.G[1] +
+                  e.N[0] +
+                  e.N[1] +
+                  e.own[0] +
+                  e.own[1]
+                );
+              }
+              return (
+                a(l[t]) - a(l[e]) ||
+                l[t].files - l[e].files ||
+                e.localeCompare(t)
+              );
+            });
+          function h(e) {
+            var t = e[0] + e[1];
+            return t
+              ? '<b style="color:' +
+                  (e[0] ? m : g) +
+                  '">' +
+                  t +
+                  "</b>" +
+                  (e[0] && e[1]
+                    ? ' <span style="color:' +
+                      g +
+                      ';font-size:11px">(' +
+                      e[1] +
+                      " earlier stage)</span>"
+                    : "")
+              : "";
+          }
+          if ("village" === N.tlBy) {
+            var v = { files: 0, run: 0, P: [0, 0], G: [0, 0], N: [0, 0] };
+            function b(e) {
+              var t = e.P[0] + e.P[1] + e.G[0] + e.G[1] + e.N[0] + e.N[1];
+              return t ? '<b style="color:' + m + '">' + t + "</b>" : "";
+            }
+            f.forEach(function (e) {
+              var t = l[e];
+              (v.files += t.files),
+                (v.run += t.run),
+                ["P", "G", "N"].forEach(function (e) {
+                  (v[e][0] += t[e][0]), (v[e][1] += t[e][1]);
+                });
+            }),
+              (u =
+                '<table class="tlv"><thead><tr><th>Village</th><th>Files</th><th>Within limit</th><th>Overdue: Patwari</th><th>Overdue: Girdawar</th><th>Overdue: Naib Tehsildar</th><th>Overdue total</th></tr></thead><tbody>' +
+                f
+                  .map(function (e) {
+                    var t = l[e];
+                    return (
+                      '<tr class="vrow' +
+                      (N.village === e ? " sel" : "") +
+                      '" data-v="' +
+                      L(e) +
+                      '"><td>' +
+                      L(e) +
+                      "</td><td>" +
+                      t.files +
+                      "</td><td>" +
+                      (t.run || "") +
+                      "</td><td>" +
+                      h(t.P) +
+                      "</td><td>" +
+                      h(t.G) +
+                      "</td><td>" +
+                      h(t.N) +
+                      "</td><td>" +
+                      b(t) +
+                      "</td></tr>"
+                    );
+                  })
+                  .join("") +
+                '<tr style="font-weight:700;background:#f0f2f6"><td>Total</td><td>' +
+                v.files +
+                "</td><td>" +
+                (v.run || "") +
+                "</td><td>" +
+                h(v.P) +
+                "</td><td>" +
+                h(v.G) +
+                "</td><td>" +
+                h(v.N) +
+                "</td><td>" +
+                b(v) +
+                "</td></tr></tbody></table>");
+          } else
+            u =
+              '<table class="tlv"><thead><tr><th>Officer</th><th>Files pending</th><th>Within limit</th><th>Overdue</th></tr></thead><tbody>' +
+              f
+                .map(function (e) {
+                  var t = l[e];
+                  return (
+                    "<tr><td>" +
+                    L(e) +
+                    "</td><td>" +
+                    t.files +
+                    "</td><td>" +
+                    (t.run || "") +
+                    "</td><td>" +
+                    h(t.own) +
+                    "</td></tr>"
+                  );
+                })
+                .join("") +
+              "</tbody></table>";
+          return (
+            '<div class="card"><div class="tools" style="margin-bottom:4px"><h3 style="margin:0;flex:1">Time-limit compliance</h3><span class="chip' +
+            ("village" === N.tlBy ? " on" : "") +
+            '" data-tb="village">By village</span><span class="chip' +
+            ("officer" === N.tlBy ? " on" : "") +
+            '" data-tb="officer">By officer</span></div>' +
+            i +
+            s +
+            '<div class="scroll">' +
+            u +
+            '</div><div class="muted" style="margin-top:6px"><b style="color:' +
+            m +
+            '">Red</b>: the officer holding the file has not acted. <b style="color:' +
+            g +
+            '">Amber</b>: overdue because the earlier stage submitted late.' +
+            ("village" === N.tlBy
+              ? " Tap a village to list only its applications."
+              : "") +
+            "</div></div>"
+          );
+        })() +
+        (N.village
+          ? '<div class="tools"><span class="chip on" id="clrv">Village: ' +
+            L(N.village) +
+            " ×</span></div>"
+          : "") +
+        (t.length &&
+        r(function (e) {
+          return "Could not read" === e.stage;
+        }) === t.length
+          ? '<div class="card warn"><b>None of the application pages could be read.</b> Tap any row below and send a screenshot of the “What the portal returned” line so the tracker can be adjusted.</div>'
+          : "") +
+        '<div class="tools"><input class="s" id="q" placeholder="Search application no, name, mobile, village, khasra, patwari" value="' +
+        L(N.q) +
+        '">' +
+        ["", "0–7", "8–15", "16+"]
+          .map(function (e) {
+            return (
+              '<span class="chip' +
+              (N.age === e ? " on" : "") +
+              '" data-a="' +
+              e +
+              '">' +
+              (e ? e + " days at stage" : "Any age") +
+              "</span>"
+            );
+          })
+          .join("") +
+        '</div><div class="scroll"><table class="apps"><thead><tr><th>Application</th><th>Applicant</th><th>Village / Khasra</th><th>Purpose</th><th>Days</th><th>Stage</th></tr></thead><tbody>' +
+        (o.length
+          ? o
+              .map(function (e, t) {
+                var r,
+                  n,
+                  i,
+                  o = e.appNo + "|" + e.service,
+                  s = (function (e) {
+                    for (var t = 0; t < O.length; t++)
+                      if (O[t][0] === e) return O[t];
+                    return null;
+                  })(e.level);
+                return (
+                  '<tr class="r' +
+                  (s && s[2] ? " " + s[2] : "") +
+                  '" data-k="' +
+                  L(o) +
+                  '"><td>' +
+                  L(e.appNo) +
+                  (e.service
+                    ? '<div class="muted">' + L(e.service) + "</div>"
+                    : "") +
+                  "</td><td>" +
+                  L(e.name) +
+                  '<div class="muted">' +
+                  L(e.mobile) +
+                  "</div></td><td>" +
+                  L(e.village) +
+                  '<div class="muted">' +
+                  L(e.khasra) +
+                  "</div></td><td>" +
+                  L(e.purpose) +
+                  (e.revert
+                    ? '<div class="flag">Reverted ' + e.revert + "×</div>"
+                    : "") +
+                  '</td><td class="d' +
+                  (Re(e) > 15 ? " hi" : "") +
+                  '">' +
+                  Re(e) +
+                  " days" +
+                  (null != e.stageDays
+                    ? '<div class="muted">at this stage · ' +
+                      e.days +
+                      " total</div>"
+                    : "") +
+                  '</td><td><span class="st ' +
+                  ((n = e.stage),
+                  ((i = a.indexOf(n)) >= 0 && i < 4
+                    ? "s" + i
+                    : "Tehsildar acted" === n
+                      ? "s3"
+                      : "s9") + '">') +
+                  L(e.stage) +
+                  "</span>" +
+                  (e.holder && e.holder !== e.stage.replace("With ", "")
+                    ? '<div class="muted">' + L(e.holder) + "</div>"
+                    : "") +
+                  ("Pending" === e.patReport
+                    ? '<div class="muted">Patwari report: pending</div>'
+                    : "") +
+                  ((function (e) {
+                    if (!e) return "";
+                    var t =
+                      "app" === e.mode
+                        ? e.dayNow +
+                          " days since " +
+                          (e.resub ? "resubmission" : "application")
+                        : "";
+                    if (e.stopped)
+                      return (
+                        '<div class="muted">⏱ ' +
+                        t +
+                        " · returned to applicant, clock stopped</div>"
+                      );
+                    var a = e.overdue[0];
+                    if (a) {
+                      var r = a.inherited ? g : m,
+                        n = a.inherited
+                          ? " — " + a.cause
+                          : "Patwari" === a.role && a.note
+                            ? " — " + a.note
+                            : " — not acted yet";
+                      return (
+                        '<div style="color:' +
+                        r +
+                        ';font-size:12px;font-weight:600">⏱ ' +
+                        L(a.role) +
+                        " overdue by " +
+                        a.over +
+                        "d — " +
+                        L(n.replace(/^ — /, "")) +
+                        (t
+                          ? ' <span style="font-weight:400">(' + t + ")</span>"
+                          : "") +
+                        "</div>"
+                      );
+                    }
+                    return e.open.length
+                      ? '<div style="color:' +
+                          ((a = e.open[0]).left <= 1 ? g : "#145c36") +
+                          ';font-size:12px;font-weight:600">⏱ ' +
+                          L(a.role) +
+                          (0 === a.left
+                            ? " due today"
+                            : " due in " +
+                              a.left +
+                              " day" +
+                              (1 === a.left ? "" : "s")) +
+                          (t
+                            ? ' <span style="font-weight:400">(' +
+                              t +
+                              ")</span>"
+                            : "") +
+                          "</div>"
+                      : t
+                        ? '<div class="muted">⏱ ' +
+                          t +
+                          " · all levels have acted</div>"
+                        : "";
+                  })((r = ce(e))) +
+                    (function (e) {
+                      return e && e.late.length
+                        ? '<div class="muted" style="color:' +
+                            g +
+                            '">Delay: ' +
+                            e.late
+                              .map(function (e) {
+                                return (
+                                  L(e.by || e.role) +
+                                  " late by " +
+                                  e.over +
+                                  (e.overMax && e.overMax > e.over
+                                    ? "–" + e.overMax
+                                    : "") +
+                                  "d"
+                                );
+                              })
+                              .join(", ") +
+                            "</div>"
+                        : "";
+                    })(r)) +
+                  (e.lastBy
+                    ? '<div class="muted">Last: ' +
+                      L(e.lastBy) +
+                      ", " +
+                      L(Z(e.lastT)) +
+                      "</div>"
+                    : "") +
+                  (e.flag
+                    ? '<div class="flag">⚠ ' + L(e.flag) + "</div>"
+                    : "") +
+                  "</td></tr>" +
+                  (N.open[o]
+                    ? '<tr class="det"><td colspan="6">' +
+                      (e.history && e.history.length
+                        ? "<p><b>Movement of file</b></p>" +
+                          e.history
+                            .map(function (e, t) {
+                              return (
+                                "<p>" +
+                                (t + 1) +
+                                ". <b>" +
+                                L(Z(e.t) || e.date) +
+                                " · " +
+                                L(e.by) +
+                                ":</b> " +
+                                L(e.remark) +
+                                "</p>"
+                              );
+                            })
+                            .join("")
+                        : "<p><b>Patwari:</b> " +
+                          L(e.pat || "—") +
+                          "</p><p><b>Girdawar:</b> " +
+                          L(e.gir || "—") +
+                          "</p><p><b>Naib Tehsildar:</b> " +
+                          L(e.nt || "—") +
+                          "</p>") +
+                      (function (e) {
+                        if (!e) return "";
+                        var t = e.visits.filter(function (e) {
+                          return "waiting" !== e.status;
+                        });
+                        if (!t.length) return "";
+                        var a = {
+                          ontime: ["On time", "#145c36"],
+                          late: ["Late", m],
+                          overdue: ["Overdue", m],
+                          running: ["Within limit", "#145c36"],
+                          moved: ["No entry", "#5b6475"],
+                          stopped: ["Clock stopped", "#5b6475"],
+                          reported: ["Report submitted", "#145c36"],
+                        };
+                        return (
+                          '<p><b>Time-limit record</b> <span class="muted">(current round; Sundays and holidays excluded, as the portal counts)</span></p><div class="scroll"><table class="tl"><thead><tr><th>Officer</th><th>Counted from</th><th>Acted on</th><th>Days taken</th><th>Allowed</th><th>Status</th></tr></thead><tbody>' +
+                          t
+                            .map(function (e) {
+                              var t =
+                                "overdue" === e.status && e.inherited
+                                  ? ["Overdue (earlier stage late)", g]
+                                  : a[e.status];
+                              return (
+                                "<tr><td>" +
+                                L(e.by || e.role) +
+                                "</td><td>" +
+                                L(Z(e.from)) +
+                                "</td><td>" +
+                                (e.to
+                                  ? (e.est ? "by " : "") + L(Z(e.to))
+                                  : e.open
+                                    ? "<i>pending</i>"
+                                    : "—") +
+                                "</td><td>" +
+                                (null != e.days
+                                  ? (e.est ? "about " : "") + e.days + " days"
+                                  : "—") +
+                                "</td><td>Within " +
+                                e.limit +
+                                ' days</td><td style="color:' +
+                                t[1] +
+                                ';font-weight:600">' +
+                                t[0] +
+                                (e.over
+                                  ? " by " +
+                                    e.over +
+                                    (e.overMax && e.overMax > e.over
+                                      ? "–" + e.overMax
+                                      : "") +
+                                    "d"
+                                  : "") +
+                                ((e.inherited ? e.cause : e.note)
+                                  ? '<div class="muted" style="font-weight:400">' +
+                                    L(e.inherited ? e.cause : e.note) +
+                                    "</div>"
+                                  : "") +
+                                "</td></tr>"
+                              );
+                            })
+                            .join("") +
+                          "</tbody></table></div>"
+                        );
+                      })(ce(e)) +
+                      (function (e) {
+                        var t = H(e);
+                        if (!e.fields)
+                          return '<p class="muted">Run a new scan to get the full scrutiny for this application.</p>';
+                        if (!t.length)
+                          return '<p><b>Scrutiny:</b> <span style="color:#145c36">no issues found in the captured data</span></p>';
+                        var a = {
+                            red: "#b42318",
+                            amber: "#8a5300",
+                            info: "#5b6475",
+                          },
+                          r = { red: "●", amber: "▲", info: "ℹ" };
+                        return (
+                          "<p><b>Scrutiny</b></p>" +
+                          t
+                            .map(function (e) {
+                              return (
+                                '<p style="color:' +
+                                a[e.l] +
+                                '">' +
+                                r[e.l] +
+                                " " +
+                                L(e.t) +
+                                "</p>"
+                              );
+                            })
+                            .join("")
+                        );
+                      })(e) +
+                      '<div class="docs"><button class="cpy" data-k="' +
+                      L(o) +
+                      '">Copy case for Claude</button>' +
+                      (window.__rpApiBase
+                        ? '<button class="ana" style="background:#12355b;color:#fff" data-k="' +
+                          L(o) +
+                          '">Analyse with village records</button>'
+                        : "") +
+                      "</div>" +
+                      (e.docs && e.docs.length
+                        ? '<p><b>Uploaded documents</b></p><div class="docs">' +
+                          e.docs
+                            .slice()
+                            .sort(function (e, t) {
+                              return (
+                                (/^All documents/.test(e.label) ? 1 : 0) -
+                                  (/^All documents/.test(t.label) ? 1 : 0) ||
+                                e.i - t.i
+                              );
+                            })
+                            .map(function (e) {
+                              return (
+                                '<button class="docbtn" data-k="' +
+                                L(o) +
+                                '" data-d="' +
+                                e.i +
+                                '">' +
+                                L(e.label) +
+                                "</button>"
+                              );
+                            })
+                            .join("") +
+                          "</div>"
+                        : e.docs
+                          ? ""
+                          : '<p class="muted">Run a new scan to see documents for this application.</p>') +
+                      (e.vendee || e.area
+                        ? '<p class="muted">' +
+                          (e.vendee ? "Vendee: " + L(e.vendee) : "") +
+                          (e.vendee && e.area ? " · " : "") +
+                          (e.area ? "Area: " + L(e.area) : "") +
+                          "</p>"
+                        : "") +
+                      (e.diag
+                        ? '<p class="muted" style="word-break:break-word"><b>What the portal returned:</b> ' +
+                          L(e.diag) +
+                          "</p>"
+                        : "") +
+                      '<p class="muted">Khewat ' +
+                      L(e.khewat || "—") +
+                      " · Applied " +
+                      L(e.appDate || "—") +
+                      "</p></td></tr>"
+                    : "")
+                );
+              })
+              .join("")
+          : '<tr><td colspan="6" class="muted">No applications match.</td></tr>') +
+        "</tbody></table></div>" +
+        (function (e) {
+          var t = {};
+          e.forEach(function (e) {
+            if (e.holder) {
+              var a = e.holder;
+              (t[a] = t[a] || { n: 0, old: 0, over: 0 }),
+                t[a].n++,
+                (t[a].old = Math.max(t[a].old, Re(e))),
+                Re(e) > 7 && t[a].over++;
+            }
+          });
+          var a = Object.keys(t).sort(function (e, a) {
+            return t[a].n - t[e].n || t[a].old - t[e].old;
+          });
+          return a.length
+            ? '<div class="card" style="margin-top:12px"><h3>Who is holding the files</h3><div class="scroll"><table><thead><tr><th>Holder</th><th>Files</th><th>Over 7 days</th><th>Oldest (days)</th></tr></thead><tbody>' +
+                a
+                  .map(function (e) {
+                    return (
+                      "<tr><td>" +
+                      L(e) +
+                      "</td><td><b>" +
+                      t[e].n +
+                      "</b></td><td>" +
+                      (t[e].over || "") +
+                      '</td><td class="d' +
+                      (t[e].old > 15 ? " hi" : "") +
+                      '">' +
+                      t[e].old +
+                      "</td></tr>"
+                    );
+                  })
+                  .join("") +
+                "</tbody></table></div></div>"
+            : "";
+        })(t) +
+        '<div class="card" style="margin-top:12px"><h3>Village-wise pendency</h3><div class="scroll"><table><thead><tr><th>Village</th>' +
+        n
+          .map(function (e) {
+            return "<th>" + L(e.replace("With ", "")) + "</th>";
+          })
+          .join("") +
+        "<th>Total</th></tr></thead><tbody>" +
+        c +
+        "</tbody></table></div></div>"),
+        Array.prototype.forEach.call(
+          w.querySelectorAll(
+            '.tile:not([data-o]):not([style*="cursor:default"])',
+          ),
+          function (e) {
+            e.onclick = function () {
+              if (e.dataset.c)
+                return (
+                  (N.scr = !N.scr),
+                  (N.flags = !1),
+                  (N.errs = !1),
+                  (N.stage = ""),
+                  void i()
+                );
+              (N.scr = !1),
+                e.dataset.f
+                  ? ((N.flags = !N.flags), (N.errs = !1), (N.stage = ""))
+                  : e.dataset.e
+                    ? ((N.errs = !N.errs), (N.flags = !1), (N.stage = ""))
+                    : ((N.stage = e.dataset.s), (N.flags = !1), (N.errs = !1)),
+                i();
+            };
+          },
+        ),
+        Array.prototype.forEach.call(
+          w.querySelectorAll("[data-o]"),
+          function (e) {
+            e.onclick = function () {
+              (N.over = N.over === e.dataset.o ? "" : e.dataset.o), i();
+            };
+          },
+        ),
+        Array.prototype.forEach.call(
+          w.querySelectorAll("[data-tb]"),
+          function (e) {
+            e.onclick = function () {
+              (N.tlBy = e.dataset.tb), i();
+            };
+          },
+        ),
+        Array.prototype.forEach.call(
+          w.querySelectorAll("tr.vrow"),
+          function (e) {
+            e.onclick = function () {
+              (N.village = N.village === e.dataset.v ? "" : e.dataset.v), i();
+            };
+          },
+        );
+      var f = y.getElementById("clrv");
+      f &&
+        (f.onclick = function () {
+          (N.village = ""), i();
+        });
+      var h = y.getElementById("sedit");
+      h &&
+        (h.onclick = function (e) {
+          e.preventDefault(), (N.tlEdit = !0), i();
+        });
+      var v = y.getElementById("ssave");
+      v &&
+        (v.onclick = function () {
+          var e = y
+              .getElementById("shol")
+              .value.split(/[\s,]+/)
+              .filter(function (e) {
+                return /^\d{4}-\d{2}-\d{2}$/.test(e);
+              }),
+            t = {
+              pat: Math.max(1, +y.getElementById("sp").value || 5),
+              gir: Math.max(1, +y.getElementById("sg").value || 7),
+              nt: Math.max(1, +y.getElementById("sn").value || 9),
+              mode: y.getElementById("sm").value,
+              holidays: e,
+            };
+          u = null;
+          try {
+            localStorage.setItem(s, JSON.stringify(t));
+          } catch (e) {}
+          (N.tlEdit = !1), i();
+        }),
+        Array.prototype.forEach.call(w.querySelectorAll(".cpy"), function (e) {
+          e.onclick = function (a) {
+            a.stopPropagation();
+            var r = t.filter(function (t) {
+              return t.appNo + "|" + t.service === e.dataset.k;
+            })[0];
+            if (r) {
+              var n = W(r);
+              navigator.clipboard && navigator.clipboard.writeText
+                ? navigator.clipboard.writeText(n).then(
+                    function () {
+                      (e.textContent = "Copied ✓ — paste into Claude"),
+                        setTimeout(function () {
+                          e.textContent = "Copy case for Claude";
+                        }, 2500);
+                    },
+                    function () {
+                      prompt("Copy this:", n);
+                    },
+                  )
+                : prompt("Copy this:", n);
+            }
+          };
+        }),
+        Array.prototype.forEach.call(w.querySelectorAll(".ana"), function (e) {
+          e.onclick = function (a) {
+            a.stopPropagation();
+            var r = t.filter(function (t) {
+              return t.appNo + "|" + t.service === e.dataset.k;
+            })[0];
+            r && rpAnalyse(r, !1);
+          };
+        }),
+        rpMarkButtons(),
+        (function () {
+          var sb = y.getElementById("stpdf");
+          sb &&
+            (sb.onclick = function () {
+              rpStatusPdf(t, sb);
+            });
+        })(),
+        Array.prototype.forEach.call(
+          w.querySelectorAll(".docbtn"),
+          function (e) {
+            e.onclick = function (a) {
+              a.stopPropagation();
+              var r = t.filter(function (t) {
+                  return t.appNo + "|" + t.service === e.dataset.k;
+                })[0],
+                n =
+                  r &&
+                  r.docs.filter(function (t) {
+                    return String(t.i) === e.dataset.d;
+                  })[0];
+              r &&
+                n &&
+                (async function (e, t) {
+                  S = y.getElementById("modal");
+                  var a = y.getElementById("mtitle"),
+                    r = y.getElementById("mbody"),
+                    n = y.getElementById("macts");
+                  (a.textContent = t.label + " — " + e.name),
+                    (n.innerHTML = ""),
+                    (r.innerHTML =
+                      '<div class="muted">Fetching document…</div>'),
+                    (S.hidden = !1);
+                  try {
+                    var i = await Ee(e, t.i, t.label),
+                      o = i.type || i.blob.type || "",
+                      s = i.blob.type
+                        ? i.blob
+                        : new Blob([i.blob], { type: o });
+                    R && URL.revokeObjectURL(R), (R = URL.createObjectURL(s));
+                    var l = /pdf/.test(o)
+                        ? ".pdf"
+                        : /png/.test(o)
+                          ? ".png"
+                          : /jpe?g/.test(o)
+                            ? ".jpg"
+                            : /zip/.test(o)
+                              ? ".zip"
+                              : /tif/.test(o)
+                                ? ".tif"
+                                : "",
+                      d =
+                        i.name ||
+                        (e.appNo + " " + t.label).replace(/[^\w .-]+/g, "_") +
+                          l,
+                      c = /Android/i.test(navigator.userAgent);
+                    /^image\//.test(o) && !/tif/.test(o)
+                      ? (r.innerHTML = '<img alt="" src="' + R + '">')
+                      : /pdf/.test(o) && !c
+                        ? (r.innerHTML =
+                            '<iframe title="Document" src="' +
+                            R +
+                            '"></iframe>')
+                        : (r.innerHTML =
+                            '<div class="muted" style="padding:16px;text-align:center">' +
+                            (/zip/.test(o)
+                              ? "This is a ZIP of all documents. Your office network may block opening ZIP files — view documents one by one instead."
+                              : "Document ready (" +
+                                L(o || "file") +
+                                ", " +
+                                Math.round(s.size / 1024) +
+                                " KB). Tap Open or Save.") +
+                            "</div>"),
+                      (n.innerHTML =
+                        '<button id="mopen">Open</button><button id="msave">Save</button>'),
+                      (y.getElementById("mopen").onclick = function () {
+                        window.open(R, "_blank");
+                      }),
+                      (y.getElementById("msave").onclick = function () {
+                        var e = document.createElement("a");
+                        (e.href = R),
+                          (e.download = d),
+                          document.body.appendChild(e),
+                          e.click(),
+                          e.remove();
+                      });
+                  } catch (e) {
+                    r.innerHTML =
+                      '<div class="muted" style="padding:16px;word-break:break-word"><b>Could not open the document.</b><br>' +
+                      L((e && e.message) || e) +
+                      "</div>";
+                  }
+                })(r, n);
+            };
+          },
+        ),
+        Array.prototype.forEach.call(w.querySelectorAll(".lv"), function (e) {
+          e.onclick = function () {
+            (N.level = N.level === e.dataset.l ? "" : e.dataset.l), i();
+          };
+        }),
+        Array.prototype.forEach.call(
+          w.querySelectorAll(".chip[data-a]"),
+          function (e) {
+            e.onclick = function () {
+              (N.age = e.dataset.a), i();
+            };
+          },
+        ),
+        Array.prototype.forEach.call(w.querySelectorAll("tr.r"), function (e) {
+          e.onclick = function () {
+            var t = e.dataset.k;
+            (N.open[t] = !N.open[t]), i();
+          };
+        });
+      var b = y.getElementById("q");
+      (b.oninput = function () {
+        N.q = b.value;
+        var e = b.selectionStart;
+        i();
+        var t = y.getElementById("q");
+        t.focus(), t.setSelectionRange(e, e);
+      }),
+        (y.getElementById("csv").onclick = function () {
+          !(function (e, t) {
+            var a = [
+                ["Service", "service"],
+                ["Application No", "appNo"],
+                ["Applicant", "name"],
+                ["Mobile", "mobile"],
+                ["Village", "village"],
+                ["Khasra", "khasra"],
+                ["Khewat", "khewat"],
+                ["Purpose", "purpose"],
+                ["Vendee", "vendee"],
+                ["Area Proposed", "area"],
+                ["Application Date", "appDate"],
+                ["Revert Count", "revert"],
+                ["Days Passed", "days"],
+                ["Current Stage", "stage"],
+                ["Holder", "holder"],
+                ["Patwari Report", "patReport"],
+                ["Last Comment Level", "levelTxt"],
+                ["Last Comment By", "levelBy"],
+                ["Days at Stage", "stageDays"],
+                ["Last Action By", "lastBy"],
+                ["Last Action Date", "lastDate"],
+                ["Last Remark", "lastRemark"],
+                ["Flag", "flag"],
+                ["Time Status", "tlNow"],
+                ["Overdue Days", "tlOver"],
+                ["Late Earlier", "tlLate"],
+                ["Scrutiny", "scr"],
+                ["Movement History", "hist"],
+                ["Read problem", "diag"],
+              ],
+              r = function (e) {
+                return (
+                  '"' +
+                  (e = String(null == e ? "" : e)).replace(/"/g, '""') +
+                  '"'
+                );
+              },
+              n = [
+                a
+                  .map(function (e) {
+                    return r(e[0]);
+                  })
+                  .join(","),
+              ].concat(
+                e.map(function (e) {
+                  var t = ce(e),
+                    n = {
+                      tlNow: t
+                        ? (t.dayNow ? "Day " + t.dayNow : "") +
+                          (t.overdue.length
+                            ? " · overdue: " +
+                              t.overdue
+                                .map(function (e) {
+                                  return e.role + " +" + e.over + "d";
+                                })
+                                .join(", ")
+                            : t.open.length
+                              ? " · " +
+                                t.open[0].role +
+                                " due within " +
+                                t.open[0].limit +
+                                " days"
+                              : "")
+                        : "",
+                      tlOver:
+                        t && t.overdue.length
+                          ? Math.max.apply(
+                              null,
+                              t.overdue.map(function (e) {
+                                return e.over;
+                              }),
+                            )
+                          : "",
+                      tlLate: t
+                        ? t.late
+                            .map(function (e) {
+                              return (e.by || e.role) + " +" + e.over + "d";
+                            })
+                            .join(", ")
+                        : "",
+                      scr: H(e)
+                        .map(function (e) {
+                          return e.t;
+                        })
+                        .join(" | "),
+                      levelTxt: "None" === e.level ? "No action yet" : e.level,
+                      lastDate: Z(e.lastT),
+                      hist: (e.history || [])
+                        .map(function (e) {
+                          return (
+                            (Z(e.t) || e.date) + " " + e.by + ": " + e.remark
+                          );
+                        })
+                        .join(" | "),
+                    };
+                  return a
+                    .map(function (t) {
+                      var a = t[1] in n ? n[t[1]] : e[t[1]];
+                      return "appNo" === t[1] || "mobile" === t[1]
+                        ? r("⁠" + a)
+                        : r(a);
+                    })
+                    .join(",");
+                }),
+              ),
+              i = new Blob(["\ufeff" + n.join("\r\n")], {
+                type: "text/csv;charset=utf-8",
+              }),
+              o = document.createElement("a");
+            (o.href = URL.createObjectURL(i)),
+              (o.download =
+                "RevenuePlus_Pendency_" +
+                new Date(t).toISOString().slice(0, 10) +
+                ".csv"),
+              document.body.appendChild(o),
+              o.click(),
+              o.remove(),
+              setTimeout(function () {
+                URL.revokeObjectURL(o.href);
+              }, 5e3);
+          })(t, e.at);
+        }),
+        (y.getElementById("json").onclick = function () {
+          var a = t.map(function (e) {
+              var t = Object.assign({}, e);
+              return (t.scrutiny = H(e)), t;
+            }),
+            r = new Blob(
+              [
+                JSON.stringify(
+                  {
+                    scannedAt: new Date(e.at).toISOString(),
+                    source: "Revenue Plus Tracker",
+                    applications: a,
+                  },
+                  null,
+                  1,
+                ),
+              ],
+              { type: "application/json" },
+            ),
+            n = document.createElement("a");
+          (n.href = URL.createObjectURL(r)),
+            (n.download =
+              "RevenuePlus_FullData_" +
+              new Date(e.at).toISOString().slice(0, 10) +
+              ".json"),
+            document.body.appendChild(n),
+            n.click(),
+            n.remove();
+        }),
+        (y.getElementById("wa").onclick = function () {
+          !(function (e, t, a, r) {
+            var n = [
+              "*Revenue Plus pendency — " +
+                new Date(a).toLocaleDateString("en-IN") +
+                "*",
+              "Total pending: " + e.length,
+            ];
+            t.forEach(function (t) {
+              n.push(
+                t +
+                  ": " +
+                  e.filter(function (e) {
+                    return e.stage === t;
+                  }).length,
+              );
+            });
+            var i = e.filter(function (e) {
+              return Re(e) > 15;
+            }).length;
+            n.push("Stuck over 15 days at one stage: " + i);
+            var o = {};
+            e.forEach(function (e) {
+              e.holder && (o[e.holder] = (o[e.holder] || 0) + 1);
+            });
+            var s = Object.keys(o).sort(function (e, t) {
+              return o[t] - o[e];
+            });
+            s.length &&
+              (n.push("", "*Holding:*"),
+              s.forEach(function (e) {
+                n.push(e + ": " + o[e]);
+              }));
+            e.some(function (e) {
+              return e.level;
+            }) &&
+              (n.push("", "*Last comment:*"),
+              O.forEach(function (t) {
+                var a = e.filter(function (e) {
+                  return e.level === t[0];
+                }).length;
+                a &&
+                  n.push(("None" === t[0] ? "No action yet" : t[0]) + ": " + a);
+              }));
+            var l = e
+                .map(function (e) {
+                  return ce(e);
+                })
+                .filter(Boolean),
+              d = ee();
+            if (l.length) {
+              var c = { Patwari: 0, Girdawar: 0, "Naib Tehsildar": 0 };
+              l.forEach(function (e) {
+                e.overdue.forEach(function (e) {
+                  c[e.role]++;
+                });
+              }),
+                n.push(
+                  "",
+                  "*Overdue (Patwari " +
+                    d.pat +
+                    ", Girdawar " +
+                    d.gir +
+                    ", NT " +
+                    d.nt +
+                    " days; Sundays & holidays excluded):*",
+                  "Patwari: " + c.Patwari,
+                  "Girdawar: " + c.Girdawar,
+                  "Naib Tehsildar: " + c["Naib Tehsildar"],
+                );
+            }
+            var p = e.filter(function (e) {
+              return /Error:/.test(e.flag);
+            }).length;
+            p && n.push("Errors (moved ahead without Patwari report): " + p);
+            var u = e.filter(function (e) {
+              return e.flag;
+            }).length;
+            u && n.push("Flagged: " + u);
+            var f = n.join("\n");
+            function h() {
+              (r.textContent = "Copied ✓"),
+                setTimeout(function () {
+                  r.textContent = "Copy summary";
+                }, 1500);
+            }
+            navigator.clipboard && navigator.clipboard.writeText
+              ? navigator.clipboard.writeText(f).then(h, function () {
+                  prompt("Copy this:", f);
+                })
+              : prompt("Copy this:", f);
+          })(t, n, e.at, this);
+        }),
+        (y.getElementById("again").onclick = ge);
+    })();
+  }
+})();
